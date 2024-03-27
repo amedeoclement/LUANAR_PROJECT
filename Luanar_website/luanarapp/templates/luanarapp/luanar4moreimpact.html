@@ -1,156 +1,20 @@
 {% extends "main.html" %}
 {% load static %}
-
 {% block content %}
-
-<div style="height: 20px"></div>
-
-<div class="container" id="single-column">
-	<div class="row">
-		<div class="col-md-3">
-			<ul class="nav nav-stacked nav-pills nav-sidebar">
-				<li><a href="/news">News</a></li>
-				<li><a href="/news/articles">Articles</a></li>
-				<li><a href="/events">Events</a></li>
-				<li><a href="/news/announcements">Announcements</a></li>
-				<li><a href="/news/academic-adverts">Academic Adverts</a></li>
-				<li><a href="/news/tag/partnership">Partnerships</a></li>
-				<li><a href="/news/tag/health">Health Activities</a></li>
-				<li><a href="/news/tag/recreational">Sports &amp; Recreation</a></li>
-				<li><a href="/vacancies">Vacancies</a></li>
-				<li><a href="/calendar">Academic Calendar</a></li>
-				<li><a href="/videos">Featured Videos</a></li>
-			</ul>
-
-
-			<div class="visible-md visible-lg">
-			</div>
-			<div class="visible-md visible-lg">
-				<div class="popular-news">
-					<h4>Popular News Items</h4>
-					<div class="list-group">
-						<button type="button" class="list-group-item popular-link"><a
-								href="/news/short-term-courses-call-for-applications-02-02-2024">Short-term Courses -
-								Call for Applications</a></button>
-						<button type="button" class="list-group-item popular-link"><a
-								href="/news/new-year-scholarship-galore-22-01-2024">New year scholarship
-								galore</a></button>
-						<button type="button" class="list-group-item popular-link"><a
-								href="/news/city-and-guilds-and-cisco-courses-call-for-applications-09-02-2024">City and
-								Guilds and CISCO courses - Call for Applications</a></button>
-					</div>
-				</div>
-
-			</div>
-
-			<!--- RANDOM NEWS ARTICLES -->
-			<div class="visible-md visible-lg">
-
-				<h4>In Case You Missed It</h4>
-				<div>
-					<a href="/news/environmental-stewardship-17-11-2023"> </a>
-					<div class="rand_news_date">November 17, 2023, Bester Nyang'wa </div>
-				</div>
-				<div style="padding-bottom: 10px"><strong>Environmental Stewardship</strong></div>
-
-			</div>
-			<!--- RANDOM PROFILES -->
-			<div class="visible-md visible-lg">
-
-
-				<h4>Featured Biography</h4>
-				<div>
-					<a href="/office/Deputy-Vice-Chancellor/staff"> </a>
-					<div class="rand_officer_date" style="padding: 10px 0"><strong>Prof Ishmael B.M. Kosamu</strong> -
-						Deputy Vice Chancellor</div>
-				</div>
-
-
-			</div>
-		</div>
-		<div class="col-md-9 page-content">
-			<h3 class="page-title"> UniPOD to Promote Collaboration among Higher Education Institutions </h3>
-
-			<div class="row">
-				<div class="col-md-12">
-
-					<div class="news-date">
-						<i class="fa fa-info-circle"></i> News &nbsp;
-						<i class="fa fa-user"></i> Peter Bwanali &nbsp;
-						<i class="fa fa-clock-o"></i> February 21, 2024
-					</div>
-
-					<div class="news-image"><img class="img-fullwidth" src="{% static 'images/about/1.jpg' %}"
-							style="height: 250px;" alt="project" /></div>
-
-					<div class="news-snippet-head">University of Malawi Vice-Chancellor, Professor Samson Sajidu, has
-						urged higher education institutions in the country to work together if they are to make the
-						Malawi 2063 vision a reality. </div>
-					<div class="news-content">
-						<p style="text-align: justify;">Sajidu made the remarks on 8 February 2024 when Vice-Chancellors
-							from Malawi`s public universities, Principals of Domasi and Nalikule Colleges of Education
-							including some senior government officials toured the University Innovation Pod (UniPOD) at
-							the Malawi University of Business and Applied Sciences in Blantyre.</p>
-						<p style="text-align: justify;">Sajidu said the coming up of the UniPOD will promote greater
-							scientific achievements and described the UniPOD as a moment of realizing a dream for
-							Malawi. He implored all universities in the country to shed off negative competition and
-							instead complement each other by bringing together different ideas that can accelerate the
-							pace of innovation to meet the aspirations of all Malawians.</p>
-						<p style="text-align: justify;">"The state-of-the-art equipment and infrastructure, including
-							the personnel at the UniPOD will help our ideas come to fruition. It is therefore extremely
-							important that as universities we work together in the field of research and innovation
-							which will contribute to the social economic development of the country", said Sajidu.</p>
-						<p style="text-align: justify;">The creation of the UniPOD at MUBAS has been made possible with
-							funding from the United Nations Development Programme (UNDP) aimed at promoting creativity,
-							ideation, learning, innovations and entrepreneurship among others. Students, innovators and
-							creative artists will have access to the UniPOD.&nbsp;</p>
-						<p style="text-align: justify;">The centre has an audio-visual studio, virtual reality space,
-							and metal, plastic, electronic and wood workshops among others.&nbsp; The UniPOD will also
-							offer services to the public at a fee for its sustainability.</p>
-						<p>&nbsp;</p>
-					</div>
-
-
-
-					<ul class="tag-container">
-						<li class="tag-label">TAGS <i class="fa fa-play"></i></li>
-						<li class="tag">vc</li>
-					</ul>
-
-
-
-
-					<div class="row">
-						<div class="col-md-12">
-							<hr>
-							<h3>Also in the news</h3>
-						</div>
-					</div>
-
-					<div class="row">
-
-						<div class="col-md-3">
-							<a href="/news/familiarization-tour-by-unima-council-chair-26-03-2019"></a>
-							<div class="rand_news_date">March 26, 2019, Hazviperi Mbizi </div>
-						</div>
-						<div class="col-md-9">
-							<div style="padding-bottom: 10px"><strong>Familiarization tour by UNIMA council
-									chair</strong></div>
-							<div>The University of Malawi (UNIMA) Council Chairman Reverend Dr Billy Gama, on Monday
-								March 25, engaged on a familiarization tour on the facilities at the Polytechnic in
-								readiness for the delinking from UNIMA.</div>
-							<div style="padding-top: 10px"><a
-									href="/news/familiarization-tour-by-unima-council-chair-26-03-2019">read more</a>
-							</div>
-						</div>
-
-					</div>
-
-
-				</div>
-			</div>
-
-		</div>
-	</div>
-</div>
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+    <div class="container pt-120 pb-60">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-theme-colored2 text-center" style="font-family: sans-serif; font-size: 46px;">LUANAR4MORE IMPACT
+                    </h2>
+                    <ol class="breadcrumb text-left mt-10 white">
+                        <li><a href="{% url '' %}">LUANAR</a></li>
+                        <li class="active">Luanar4moreimpact</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock content %}
