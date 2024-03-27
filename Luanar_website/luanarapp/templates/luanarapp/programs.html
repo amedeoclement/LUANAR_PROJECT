@@ -1,0 +1,106 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+  <div class="container pt-120 pb-60">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-theme-colored2 text-center" style="font-family: sans-serif; font-size: 46px;">LUANAR | PROGRAMS</h2>
+          <ol class="breadcrumb text-left mt-10 white">
+            <li><a href=" url '' ">LUANAR</a></li>
+            <li class="active">PROGRAMS</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="container mt-30 mb-30 pt-30 pb-30">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="single-service">
+           <h3 class="text-uppercase mt-30 mb-10">
+            {{program.program_name}}
+          </h3>
+          <div class="double-line-bottom-theme-colored2 mt-10"></div>
+          <p>
+            {% autoescape off %}
+            {{program.program_description|linebreaks}}
+            {% endautoescape %}
+          </p>
+       
+          <ul id="myTab" class="nav nav-tabs mt-30">
+            <li class="active">
+              <a href="#tab1" data-toggle="tab">Requirements</a>
+            </li>
+            <li><a href="#tab2" data-toggle="tab">Program Details</a></li>
+            <li><a href="#tab3" data-toggle="tab">Prospects</a></li>
+          </ul>
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="tab1">
+              <p>
+                {{program.requirement}}
+              </p>
+            </div>
+            <div class="tab-pane fade" id="tab2">
+             
+              <ul class="course-info-list font-14 mt-20">
+                <li>
+                  <span class="course-info-title">
+                    <i
+                      class="pe-7s-date font-26 vertical-align-middle text-theme-colored2 mr-10"
+                    ></i
+                    >Program Duration:</span
+                  >
+                  <span class="course-info-details">{{program.duration}}</span>
+                </li>
+                <li>
+                  <span class="course-info-title">
+                    <i
+                      class="pe-7s-timer font-26 vertical-align-middle text-theme-colored2 mr-10"
+                    ></i
+                    >Department:</span
+                  >
+                  <span class="course-info-details">{{department.department_name}}</span>
+                </li>
+              </ul>
+            </div>
+            <div class="tab-pane fade" id="tab3">
+              <p>
+                
+                {% autoescape off %}
+                
+                {{program.prospects|linebreaks}}
+                
+                {% endautoescape %} 
+              </p>
+              </div>
+           
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="sidebar sidebar-left mt-sm-30 ml-30 ml-sm-0">
+     
+            <h4 class="widget-title line-bottom mt-30">
+              Quick 
+              <span class="text-theme-colored2">Links</span>
+            </h4>
+           
+            <ul class="nav  nav-stacked  nav-pills nav-sidebar" style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+                <li> <a href="{% url 'undergraduateprograms' %}" >Undergraduate Programs</a ></li>
+                 <li> <a href="{% url 'postgraduateprograms' %}" >Postgraduate Programs</a ></li>
+               <li> <a href="{% url 'howtoapply' %}">How to Apply</a ></li>
+                <li> <a href="{% url 'internationalstudents' %}" >International Students</a ></li>
+                <li> <a href="{% url 'bundacampus' %}">Bunda Campus</a ></li>
+               <li> <a href="{% url 'naturalresourcescollege' %}">NRC Campus</a ></li>
+                <li> <a href="{% url 'citycampus' %}">City Campus</a ></li>
+            </ul>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</section> {% endblock content %}

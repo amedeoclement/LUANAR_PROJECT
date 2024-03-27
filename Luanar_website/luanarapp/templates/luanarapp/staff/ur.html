@@ -1,0 +1,142 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+    <div class="container pt-120 pb-60">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-theme-colored2 text-center" style="font-family: sans-serif; font-size: 38px;">
+                        LUANAR | UNIVERSITY REGISTRAR
+                    </h2>
+                    <ol class="breadcrumb text-left mt-10 white">
+                        <li><a href="{% url '' %}">LUANAR</a></li>
+                        <li class="active">UNIVERSITY REGISTRAR</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+
+
+
+
+    <!-- content 
+			================================================== -->
+    <div id="content">
+
+        <!-- Page Banner -->
+        <div class="page-banner pl-10 pt-20">
+            <h2 class="text-theme-colored">{{ur.staff_name}}</h2>
+
+        </div>
+        <!-- blog-box Banner -->
+        <div class="blog-box blog-box-other with-one-col">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-9 blog-side">
+                        <div style="text-align: justify;">
+                            <div style="float: right; margin-left: 30px; width: 400px;"><img style="width: 100%;"
+                                    src="{{ur.profile_pic.url}}" alt="" />
+                                <div class="news-image-caption" style="font-size: 16px;"><strong>
+                                       University Registrar:&nbsp;</strong>{{ur.staff_name}}</div>
+                            </div>
+                            {% autoescape off %}
+                            <p style="text-align: justify; font-size: 16px;">{{ur.about_staff|linebreaks}}</p>
+                            {% endautoescape %}
+
+                        </div>
+
+                        <h3 style="font-family: sans-serif;">Contacting the UR</h3>
+                        <table class="table" style="background-color: rgb(229, 231, 237); border-radius: 0 0 10px 10px; font-size: 16px;">
+                            <tr>
+                                <td class="col-md-3"><strong>Physical Address</strong></td>
+                                <td>LUANAR Bunda Campus - Gateway Administration Block</td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-3"><strong>Postal Address</strong></td>
+                                <td>P.O Box 219, Lilongwe, Malawi.</td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-3"><strong>Phone</strong></td>
+                                <td>01 277 222/1016</td>
+                            </tr>
+                            <tr>
+                                <td class="col-md-3"><strong>Email</strong></td>
+                                <td><a href="mailto:dvc@luanar.ac.mw">ur@luanar.ac.mw</a></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="col-md-3 sidebar">
+                        <div class="sidebar-widgets">
+                                <h3 class="widget-title" style="font-family: sans-serif;">
+                                    Quick <span class="text-theme-colored2">Links</span>
+                                  </h3>
+                                <ul class="nav nav-pills nav-stacked nav-sidebar" style="background-color: rgb(205, 218, 211);">
+                                    <li>
+                                      <a href="{% url 'office_of_vc' %}">Office of VC</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'office_of_dvc' %}" >Office of DVC</a>
+                                      </li>
+                                    <li>
+                                      <a href="{% url 'office_of_doqa' %}">Quality Assurance</a>
+                                    </li>
+                                 
+                                    <li>
+                                      <a href="{% url 'feesandfunding' %}">Fees & Funding</a>
+                                    </li>
+                                    <li>
+                                      <a href="{% url 'studentsgovernance' %}">Students Governance</a>
+                                    </li>
+                                    <li>
+                                      <a href="{% url 'accommodation' %}" >Accommodation</a>
+                                    </li>
+                      
+                                  </ul>
+                                  <hr>
+                                  <div class="tags-widget widget">
+                                    <h4 style="font-family: sans-serif;">LUANAR's Virtual Campus</h4>
+    
+                                    <p>
+                                        <div class="box-hover-effect about-video mt-sm-30">
+                                            <div class="effect-wrapper">
+                                                <div class="thumb">
+                                                    <img class="img-fullwidth" src="{% static 'images/about/bunda.jpg' %}" alt="project">
+                                                </div>
+                                                <div class="video-button"></div>
+                                                <a class="hover-link" data-lightbox-gallery="youtube-video"
+                                                    href="https://www.youtube.com/watch?v=c__G3qgDMBw&t=7s" title="Youtube Video">Youtube
+                                                    Video</a>
+                                            </div>
+                    
+                                        </div>
+                                    </p>
+                                </div>
+
+                            <div class="tags-widget widget">
+                               
+                                <p>Lilongwe University of Agriculture and Natural Resources (LUANAR) is located in Lilongwe, the capital city of Malawi. Lilongwe is situated in the central region of the country, making it easily accessible from various parts of Malawi. 
+                                </p>
+                                <p>The university campus is typically found on the outskirts of the city, offering a serene environment conducive to academic pursuits.
+                                </p>
+                              
+                            </div>
+
+                           
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <!-- End content -->
+
+
+</section>
+{% endblock content %}

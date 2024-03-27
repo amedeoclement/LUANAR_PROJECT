@@ -1,0 +1,329 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+  <div class="container pt-120 pb-60">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-theme-colored2 text-center text-uppercase" style="font-family: sans-serif; font-size: 46px;">
+           Mission | Vision | Values
+          </h2>
+          <ol class="breadcrumb text-left mt-10 white">
+            <li><a href="#">LUANAR</a></li>
+            <li><a href="#">About us</a></li>
+            <li class="active">Mission, Vision & Values</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h5 class="widget-title line-bottom">Quick links</h5>
+        <div class="list-group">
+          <a href="{% url 'message_from_vc' %}" class="list-group-item">Message from VC</a>
+          <a href="{% url 'luanar_history' %}" class="list-group-item">Luanar History</a>
+          <a href="#" class="list-group-item">Management & Governance</a>
+          <a href="#" class="list-group-item">Policies</a>
+          <a href="#" class="list-group-item">News & Events</a>
+        </div>
+
+
+        <h4 class="widget-title line-bottom">
+          Featured <span class="text-theme-colored2">Staff</span>
+        </h4>
+        <div class="col-xs-12 col-sm-12 col-md-12 ">
+          <div class="team-members border-bottom-theme-colored2px text-center maxwidth400 mb-30">
+            <div class="team-thumb">
+              <img class="img-fullwidth" alt src="{% static 'images/team/1.jpg' %}">
+              <div class="team-overlay"></div>
+              <ul class="styled-icons team-social icon-sm">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+            <div class="team-details">
+              <h4 class="text-uppercase  font-weight-600 m-5"><a href="">Professor Emmanuel Kaunda</a></h4>
+              <h6 class="text-gray font-18 line-bottom-centered font-weight-400  mt-0">Vice Chancellor</h6>
+              <p class="hidden-md">Lorem ipsum dolor sit ametcon secte adipis elit. dignissimos saperator ellium</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9">
+
+        <div class="col-md-12" style="padding-top: 70px;">
+
+          
+          <div class="custom-div" style=" border-left: 5px solid; background-color: #f0f0f0;  padding: 5px 20px 20px 20px; margin-bottom: 10px;">
+            <div >
+              <h3 class="text-uppercase" >
+                Vision
+              </h3>
+            </div>
+             <div>
+              <p> To be a world class University</p>
+             </div>
+            
+          </div>
+     
+        
+    
+          <div class="custom-div" style=" border-left: 5px solid; background-color: #f0f0f0;  padding: 5px 20px 20px 20px; margin-bottom: 10px; ">
+            <div >
+              <h3 class="text-uppercase" >
+                Mission
+              </h3>
+            </div>
+             <div >
+              <p>  To advance knowledge and produce relevant graduates with entrepreneurship skills for agricultural
+                growth, food security, wealth creation and sustainable natural resources management, through
+                teaching, training, research, outreach, consultancy and sound management.</p>
+             </div>
+            
+          </div>
+      
+          <div class="custom-div" style=" border-left: 5px solid; background-color: #f0f0f0;  padding: 5px 20px 20px 20px; margin-bottom: 10px; ">
+            <div>
+              <h3 class="text-uppercase" >
+               Our Mandate
+              </h3>
+            </div>
+             <div>
+              <p>To provide quality education and training in agricultural and natural resources science, engineering
+                and irrigation technologies, agro-processing, entrepreneurship, trade, climate change adaptation,
+                sustainable utilization of natural resources and environmental preservation for socio-economic
+                development.</p>
+             </div>
+            
+          </div>
+      
+  </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="heading-line-bottom">
+          <h4 class="heading-title">Our Core Values</h4>
+        </div>
+      </div>
+      <div class="col-md-4 mb-30 " >
+        <div class="card effect__hover " >
+          <div class="card__front bg-theme-colored " data-bg-color="#2eb135">
+            <div class="card__text">
+              <div class="display-table-parent">
+                <div class="display-table">
+                  <div class="display-table-cell">
+                    <div class="icon-box mb-0">
+                      <a href="#" class="icon mb-0">
+                        <i class="text-white pe-7s-users font-72"></i>
+                      </a>
+                      <h3  style="font-weight: bold;" class="icon-box-title text-white">Innovativeness</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card__back" data-bg-color="#e0e0e0">
+            <div class="card__text">
+              <div class="display-table-parent p-30">
+                <div class="display-table">
+                  <div class="display-table-cell">
+                    <h3 style="font-weight: bold;">Innovativeness</h3>
+                    <p  style=" margin: 0 auto; text-align: justify; ">
+                      We are committed to conduct ourselves in a manner consistent with the highest standards of integrity. We aim to be honest, ethical and fair in all our activities. We aim to keep our word, deliver on our promises and acknowledge our mistakes. In all that we do, we aim to guard our good reputation as it is more important than any rewards.
+                      </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-30" >
+        <div class="card effect__hover">
+          <div class="card__front" style="background-color: rgb(0,124,187);">
+            <div class="card__text">
+              <div class="display-table-parent">
+                <div class="display-table">
+                  <div class="display-table-cell">
+                    <div class="icon-box mb-0">
+                      <a href="#" class="icon mb-0">
+                        <i class="text-white pe-7s-users font-72"></i>
+                      </a>
+                      <h3  style="font-weight: bold;" class="icon-box-title text-white">Integrity</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card__back" data-bg-color="#e0e0e0">
+            <div class="card__text">
+              <div class="display-table-parent p-30">
+                <div class="display-table">
+                  <div class="display-table-cell">
+                    <h3  style="font-weight: bold;">Integrity</h3>
+                    <p  style=" margin: 0 auto; text-align: justify; ">We prioritize creativity and innovation in teaching, learning, and services, aiming to redefine excellence. Open to unconventional ideas, we embrace change and adapt to evolving societal needs, continually seeking innovative approaches to further LUANAR's mission through development, implementation, and evaluation of practices.</p>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-30">
+        <div class="card effect__hover">
+          <div class="card__front"  data-bg-color="#808080">
+            <div class="card__text">
+              <div class="display-table-parent">
+                <div class="display-table">
+                  <div class="display-table-cell">
+                    <div class="icon-box mb-0">
+                      <a href="#" class="icon mb-0">
+                        <i class="pe-7s-users text-white font-72"></i>
+                      </a>
+                      <h3  style="font-weight: bold;" class="icon-box-title text-white">Excellence</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card__back" data-bg-color="#e0e0e0">
+            <div class="card__text">
+              <div class="display-table-parent p-30">
+                <div class="display-table">
+                  <div class="display-table-cell">
+                    <h3  style="font-weight: bold;">Excellence</h3>
+                    <p  style=" margin: 0 auto; text-align: justify; ">
+We value excellence in teaching, learning, research and support services while recognizing the needs and rights of others in all aspects of the University’s operations, and fulfill their employment obligations both in spirit and in fact.</p>
+              
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card effect__hover">
+          <div class="card__front" data-bg-color="#808080">
+            <div class="card__text">
+              <div class="display-table-parent">
+                <div class="display-table">
+                  <div class="display-table-cell">
+                    <div class="icon-box mb-0">
+                      <a href="#" class="icon mb-0">
+                        <i class="pe-7s-users  text-white font-72"></i>
+                      </a>
+                      <h3  style="font-weight: bold;" class="icon-box-title text-white">Environmental Stewardship</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card__back" data-bg-color="#e0e0e0">
+            <div class="card__text">
+              <div class="display-table-parent p-30">
+                <div class="display-table">
+                  <div class="display-table-cell">
+                    <h3  style="font-weight: bold;">Environmental Stewardship</h3>
+                    <p  style=" margin: 0 auto; text-align: justify; ">
+                      We aim to provide safe working and operating conditions for our employees. We understand our role as stewards of the environment and incorporate this value into our teaching, research and consultancy as well as all operations of the University.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card effect__hover">
+          <div class="card__front" data-bg-color="#2eb135">
+            <div class="card__text">
+              <div class="display-table-parent">
+                <div class="display-table">
+                  <div class="display-table-cell">
+                    <div class="icon-box mb-0">
+                      <a href="#" class="icon mb-0">
+                        <i class="pe-7s-users text-white font-72"></i>
+                      </a>
+                      <h3 style="font-weight: bold;"  class="icon-box-title text-white">Openness & Transparency</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card__back" data-bg-color="#e0e0e0">
+            <div class="card__text">
+              <div class="display-table-parent p-30">
+                <div class="display-table">
+                  <div class="display-table-cell">
+                    <h3  style="font-weight: bold;">Openness & Transparency</h3>
+                    <p  style=" margin: 0 auto; text-align: justify; ">
+                      At LUANAR we are transparent, accessible to anyone, anytime, anywhere; and responsive to new ideas and demands. We strive to lead by example, aligning disclosure and dissemination procedures with modern information management practices.</p>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card effect__hover">
+          <div class="card__front"  style="background-color: rgb(0,124,187);">
+            <div class="card__text">
+              <div class="display-table-parent">
+                <div class="display-table">
+                  <div class="display-table-cell">
+                    <div class="icon-box mb-0">
+                      <a href="#" class="icon mb-0">
+                        <i class="pe-7s-users text-white font-72"></i>
+                      </a>
+                      <h3  style="font-weight: bold;" class="icon-box-title text-white">Professionalism</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card__back" data-bg-color="#e0e0e0">
+            <div class="card__text" >
+              <div class="display-table-parent p-30">
+                <div class="display-table">
+                  <div class="display-table-cell">
+                    <h3  style="font-weight: bold;">Professionalism</h3>
+                    <p style=" margin: 0 auto; text-align: justify; " >
+                      We demonstrate professionalism through collegiality, respect, and recognition for each other. We aim to exercise the highest professional standards in the use of time and resources. We recognize the necessity of many roles in the educational enterprise, and work in such a manner as to enhance cooperation and collegiality among students, faculty, administrators, and staff.</p>
+            
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+</section>
+
+{% endblock content %}

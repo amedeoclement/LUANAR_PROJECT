@@ -1,0 +1,87 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+    <div class="container pt-120 pb-60">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-theme-colored2 text-uppercase text-center " style="font-family: sans-serif; font-size: 46px;">LUANAR | Vacancies</h2>
+            <ol class="breadcrumb text-left mt-10 white">
+              <li><a href=" url '' ">LUANAR</a></li>
+              <li class="active">Vacancies</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<section>
+    <div class="container pt-0">
+        <div class="row">
+           
+
+            <div class="col-md-9">
+                <div class="heading-line-bottom mt-0 mb-30">
+                    
+                </div>
+
+                <div class="icon-box mb-0 p-0">
+
+                    <a href="#" class="icon pull-left mb-0 mr-10"> <i class="pe-7s-users"></i> </a>
+
+                    <h3 class="icon-box-title pt-15 mt-0 mb-40">{{vacancy.position}}</h3>
+                     <h4>Job description</h4>
+                    <p class="text-gray">{{vacancy.job_description}}</p>
+
+
+                     <h4>Requirements</h4>
+                    <p>{{vacancy.requirements}}</p>
+
+                     <h4>Mode of Application</h4>
+                    </div>
+             
+                <a href="{{vacancy.vacancy_file.url}}" class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat"><i class="fa fa-download fa-lg"></i>&nbsp; Download pdf</a>
+                <hr>
+            </div>
+            <div class="col-sm-12 col-md-3">
+              <h4 class="widget-title line-bottom mt-30">
+                <i class="text-theme-colored"></i>Quick
+                <span class="text-theme-colored2">Links</span>
+              </h4>
+              <ul class="nav nav-stacked nav-pills nav-sidebar" style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+                <li><a href="{% url 'office_of_hr' %}">Office of Human Resources</a></li>
+                <li><a href="{% url 'newsandevents' %}">News and Events</a></li>
+                <li><a href="{% url 'downloads' %}">Downloads</a></li>
+                <li><a href="{% url 'about' %}">About Luanar</a></li>
+                <li><a href="{% url 'office_of_doqa' %}">Office of Quality Assurance</a></li>
+              </ul>
+                <div class="sidebar sidebar-left mt-sm-30 pt-20">
+                  <div class="widget">
+                    <h4 class="widget-title line-bottom">
+                      Featured <span class="text-theme-colored2">Staff</span>
+                    </h4>
+                    <div class="col-md-12">
+                      <div class="card mb-sm-30 bg-white" style="border-bottom:#2eb135 4px solid;">
+                        <a href="#"><img src="/static/images/about/cr1.jpg" class="card-img-top" style="padding-top: 15px;"
+                          alt="...">
+                        <div class="card-body ">
+                         <h3 class="card-title font-weight-700 mt-20">D. Mpando</h3>
+                          <h4 class="card-title font-weight-700 font-16 mt-20">Human Resources Manager</h4></a>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+                 
+
+        </div>
+    </div>
+</section>
+{% endblock content %}

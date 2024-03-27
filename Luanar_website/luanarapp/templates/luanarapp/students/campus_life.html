@@ -1,0 +1,135 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+
+      
+<!-- Breadcrumbs Start -->
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/campus_life.jpg' %}">
+    <div class="container pt-120 pb-60">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-theme-colored2 text-center" style="font-family: sans-serif; font-size: 44px;">LUANAR | CAMPUS LIFE</h2>
+            <ol class="breadcrumb text-left mt-10 white">
+              <li><a href=" url '' ">LUANAR</a></li>
+              <li><a href="{% url 'about' %}">ABOUT</a></li>
+              <li class="active">Campus Life</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Breadcrumbs End -->
+
+  <!-- Events Start -->
+  <div class="pt-20 pb-20">
+    <div class="container">
+        <div class="row">
+                    <div class="col-md-4 " style="margin-bottom: 10px;">
+                        <div class="container-fluid col-md-12" style="background-color: #2eb135; height: 50px;">
+                          <h4 class="text-white text-center" style="font-family: sans-serif; padding-top: 10px;">Student Union</h4>
+                        </div>
+                        <div class="event-img">
+                            <img src="{% static 'images/campus_life/studentsunionthumb.jpg' %}" alt="" />
+                         
+                        </div>
+                       
+                        <div class="col-md-12 pl-0" style="padding-top:10px;">
+                            <p>As is mostly the case in universities worldwide, LUANAR students have their own governing body. This is led by a President...</p>
+                        </div>
+                        <div>
+                            <a href="{% url 'studentunion' %}">View details <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 " style="margin-bottom: 10px;">
+                        <div class="col-md-12" style="background-color: #2eb135; height: 50px;">
+                          <h4 class="text-white text-center" style="font-family: sans-serif; padding-top: 10px;">Student Accommodation</h4>
+                        </div>
+                        <div class="event-img">
+                            <img src="{% static 'images/campus_life/accomodationthumb.jpg' %}" alt="" />
+                         
+                        </div>
+                       
+                        <div class="col-md-12 pl-0" style="padding-top:10px;">
+                          <p style="font-size: 15px; color: #444141;"> All successful candidates should note that, they are required to find and pay for their own accommodation and meals...</p>
+                      
+                        </div>
+                        <div>
+                            <a href="{% url 'accommodation' %}">View details <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 " style="margin-bottom: 10px;">
+                        <div class="col-md-12" style="background-color: #2eb135; height: 50px;">
+                          <h4 class="text-white text-center" style="font-family: sans-serif; padding-top: 10px;">Student Orientation</h4>
+                        </div>
+                        <div class="event-img">
+                            <img src="{% static 'images/campus_life/orientationthumb.jpg' %}" alt="" />
+                         
+                        </div>
+                       
+                        <div class="col-md-12 pl-0" style="padding-top:10px;">
+                          <p style="font-size: 15px; color: #444141;">Once students come to LUANAR, the first step to their journey of studies is participation in the Orientation Program...</p>
+                        </div>
+                        <div>
+                            <a href="{% url 'studentorientation' %}">View details<i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 ">
+                        <div class="col-md-12" style="background-color: #007cbb; height: 50px;">
+                          <h4 class="text-white text-center" style="font-family: sans-serif; padding-top: 10px;">Students Health and Disabilities</h4>
+                        </div>
+                        <div class="event-img">
+                            <img src="{% static 'images/campus_life/studenthealththumb.jpg' %}" alt="" />
+                         
+                        </div>
+                       
+                        <div class="col-md-12 pl-0" style="padding-top:10px;">
+                          <p style="font-size: 15px; color: #444141;">Welcome to the University Health Service. We aim to provide a confidential service to support your physical and mental wellbeing...</p>
+                        </div>
+                        <div>
+                            <a href="{% url 'healthandwellbeing' %}">View details <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="col-md-12" style="background-color: #007cbb; height: 50px;">
+                          <h4 class="text-white text-center" style="font-family: sans-serif; padding-top: 10px;">Support Networks and Services</h4>
+                        </div>
+                        <div class="event-img">
+                            <img src="{% static 'images/campus_life/supportthumb.jpg' %}" alt="" />
+                         
+                        </div>
+                       
+                        <div class="col-md-12 pl-0" style="padding-top:10px;">
+                          <p style="font-size: 15px; color: #444141;">As is mostly the case in universities worldwide, LUANAR students have their own governing body. This is led by a President, seconded by the...</p>
+                        </div>
+                        <div>
+                            <a href="{% url 'supportnetworks' %}">View details <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="col-md-12" style="background-color: #007cbb; height: 50px;">
+                          <h4 class="text-white text-center" style="font-family: sans-serif; padding-top: 10px;">Clubs and Societies</h4>
+                        </div>
+                        <div class="event-img">
+                            <img src="{% static 'images/campus_life/clubsandSocietiesthumb.jpg' %}" alt="" />
+                         
+                        </div>
+                       
+                        <div class="col-md-12 pl-0" style="padding-top:10px;">
+                          <p style="font-size: 15px; color: #444141;">At LUANAR there is a full range of clubs, societies and organizations. Clubs have been offering sporting opportunities for student cohort...</p>
+                  
+                        </div>
+                        <div>
+                            <a href="{% url 'studentclubsandsociety' %}">View details <i class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+        </div>
+    </div>
+</div>
+<!-- Events End -->
+
+
+
+{% endblock content %}

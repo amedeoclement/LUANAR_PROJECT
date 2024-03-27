@@ -1,0 +1,63 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+    <div class="container pt-120 pb-60">
+    
+    <div class="section-content">
+    <div class="row">
+    <div class="col-md-12">
+    <h2 class="text-theme-colored2  text-center text-uppercase" style="font-family: sans-serif; font-size: 46px;">Message from Vice Chancellor</h2>
+    <ol class="breadcrumb text-left mt-10 white">
+    <li><a href="#">LUANAR</a></li>
+    <li><a href="{% url 'about' %}">About us</a></li>
+    <li class="active">Message forom VC</li>
+    </ol>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+
+<section>
+    <div class="container">
+    <div class="section-content">
+    <div class="row">
+    <div class="col-sx-12 col-sm-4 col-md-4">
+        <div class="box-hover-effect about-video mt-sm-30">
+            <div class="effect-wrapper">
+             
+                    <img class="img-fullwidth" src="{% static 'images/about/vc.jpg' %}" alt="project">
+            
+                <div class="video-button"></div>
+                <a class="hover-link" data-lightbox-gallery="youtube-video"
+                    href="https://www.youtube.com/watch?v=mY_sXwVAdJo" title="Youtube Video">Youtube
+                    Video</a>
+            </div>
+        </div>
+    <div class="info p-20 " style="background-color: rgb(117, 115, 86);">
+    <h4 class="text-uppercase text-white">Professor Emmanuel Kaunda</h4>
+    <p class="text-gray-silver">He has extensive experience in leadership and management within the Higher education sector in Malawi and beyond and is an accomplished high-level academic leader and researcher.</p>
+    </div>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-8">
+    <div class="font-15" style="font-family:Arial, Helvetica, sans-serif;">
+
+    <p class="mt-15 mb-15">I am delighted to welcome you to the Lilongwe University of Agriculture and Natural Resources (LUANAR), which is the third public University in Malawi. At LUANAR, we are extremely proud of our reputation for teaching and research national and beyond. We are also extremely proud of the unique atmosphere on campus and we know it will make your time at LUANAR a special and highly memorable experience.</p>
+    <p class="mb-15">Our activities bring economic, cultural and social benefits to Malawi and beyond, and we will continue to ensure our international ambitions have a direct and positive impact.</p>
+    <blockquote class="theme-colored pt-20 pb-20">
+    <p>This website is expected to be a gateway of the University to the world. A means of providing comprehensive, accurate and timely information on all operations of the University.
+    </p>
+    </blockquote>
+    <p>The information will be especially useful to anyone who wishes to transact any form of business with the University. Since information is dynamic, the University will therefore continue to update the information on this website from time to time as the need arises.</p>
+    <p>I hope you will be able to visit us at our many locations but until then, please explore the website to find out more about our courses, our research and our staff and students.</p>
+   
+    <p>Once again welcome.</p>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </section>
+{% endblock content %}

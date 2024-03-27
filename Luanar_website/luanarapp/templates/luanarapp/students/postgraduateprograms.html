@@ -1,0 +1,177 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+  <div class="container pt-120 pb-60">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-theme-colored2 text-center " style="font-family: sans-serif; font-size: 46px;">
+            PROGRAMS | POSTGRADUATE
+          </h2>
+          <ol class="breadcrumb text-left mt-10 white">
+            <li><a href="{% url '' %}">LUANAR</a></li>
+            <li><a href="{% url '' %}">PROGRAMS</a></li>
+            <li class="active">POSTGRADUATE</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 blog-pull-right">
+
+        <div class="section-content">
+            <div class="col-md-12" style="font-family: sans-serif; font-size: 15px;">
+              <h3 class="text-uppercasetext-theme-colored mt-0" style="font-family: sans-serif; font-weight: bolder;">
+                Postgraduate <span class="text-theme-colored2">Programs</span>
+
+              </h3>
+              <hr>
+            </div>
+          <div class="col-md-12" style="border-bottom:#2eb135 3px solid; padding-left: 0;">
+          <div class="row">
+            {% for program in page %}
+             <div class="col-md-6">
+                <div class="table" >
+                    <div class="col-md-12" style="background-color: #e7e6c5; margin: 5px; border-radius: 10px;">
+
+                        <h4 class=" mb-2 "><a href="{% url 'program_details' program.program_id %}">{{ program.program_name }}</a></h4>
+                        <hr>
+                        <p class="card-text" style="text-align: justify;">Duration:  {{program.duration}}</p>
+                        {% if program.campus_code_id is 2 %}
+                        <p class="card-text" style="text-align: justify;">Offered at Bunda Campus </p>
+                        {% elif program.campus_code_id is 1 %}
+                        <p class="card-text" style="text-align: justify;">Offered at City Campus </p>
+                        {% elif program.campus_code_id is 3 %}
+                        <p class="card-text" style="text-align: justify;">Offered at NRC Campus </p>
+                        {% elif program.campus_code_id is 4 %} 
+                        <p class="card-text" style="text-align: justify;">Offered at ODL Campus </p>
+                        {% else %}
+                        <p class="card-text" style="text-align: justify;"> Campus to be Verified</p>
+                        {% endif %}
+                        <a href="{% url 'program_details' program.program_id %}">Read more...</a> 
+                   
+                    </div>
+                    </div>
+             </div>
+            {% endfor %}
+          </div>
+          
+    <div class="col-md-12 mb-30 mt-20" >
+        {% if page.has_previous %}
+        <a class="btn btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?page=1">First</a>
+        <a class="btn btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?page={{ page.previous_page_number }}">Previous</a>
+    {% endif %}
+    {% for num in page_range %}
+        {% if num == page.number %}
+            <span class="btn btn-primary" style="background-color:  rgb(204, 207, 207);">{{ num }}</span>
+        {% else %}
+            <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ num }}">{{ num }}</a>
+        {% endif %}
+    {% endfor %}
+    {% if page.has_next %}
+        <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ page.next_page_number }}">Next</a>
+        <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ page.paginator.num_pages }}">Last</a>
+    {% endif %}
+    
+      </div>
+   
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="sidebar sidebar-left mt-sm-30 ml-40">
+
+            <h3 class="widget-title line-bottom">
+              Important <span class="text-theme-colored2">information</span>
+            </h3>
+
+            <ul class="nav nav-stacked nav-pills nav-sidebar" style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+              <li>
+                <a href="{% url 'undergraduateprograms' %}">Undergraduate Programs</a>
+              </li>
+              <li>
+                <a href="{% url 'citycampus' %}">City Campus</a>
+              </li>
+              <li>
+                <a href="{% url 'naturalresourcescollege' %}">NRC Campus</a>
+              </li>
+              <li>
+                <a href="{% url 'bundacampus' %}">Bunda Campus</a>
+              </li>
+              <li>
+                <a href="{% url 'odl' %}">ODL Campus </a>
+              </li>
+
+
+            </ul>
+          <div class="widget">
+
+            <div class="c col-md-12">
+              <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 5px solid;">
+                <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top" style="padding-top: 15px;"
+                  alt="...">
+                <div class="card-body ">
+                  <h5 class="card-title font-weight-700 font-18 mt-20">Admission</h5>
+                  <p class="card-text">LUANAR is a dynamic and vibrant community of learning that brings together
+                    administrators, academic staff and students from Malawi and abroad in an effort to provide sound...
+                  </p>
+                  <a href="{% url 'howtoapply' %}"
+                    class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ MORE</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="container">
+      <div class="row">
+        <div class="container mt-0">
+          <div class="col-md-12 text-center">
+            <h2 class="text-uppercase title">ENTRY <span class="text-theme-colored2"> REQUIREMENTS</span></h2>
+            <div class="line-bottom-centered"></div>
+           </div>
+            </div>   
+    </div>
+    <div class="col-md-12">
+
+        <div class="table-responsive">
+     
+       <table class="table"  style="text-align: justify;">
+         <thead>
+           <tr style=" border-left: 5px solid; background-color: #beb999; margin-bottom: 5px;">
+           
+             <th scope="col">Faculty</th>
+             <th scope="col">Entry Type</th>
+             <th scope="col">Requirements</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr style=" border-left: 5px solid; background-color: #d8d9ca; margin-bottom: 5px;">
+             <td style=" border-left: 1px solid;">All Faculties</td>
+             <td style=" border-left: 1px solid;">Postgraduate Diploma</td>
+             <td style=" border-left: 1px solid;">A Bachelor of Science Degree in a relevant field obtained from an accredited institution of higher learning.</td>
+           </tr>
+           <tr style=" border-left: 5px solid; background-color: #d8d9ca; margin-bottom: 5px;">
+             <td style=" border-left: 1px solid;">All Faculties</td>
+             <td style=" border-left: 1px solid;">Masters</td>
+             <td style=" border-left: 1px solid; ">A Bachelor’s Degree in a relevant field obtained with a credit from an accredited institution of higher learning.</td>
+         </tr>
+           <tr style=" border-left: 5px solid; background-color: #d8d9ca; margin-bottom: 5px;">
+             <td>All Faculties</td>
+             <td style=" border-left: 1px solid;">PhD</td>
+             <td style=" border-left: 1px solid;">A relevant Master’s Degree obtained from an accredited institution of higher learning and at least 2 years’ relevant work experience.
+              APPLY FOR ADMISSIONS</td>
+         </tr>
+         </tbody>
+       </table>
+      </div>
+         </div>
+    </section>
+  </div>
+</section>
+{% endblock content %}

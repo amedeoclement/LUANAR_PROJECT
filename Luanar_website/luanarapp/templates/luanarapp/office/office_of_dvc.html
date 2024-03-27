@@ -1,0 +1,154 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+  <div class="container pt-120 pb-60">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-theme-colored2 text-center" style="font-family: sans-serif; font-size: 46px;">
+            LUANAR | OFFICE OF DVC
+          </h2>
+          <ol class="breadcrumb text-left mt-10 white">
+            <li><a href="{% url '' %}">LUANAR</a></li>
+            <li><a href="#">OFFICES</a></li>
+            <li class="active">DEPUTY VICE CHANCELLOR</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="pb-0 mb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 blog-pull-right">
+
+        <h2 class="text-center title">Functions of the Office of the Deputy Vice Chancellor <span
+            class="text-theme-colored2"></span></h2>
+        <div class="line-bottom-centered"></div>
+
+        <div class="single-service"
+          style="font-family: sans-serif; font-size: 15px; border-bottom:#2eb135 3px solid; text-align: justify;">
+
+          <h3>Research and Publications</h3>
+          <p>
+            The office of the Deputy Vice Chancellor ensures implementation of University Research Agenda which fosters application of research results to improve knowledge and human welfare. Facilitates collaborative research projects and innovative research that can result in improved production, processing and marketing of agricultural products. Encourages academic members of staff to embark on investigative research that brings about socio-economic changes in people's habits.
+          </p>
+          <h3>Academic Affairs</h3>
+          <p style="padding-top: 10px;">
+            Initiates development and review of curricula for all programmes. Explores and facilitate alternative teaching and learning avenues (including open and distance learning) in order to widen access to higher education. The office works hand in hand with Senate on academic programmes, standards, research and consultancies for policy guidelines. Liaise with external stakeholders to develop and maintain strategic academic partnerships
+          </p>
+
+         
+          <h3>Marketing and Publicity</h3>
+          <p>
+            The office of the Deputy Vice Chancellor provides leadership for the development and execution of a comprehensive strategic communications and marketing plan to enhance the universities leadership position, reputation and brand. Markets the University by giving desirable visibility through interaction with government, the public, the donor community and the outside world on higher education issues.
+          </p>
+          <h3>Financial/Business Management</h3>
+          <p>
+            The office leads the resource mobilization initiatives and ensure that funds raised by the University and those provided by government are managed properly. The office develops and manages strategic alliances and partnerships with the public and the private sectors in areas of mutual interest.
+          </p>
+
+          <h3>Quality Assurance</h3>
+          <p>
+            The office ensures that mechanisms for quality control and inspection are in place and are functioning properly so that the quality of the graduates is consistent with both regional and international expectations. Champion process of obtaining ISO certification.
+          </p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="sidebar sidebar-left mt-sm-30 ml-40">
+
+            <h3 class="widget-title line-bottom">
+              Important <span class="text-theme-colored2">information</span>
+            </h3>
+            <ul class="nav nav-pills nav-stacked nav-sidebar" style="background-color: rgb(205, 218, 211);">
+              <li>
+                <a href="{% url 'aboutdvc' %}">About DVC</a>
+              </li>
+              <li>
+                <a href="{% url 'office_of_doqa' %}">Quality Assurance</a>
+              </li>
+              <li>
+                <a href="{% url 'marketing' %}" >Marketing and Communications Office</a>
+              </li>
+              <li>
+                <a href="{% url 'feesandfunding' %}">Fees & Funding</a>
+              </li>
+              <li>
+                <a href="{% url 'studentsgovernance' %}">Students Governance</a>
+              </li>
+              <li>
+                <a href="{% url 'accommodation' %}" >Accommodation</a>
+              </li>
+
+            </ul>
+            <div class="widget pt-20">
+              <h3 class="widget-title line-bottom">
+                Featured <span class="text-theme-colored2">Staff</span>
+              </h3>
+              <div class="c col-md-12">
+                <div class="card mb-sm-30 pb-20 " style="border-bottom: #2eb135 1px solid; background-color: antiquewhite;">
+                  <img src="{{dvc.profile_pic.url}}" class="card-img-top img-fluid" style="padding-top: 15px;"
+                    alt="">
+                  <div class="card-body ">
+                    <h2 class="card-title font-weight-700 font-18 mt-20"><a href="{% url 'aboutdvc' %}">{{dvc.staff_name}}</a></h2>
+                    <h4 class="card-text">The Deputy Vice Chancellor</h4>
+                    <a href="{% url 'aboutdvc' %}"
+                      class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ MORE</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+  
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background-color: #ffffff;" class="pt-0 mt-0">
+  <div class="container">
+    <div class="container mt-0">
+      <div class="col-md-12 text-center">
+        <h2 class="text-uppercase title">Contact the <span class="text-theme-colored2"> DVC</span></h2>
+        <div class="line-bottom-centered"></div>
+      </div>
+    </div>
+      <div class="container col-md-12" style="text-align: justify;">
+        <div class="row">
+                   
+                      <div class="col-xs-12  col-md-4">
+                        <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#">
+                            <i class="pe-7s-map-marker text-theme-colored"></i></a>
+                          <div class="media-body">
+                            <p>The Deputy Vice Chancellor, <br>
+                              Lilongwe University of Agriculture and Natural Resources (LUANAR), <br>
+                              Post Office Box 219, <br>
+                              Lilongwe, Malawi.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-md-4">
+                        <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#">
+                            <i class="pe-7s-call text-theme-colored"></i></a>
+                          <div class="media-body">
+                            <h5 class="mt-0">Contact Number</h5>
+                            <p>01 277 222/1016</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-md-4">
+                        <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#">
+                            <i class="pe-7s-mail text-theme-colored"></i></a>
+                          <div class="media-body">
+                            <h5 class="mt-0">Email Address</h5>
+                            <p><a href="mailto:vc@luanar.ac.mw">dvc@luanar.ac.mw</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+          
+  </div>
+</section>
+
+{% endblock content %}

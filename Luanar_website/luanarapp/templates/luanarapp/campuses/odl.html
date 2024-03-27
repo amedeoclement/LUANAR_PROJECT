@@ -1,0 +1,200 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+  <div class="container pt-120 pb-60">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-theme-colored2 text-uppercase text-center " style="font-family: sans-serif; font-size: 46px;">
+            Open and Distance Learning Campuses
+          </h2>
+          <ol class="breadcrumb text-left mt-10 white">
+            <li><a href="{% url '' %}">LUANAR</a></li>
+            <li><a href="#">CAMPUSES</a></li>
+            <li class="active">ODL</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 blog-pull-right">
+
+        <div class="section-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="box-hover-effect mt-sm-30">
+                <div class="effect-wrapper">
+                  <div class="thumb">
+                    <img class="img-fullwidth" src="{% static 'images/about/1.jpg' %}" style="height: 250px;"
+                      alt="project" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6" style="font-family: sans-serif; font-size: 15px;">
+              <h3 class="text-uppercasetext-theme-colored mt-0" style="font-family: sans-serif; font-weight: bolder;">
+                Welcome to Bunda College, <span class="text-theme-colored2">ODL campus</span>
+
+              </h3>
+              <hr>
+
+              <p>
+                The LUANAR, Open and Distance (ODL) Directorate is dedicated to increase equitable access to market
+                relevant agricultural programmes through flexible learning environment which aligns with LUANAR’s vision
+                of becoming a world class university in teaching and learning excellence.
+              </p>
+
+            </div>
+
+          </div>
+          <div class="col-md-12" style="border-bottom:#2eb135 3px solid; padding-left: 0; text-align: justify;">
+            <p style="padding-top: 20px;">
+              Its vision is to be a center of excellence in open and distance learning in agriculture, rural development
+              and natural resources. Its Mission is to provide equitable access to quality university education through
+              sustainable open and distance learning innovations.
+
+            </p>
+            <p>
+              The ODL Directorate was established in 2016 with an initial enrolment of 441 students. As of January 2020,
+              the student enrollment was over 1500 students. Currently, LUANAR ODL offers four academic programs: BSc in
+              Agribusiness Management, BSc in Agricultural Economics, BSc in Extension and BSc in Agricultural
+              Innovations.
+            </p>
+            <p>
+              Admission into ODL programmes is through both generic and mature entry level, in line with the LUANAR
+              Admission Policy and Programme Requirements.Running of ODL programmes is undertaken by various operational
+              teams at University level including LUANAR Management, ODL Directorate, Faculties, Departments, Library
+              Management, ICT experts, Laboratory Assistants, Lecturers and Tutors.
+            </p>
+          </div>
+
+
+
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="sidebar sidebar-left mt-sm-30 ml-40">
+
+            <h3 class="widget-title line-bottom">
+                Important <span class="text-theme-colored2">information</span>
+            </h3>
+
+            <ul class="nav nav-stacked nav-pills nav-sidebar" style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+              <li>
+                <a href="{% url 'accommodation' %}"
+                  >Accommodation</a >
+              </li>
+              <li>
+                <a href="{% url 'citycampus' %}"
+                  >City Campus</a >
+              </li>
+              <li>
+                <a href="{% url 'naturalresourcescollege' %}" 
+                  >NRC Campus</a >
+              </li>
+              <li>
+                <a href="{% url 'virtualcampus' %}"
+                  >Virtual Campus</a >
+              </li>
+              <li>
+                <a href="{% url 'odl' %}"
+                  >ODeL </a >
+              </li>
+             
+             
+            </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="section-content">
+
+          <div class="container mt-5">
+              <div class="container mt-0">
+                  <div class="col-md-12 text-center">
+                      <h2 class="text-uppercase title">CITY <span class="text-theme-colored2"> CAMPUS</span></h2>
+                      <div class="line-bottom-centered"></div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-4">
+                      <div class="card mb-sm-30 bg-white pb-20" style="border-bottom:#2eb135 5px solid;">
+                          <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top"
+                              style="padding-top: 15px;" alt="...">
+                          <div class="card-body pl-20  pr-10">
+                              <h3 class="font-weight-600 mt-20 text-center"><a href="#">PROGRAMS AT ODL</a></h3>
+                              <p class="card-text" style="text-align: justify">ODL Campus offers Four undergraduate programs from three departments including Extension Agribusiness, Agriculture and Applied Economics and Agribusiness Department...</p>
+                              <a href="{% url 'programs_at_odl' %}"
+                                  class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ
+                                  MORE</a>
+
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 5px solid;">
+                          <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top"
+                              style="padding-top: 15px;" alt="...">
+                          <div class="card-body pl-20  pr-10">
+                              <h3 class="font-weight-600 mt-20 text-center"><a href="#">STUDENTS PORTAL</a></h3>
+                              <p class="card-text" style="text-align: justify">Students portal allows you to access your academic records at
+                                  LUANAR. During the orientations, students are given default passwords which
+                                  enable them login for the first time into the portal.</p>
+                              <a href="#"
+                                  class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">LOGIN
+                                  NOW</a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 5px solid; ">
+                          <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top"
+                              style="padding-top: 15px;" alt="...">
+                          <div class="card-body pl-20  pr-10">
+                              <h3 class="font-weight-600 mt-20 text-center"><a href="#">SPORTS AND RECREATION</a>
+                              </h3>
+                              <p class="card-text" style="text-align: justify">Clubs have been offering sporting opportunities for student
+                                  cohort for many years. Membership is open to students, staff and alumni.
+                                  Sporting clubs compete in local, regional...</p>
+                              <a href="#"
+                                  class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ
+                                  MORE</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="container pt-20">
+    <div class="container mt-0">
+      <div class="col-md-12 text-center">
+      <h2 class="text-uppercase title">ODL CAMPUS LOCATION AND STRUCTURE</h2>
+      <div class="line-bottom-centered"></div>
+     </div>
+      </div>
+   
+      <div class="container col-md-12" style="text-align: justify;">
+         <div class="row">
+          <div class="col-md-6">
+             <p class="pl-20  pr-10">The ODL Directorate was established in 2016 with an initial enrolment of 441 students. As of January 2020, the student enrollment was over 1500 students. Currently, LUANAR ODL offers four academic programs: BSc in Agribusiness Management, BSc in Agricultural Economics, BSc in Extension and BSc in Agricultural Innovations. Admission into ODL programmes is through both generic and mature entry level, in line with the LUANAR Admission Policy and Programme Requirements.Running of ODL programmes is undertaken by various operational teams at University level including LUANAR Management, ODL Directorate, Faculties, Departments, Library Management, ICT experts, Laboratory Assistants, Lecturers and Tutors.</p>
+            </div>
+          <div class="col-md-6">
+             <p class="pl-20  pr-10">LUANAR ODL has adopted a modular approach to learning, which is delivered through a blended mode that comprises face to face interaction and distance mode to support students, enhanced by e-learning technologies.</p>
+             <p class="pl-20  pr-10">The directorate places strong emphasis on student support services. This is being achieved by operating satellite centers in Mzuzu, Lilongwe and Blantyre where students have access to Internet and ICT equipment, library resources, tutoring services based on areas requiring support, guidance and counselling, and other support services to support teaching and learning.</p>
+          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+
+</section>
+{% endblock content %}

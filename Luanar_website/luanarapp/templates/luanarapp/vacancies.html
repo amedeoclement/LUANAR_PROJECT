@@ -1,0 +1,108 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+    <div class="container pt-120 pb-60">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-theme-colored2 text-uppercase text-center" style="font-family: sans-serif; font-size: 46px;"> LUANAR | Vacancies</h2>
+            <ol class="breadcrumb text-left mt-10 white">
+              <li><a href=" url '' ">LUANAR</a></li>
+              <li class="active">Vacancies</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+</div>
+</section>
+<section>
+    <div class="container pt-0">
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+              <h4 class="widget-title line-bottom mt-30">
+                <i class="text-theme-colored"></i>Quick
+                <span class="text-theme-colored2">Links</span>
+              </h4>
+              <ul class="nav nav-stacked nav-pills nav-sidebar" style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+                <li><a href="{% url 'office_of_hr' %}">Office of Human Resources</a></li>
+                <li><a href="{% url 'newsandevents' %}">News and Events</a></li>
+                <li><a href="{% url 'downloads' %}">Downloads</a></li>
+                <li><a href="{% url 'about' %}">About Luanar</a></li>
+                <li><a href="{% url 'office_of_doqa' %}">Office of Quality Assurance</a></li>
+              </ul>
+                <div class="sidebar sidebar-left mt-sm-30 pt-20">
+                  <div class="widget">
+                    <h4 class="widget-title line-bottom">
+                      Latest <span class="text-theme-colored2">Annoucements</span>
+                    </h4>
+                      {% for announcement in announcements %}
+                      <div class="col-md-12 " style=" border-left: 5px solid; background-color: #f7f7f3f1; margin-bottom: 5px;">
+                        <div class="col-md-12 col-xs-12 col-sm-12">
+                          <h3><a href="#">{{announcement.title}}</a></h3>
+                        </div>
+                        <div class="row ">
+                          <div class="col-md-5">
+                            <a class="text-theme-colored font-weight-600 font-12" href="#"> View
+                              Details →</a>
+                          </div>
+                          <div class="col-md-7">
+                            <p class="mb-5 text-gray-darkgray mr-5"><i
+                                class="fa fa-clock-o mr-5 text-theme-colored2"></i>
+                              {{announcement.updated_at|timesince}} ago</p>
+                          </div>
+                        </div>
+                      </div>
+                      <hr>
+                      {% endfor %}
+                    </div>
+                </div>
+
+
+              </div>
+            <div class="col-md-8">
+              <div class="single-service">
+                <h3 class="line-bottom">
+                 Vacancies
+                </h3>
+              </div>
+                {% for vacancy in page %}
+                <div class="icon-box mb-0 p-0">
+
+                    <a href="{% url 'vacancy_details' vacancy.vacancy_id %}" class="icon pull-left mb-0 mr-10"> <i class="pe-7s-users"></i> </a>
+                    <h3 class="icon-box-title pt-15 mt-0 mb-40"><a href="{% url 'vacancy_details' vacancy.vacancy_id %}" >{{vacancy.position}}</a></h3>
+                  
+                   
+                    <p class="text-gray">{{vacancy.job_description|truncatewords:46}}</p>
+                        <a href="{% url 'vacancy_details' vacancy.vacancy_id %}" class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">View details</a>
+                </div>
+
+                <hr>
+                {% endfor %}
+                <div class="col-md-12 mb-30 mt-20" >
+                  {% if page.has_previous %}
+                  <a class="btn btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?page=1">First</a>
+                  <a class="btn btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?page={{ page.previous_page_number }}">Previous</a>
+              {% endif %}
+              {% for num in page_range %}
+                  {% if num == page.number %}
+                      <span class="btn btn-primary" style="background-color:  rgb(204, 207, 207);">{{ num }}</span>
+                  {% else %}
+                      <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ num }}">{{ num }}</a>
+                  {% endif %}
+              {% endfor %}
+              {% if page.has_next %}
+                  <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ page.next_page_number }}">Next</a>
+                  <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ page.paginator.num_pages }}">Last</a>
+              {% endif %}
+              
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

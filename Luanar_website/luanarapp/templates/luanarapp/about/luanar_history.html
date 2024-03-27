@@ -1,0 +1,51 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<section
+  class="inner-header divider layer-overlay overlay-dark-4"
+  data-bg-img="{% static 'images/bg/about.jpg' %}"
+>
+  <div class="container pt-120 pb-60">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-theme-colored2 text-center " style="font-family: sans-serif; font-size: 46px;">LUANAR HISTORY</h2>
+          <ol class="breadcrumb text-left mt-10 white">
+            <li><a href="{% url '' %}">LUANAR</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li class="active">LUANAR History</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-4">
+            <div class="list-group">
+                <a href="{% url 'message_from_vc' %}" class="list-group-item">Message from VC</a>
+                <a href="{% url 'mission_vision_values' %}" class="list-group-item">Mission, Vision & Values</a>
+                <a href="{% url 'managementandgovernance' %}" class="list-group-item">Management & Governance</a>
+                <a href="{% url 'policies' %}" class="list-group-item">Policies</a>
+                <a href="{% url 'newsandevents' %}" class="list-group-item">News & Events</a>
+              </div>
+        </div>
+        <div class="col-md-8">
+            <h2 class="text-uppercasetext-theme-colored mt-0">LUANAR<span class="text-theme-colored2"> History</span></h2>
+            <div class="diamond-line-left-theme-colored2" style="padding-top: 5px;"></div>
+            <p style="text-align: justify; font-size:16px;">
+              In a landmark address to the Malawi parliament on 24th May 2010, the third State President of the Republic of Malawi, His Excellency the late Professor Bingu wa Mutharika shared his vision of establishing six universities in Malawi.
+              This was meant to address the problems of limited University access and to increase the pool of well-trained human resource in the country in order to accelerate the socio-economic development of Malawi. One of the new universities to be established was the Lilongwe University of Agriculture and Natural
+              Resources (LUANAR) which was to be formed by transforming the then Bunda College of Agriculture into a University with the integration of Natural Resources College (NRC). </p>
+          <p style="text-align: justify; font-size:16px;">
+            LUANAR was therefore created through an Act of Parliament No. 22 of 2011 and started her operations on 1st July 2012, with Bunda Campus, as the initial institution until NRC was fully integrated into LUANAR in December 2014.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

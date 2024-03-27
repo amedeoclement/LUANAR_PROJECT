@@ -1,0 +1,59 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Breadcrumbs Start -->
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/campus_life/accomodationthumb.jpg' %}">
+    <div class="container pt-120 pb-60">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-theme-colored2 text-center font-36">LUANAR | CAMPUS LIFE</h2>
+            <ol class="breadcrumb text-left mt-10 white">
+              <li><a href=" url '' ">LUANAR</a></li>
+              <li><a href="{% url 'campus_life' %}">CAMPUS LIFE</a></li>
+              <li class="active">Accommmodation</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Breadcrumbs End -->
+
+<div class="rs-history sec-spacer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mobile-mb-50 pl-30 pt-30">
+             
+                    <img src="{% static 'images/campus_life/accomodationthumb.jpg' %}" alt="Accommmodation image"/>
+             
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="abt-title">
+                    <h2>Students accommodation</h2>
+                </div>
+                <div class="about-desc" style="text-align: justify; font-size: 16px;">
+                    <p>All successful candidates at LUANAR are required to find and pay for their own accommodation 
+                        and meals. </p>
+
+                    <p>For those who prefer to stay on campus, an application for accommodation must be 
+                        submitted. If accepted, students will then need to pay the university for their accommodation.</p>
+                    <p>Candidates who would like to stay on campus should apply for accommodation and, if accepted, they will be required to pay the University for the same.However, it is important to note that university accommodation is limited and allocated based 
+                        on specific criteria, which can be obtained from the office of the Director of Students Affairs.</p>
+                    </div>
+            </div>
+        </div>
+    <div class="col-md-12 col-lg-12 col-sm-12">
+        <p  style="text-align: justify; font-size: 16px;">In instances where university accommodation is not available, there are private operators 
+            within walking distance of the campus. In such cases, students are required to deal directly with 
+            the owners to arrange accommodation.</p>
+
+    </div>
+    
+    </div>
+</div>
+<hr>
+
+{% endblock content %}

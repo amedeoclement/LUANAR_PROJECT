@@ -1,0 +1,133 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+  <div class="container pt-120 pb-60">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-theme-colored2 text-uppercase text-center"  style="font-family: sans-serif; font-size: 46px;">
+            LUANAR | Director of Qality Assuarance
+          </h2>
+          <ol class="breadcrumb text-left mt-10 white">
+            <li><a href="{% url '' %}">LUANAR</a></li>
+            <li><a href="#">OFFICES</a></li>
+            <li class="active text-uppercase">Director of Qality Assuarance</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="pb-0 mb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 blog-pull-right">
+
+        <h2 class="text-center title">Functions of the Director of Qality Assuarance <span
+            class="text-theme-colored2"></span></h2>
+        <div class="line-bottom-centered"></div>
+
+        <div class="single-service"
+          style="font-family: sans-serif; font-size: 20px; border-bottom:#2eb135 3px solid; text-align: justify;">
+
+          <p>
+          <ul class="list">
+            <li>Liase with National Council for Higher Education (NCHE) and the Malawi Bureau of Standards (MBS) on issues relating to quality and Relevance of programs.</li>
+          </ul>
+        </p>
+          <p style="padding-top: 10px;">
+            <ul class="list">
+                <li>  Monitor and advise on the performance, implementation and the quality Management systems and criteria for promotion in the university.   
+                </li>
+              </ul>
+           </p>
+           <p style="padding-top: 10px;">
+            <ul class="list">
+                <li> Identify quality related training needs and delivering training and provide training tools and techniques to enable departments and sections achieve quality. </li>
+              </ul>
+           </p>
+           <p style="padding-top: 10px;">
+            <ul class="list">
+                <li>Establish networks and linkages with quality assurance regimes in the region and beyond to ensure standards are competitive. </li>
+              </ul>
+           </p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="sidebar sidebar-left mt-sm-30 ml-40">
+
+            <h3 class="widget-title line-bottom">
+              Important <span class="text-theme-colored2">information</span>
+            </h3>
+
+            <ul class="nav nav-pills nav-stacked nav-sidebar" style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+              <li>
+                <a href="{% url 'about' %}" >About us</a>
+              </li>
+              <li>
+                <a href="{% url 'office_of_dvc' %}" >Office of the DCV</a>
+              </li>
+              <li>
+                <a href="{% url 'office_of_ur' %}">Office of UR</a>
+              </li>
+              <li>
+                <a href="{% url 'office_of_ar' %}">Office of Academics</a>
+              </li>
+              <li>
+                <a href="{% url 'studentsgovernance' %}">Students Governance</a>
+              </li>
+              <li>
+                <a href="{% url 'accommodation' %}">Accommodation</a>
+              </li>
+
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background-color: #ffffff;" class="pt-0 mt-0">
+  <div class="container">
+    <div class="container mt-0">
+      <div class="col-md-12 text-center">
+        <h2 class="text-uppercase title">Contact the <span class="text-theme-colored2"> DOQA Office</span></h2>
+        <div class="line-bottom-centered"></div>
+      </div>
+    </div>
+      <div class="container col-md-12" style="text-align: justify;">
+        <div class="row">
+                   
+                      <div class="col-xs-12  col-md-4">
+                        <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#">
+                            <i class="pe-7s-map-marker text-theme-colored"></i></a>
+                          <div class="media-body">
+                            <p>Director of Qality Assuarance, <br>
+                              Lilongwe University of Agriculture and Natural Resources (LUANAR), <br>
+                              Post Office Box 219, <br>
+                              Lilongwe, Malawi.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-md-4">
+                        <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#">
+                            <i class="pe-7s-call text-theme-colored"></i></a>
+                          <div class="media-body">
+                            <h5 class="mt-0">Contact Number</h5>
+                            <p>01 277 222/1016</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-md-4">
+                        <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#">
+                            <i class="pe-7s-mail text-theme-colored"></i></a>
+                          <div class="media-body">
+                            <h5 class="mt-0">Email Address</h5>
+                            <p><a href="mailto:vc@luanar.ac.mw">doqa@luanar.ac.mw</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+  </div>
+</section>
+
+{% endblock content %}

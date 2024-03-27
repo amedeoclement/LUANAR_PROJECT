@@ -1,0 +1,118 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+    <div class="container pt-120 pb-60">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-theme-colored2 text-center text-uppercase" style="font-family: sans-serif; font-size: 44px;">International Students | Immigration</h2>
+                    <ol class="breadcrumb text-left mt-10 white">
+                        <li><a href=" url '' ">LUANAR</a></li>
+                        <li><a href="{% url 'internationalstudents' %}">International Students</a></li>
+                        <li class="active">Immigration</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 blog-pull-right">
+                <div class="single-service" style="font-family: sans-serif; font-size: 15px; border-bottom:#2eb135 5px solid;">
+
+                    <img src="{% static 'images/about/japan-e-visa.jpg' %}" class="img-fluid img-responsive"
+                        style=" height: 350px; width: 100%; padding-bottom: 10px;" alt="" />
+                    <p style="padding-top: 10px; text-align: justify;">
+                        Once selected, and have paid semester fee, you will need to apply for a study visa from any
+                        Malawi Embassy. As a study visa takes several weeks to obtain, we recommend that you pay the
+                        required fee at least six weeks prior to your departure. Those coming from SADC countries need
+                        not to apply for a visa to Malawi. (provision in LUANAR prospectus).
+                    </p>
+                    <p>
+                        Travelers who want to travel Malawi can apply for the visa through <a
+                            href="https://www.immigration.gov.mw" style="color: blue;" target="_blank">this link...</a>
+                        The applicant can get their visas after providing the required details and making an online
+                        payment.
+                    </p>
+                    <p style="text-align: justify;">
+                        The e-Visa system will inform you through email after your visa application is submitted. After
+                        the necessary processing, the decision will be made on approval of the application. Once your
+                        visa is approved, you will receive an email and approval letter. The Visa approval letter must
+                        be shown to the Passport control counter at ports of entry for verification. A copy of e-Visa
+                        approval letter is mandatory before travelling to Malawi.
+                    </p>
+                    <h3 style="font-family: sans-serif;">
+                        Family and dependents of international students
+                 
+                    </h3>
+                    <p>
+                        Post-graduate students can bring their spouse and children to Malawi. Like new students,
+                        dependents will need to apply for dependent visa status, which carries certain visa requirements
+                        and restrictions.
+                    </p>
+                    <h3 style="font-family: sans-serif;">
+                        Change in Visa status
+                      
+                    </h3>
+
+                    <p>
+                        Visas and immigration records may also need to be changed if you take a break in your studies,
+                        require an extension, or lose immigration status due to a violation.
+                    </p>
+
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="sidebar sidebar-left mt-sm-30 ml-40">
+
+                        <h3 class="widget-title line-bottom">
+                            Important <span class="text-theme-colored2">information</span>
+                        </h3>
+
+                        <ul class="nav nav-pills nav-stacked nav-sidebar" style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+                            <li>
+                                <a href="{% url 'about' %}" >About us</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'howtoapply' %}">How to Apply</a>
+                            </li>
+                            <li><a href="{% url 'internationalstudents' %}" >International Students</a></li>
+                            <li>
+                                <a href="{% url 'feesandfunding' %}">Fees & Funding</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'campus_life' %}">Campus Life</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'accommodation' %}">Accommodation</a>
+                            </li>
+
+                        </ul>
+                </div>
+
+                <div class="sidebar sidebar-left mt-sm-30 ml-40">
+
+                    <h3 class="widget-title line-bottom">
+                        Campus  <span class="text-theme-colored2">Life</span>
+                    </h3>
+                    
+                        <div class="c col-md-12">
+                          <div class="card mb-sm-30 bg-white" style="border-bottom:#2eb135 5px solid;">
+                            <img src="{% static 'images/campus_life/studentsunionthumb.jpg' %}" class="card-img-top" alt="...">
+                            <div class="card-body ">
+                              <p class="card-text" style="text-align: justify; padding-top: 10px;">We encourage you to envision yourself as a member of our University community, where you will receive a world-class education and discover your true potential...</p>
+                              <a href="{% url 'campus_life' %}" class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ MORE</a>
+                           
+                          </div>
+                        </div>
+                     </div>
+
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

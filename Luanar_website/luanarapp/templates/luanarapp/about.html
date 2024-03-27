@@ -1,0 +1,184 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+    <div class="container pt-120 pb-60">
+
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-theme-colored2 text-center" style="font-family: sans-serif; font-size: 46px;">LUANAR | ABOUT US</h2>
+                    <ol class="breadcrumb text-left mt-10 white">
+                        <li><a href="{% url '' %}">LUANAR</a></li>
+                        <li class="active">About us</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-content">
+            <h2 class="text-uppercase text-theme-colored mt-0">About <span class="text-theme-colored2">LUANAR</span>
+            </h2>
+            <div class="diamond-line-left-theme-colored2" style="padding-top: 5px;"></div>
+            <div class="row">
+                <div class="col-md-7 col-lg-7" style="font-size: 16px; text-align: justify;">
+                    <p>Lilongwe University of Agriculture and Natural Resources (LUANAR) is located in Lilongwe, the capital city of Malawi. Lilongwe is 
+                        situated in the central region of the country, making it easily accessible from various parts of Malawi. The university campus is
+                     typically found on the outskirts of the city, offering a serene environment conducive to academic pursuits. </p>
+                    <p>Being located in 
+                        Lilongwe provides students and faculty with access to various governmental, agricultural, and natural resource-related 
+                        organizations and opportunities for collaboration and research. Additionally, the central location of Lilongwe enhances 
+                        the university's outreach and engagement activities within Malawi and the broader region, contributing to its mission of 
+                        promoting sustainable agriculture and natural resource management.</p>
+    
+                   <p>LUANAR was therefore created through an Act of Parliament No. 22 of 2011 and started her operations on 1st July 2012, with Bunda Campus, as the initial institution until NRC was fully integrated into LUANAR in December 2014.</p>
+                    </div>
+                <div class="col-md-5 col-lg-5">
+                    <div class="box-hover-effect about-video mt-sm-30">
+                        <div class="effect-wrapper">
+                            <div class="thumb">
+                                <img class="img-fullwidth" src="{% static 'images/about/bunda.jpg' %}" alt="project">
+                            </div>
+                            <div class="video-button"></div>
+                            <a class="hover-link" data-lightbox-gallery="youtube-video"
+                                href="https://www.youtube.com/watch?v=c__G3qgDMBw&t=7s" title="Youtube Video">Youtube
+                                Video</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+</section>
+<!-- 
+<div class="product-details-area section-top-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-6">
+                <div class="product-details-image">
+                    <img src="{% static 'images/about/marketing2.jpg' %}" alt="">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div> -->
+
+<section id="About_luanar" style="background-color: rgb(214, 214, 189);">
+    <div class="container">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-6 col-md-4">
+                    <div class="mb-sm-30 bg-white pb-10 ">
+                        <a href="{% url 'message_from_vc' %}"> <img class="img-fullwidth"
+                                src="{% static 'images/about/vc.jpg' %}" alt=""></a>
+                        <div class="pl-20 pr-10">
+                            <h4 class="font-weight-600 mt-20">Message from VC</h4>
+                            <p style="text-align: justify;">I am delighted to welcome you to the Lilongwe University of
+                                Agriculture and Natural Resources (LUANAR), which is the third public University in
+                                Malawi. At LUANAR, we are...</p>
+                            <a href="{% url 'message_from_vc' %}"
+                                class="text-theme-colored2 font-weight-600 font-14">Read more →</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-4 mt-sm-30">
+                    <div class="mb-sm-30 bg-white pb-10">
+                        <img class="img-fullwidth" src="{% static 'images/about/mission.jpg' %}" alt="">
+
+                        <div class="pl-20  pr-10">
+                            <h4 class="font-weight-600 mt-20">Vision, Mission & Values</h4>
+                            <p style="text-align: justify;">We are committed to conduct ourselves in a manner consistent
+                                with the highest standards of integrity. We aim to be honest, ethical and fair in all
+                                our activities. We aim to keep...</p>
+                            <a href="{% url 'mission_vision_values' %}"
+                                class="text-theme-colored2 font-weight-600 font-14">Read more →</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-4 mt-sm-30">
+                    <div class="mb-sm-30 bg-white pb-10">
+                        <img class="img-fullwidth" src="{% static 'images/about/history.jpg' %}" alt="">
+
+                        <div class="pl-20  pr-10">
+                            <h4 class="font-weight-600 mt-20">LUANAR History</h4>
+                            <p style="text-align: justify;">In a landmark address to the Malawi parliament on 24th May
+                                2010, the third State President of the Republic of Malawi, His Excellency the late
+                                Professor Bingu wa Mutharika shared his vision of...</p>
+                            <a href="{% url 'luanar_history' %}"
+                                class="text-theme-colored2 font-weight-600 font-14">Read more →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="about_luanar">
+    <div class="container">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-6 col-md-3">
+                    <div class="mb-sm-30">
+                        <img class="img-fullwidth" src="{% static 'images/about/about.jpg' %}" alt="">
+                        <div class="pl-10 pr-10">
+                            <h4 class="font-weight-600 mt-20">Management & Governance</h4>
+                            <p>As a vibrant hub of learning, research, and innovation, our university operates under a comprehensive framework of leadership... </p>
+                            <a href="{% url 'managementandgovernance' %}"
+                                class="text-theme-colored2 font-weight-600 font-14">Read more →</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-3 mt-sm-30">
+                    <div class="mb-sm-30">
+                        <img class="img-fullwidth" src="{% static 'images/about/mission.jpg' %}" alt="">
+                        <div class="pl-10 pr-10">
+                            <h4 class="font-weight-600 mt-20">LUANAR Policies</h4>
+                            <p>At the heart of our institution lies a commitment to fostering an environment of excellence, integrity, and inclusivity. Our policies... </p>
+                            <a href="{% url 'policies' %}" class="text-theme-colored2 font-weight-600 font-14">Read more
+                                →</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-3 mt-sm-30">
+                    <div class="mb-sm-30">
+                        <img class="img-fullwidth" src="{% static 'images/about/about.jpg' %}" alt="">
+                        <div class="pl-10 pr-10">
+                            <h4 class="font-weight-600 mt-20">Partinerships & Collaborations</h4>
+                            <p>
+                                At our institution, we recognize that addressing the complex challenges facing agriculture and natural resources requires interdisciplinary...
+                            </p>
+                            <a href="{% url 'partinerships' %}" class="text-theme-colored2 font-weight-600 font-14">Read
+                                more →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-3 mt-sm-30">
+                    <div class="mb-sm-30">
+                        <img class="img-fullwidth" src="{% static 'images/about/about.jpg' %}" alt="">
+                        <div class="pl-10 pr-10">
+                            <h4 class="font-weight-600 mt-20">Campuses, Maps & Directions</h4>
+                            <p>Lilongwe University of Agriculture and Natural Resources (LUANAR) is located in Lilongwe, the capital city of Malawi. Lilongwe is... </p>
+                            <a href="{% url 'campusesandmaps' %}"
+                                class="text-theme-colored2 font-weight-600 font-14">Read more →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

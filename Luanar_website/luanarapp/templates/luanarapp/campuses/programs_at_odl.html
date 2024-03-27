@@ -1,0 +1,97 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/bg1.jpg' %}">
+  <div class="container pt-120 pb-60">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-theme-colored2 text-center font-36">ODL Programs</h2>
+          <ol class="breadcrumb text-left mt-10 white">
+            <li><a href=" url '' ">LUANAR</a></li>
+            <li><a href=" url 'odl' ">ODL Campus</a></li>
+            <li class="active">Programs</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 blog-pull-right">
+        <div class="single-service" style="font-family: sans-serif; font-size: 15px; text-align: justify;">
+
+          <img src="{% static 'images/about/front.jpg' %}" class="img-fluid img-responsive" style=" height: 350px; width: 100%; padding-bottom: 10px;" alt="" />
+          <p style="padding-top: 10px;">
+            The ODL Directorate was established in 2016 with an initial enrolment of 441 students. As of January 2020, the student enrollment was over 1500 students. Currently, LUANAR ODL offers four academic programs: BSc in Agribusiness Management, BSc in Agricultural Economics, BSc in Extension and BSc in Agricultural Innovations. Admission into ODL programmes is through both generic and mature entry level, in line with the LUANAR Admission Policy and Programme Requirements.
+        </p>
+        </div>
+        <div class="col-md-12" style=" border-left: 5px solid; margin: 20px 0 10px 0; background-color: #f0f0f0;">
+            <div >
+              <h3 >
+               ODL campuses offer the following programmes:
+              </h3>
+            </div>
+            
+        </div>
+        <div class="col-md-12 pl-0">
+            <div class="list-group">
+                {% for program in programs %}
+                <a href="{% url 'program_details' program.program_id %}" class="list-group-item">{{program.program_name}}</a>
+                {% endfor %}
+              </div>
+          </div>
+
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="sidebar sidebar-left mt-sm-30 ml-40">
+            
+          <div class="widget">
+            <h3 class="widget-title line-bottom">
+                LUANAR <span class="text-theme-colored2">Campuses</span>
+            </h3>
+            <hr class="mt-0" />
+
+            <ul class="nav nav-pills nav-stacked nav-sidebar" style="font-family: sans-serif;  font-size: 16px;">
+              <li>
+                <a href="{% url 'bundacampus' %}" class="text-theme-colored2">
+                  Bunda Campus</a >
+              </li>
+              <li>
+                <a href="{% url 'citycampus' %}" class="text-theme-colored2"
+                  >City Campus</a >
+              </li>
+              <li>
+                <a href="{% url 'naturalresourcescollege' %}" class="text-theme-colored2"
+                  >Natural Resources College Campus</a >
+              </li>
+              <li>
+                <a href="{% url 'odl' %}" class="text-theme-colored2"
+                  >Open and Distance Learning</a >
+              </li>
+            </ul>
+          </div>
+
+          <div class="widget">
+                
+            <div class="c col-md-12">
+              <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 5px solid;">
+                <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top" style="padding-top: 15px;" alt="...">
+                <div class="card-body ">
+                  <h5 class="card-title font-weight-700 font-18 mt-20">Sports and Recreation</h5>
+                  <p class="card-text" style="text-align: justify;">Clubs have been offering sporting opportunities for student cohort for many years. Membership is open to students, staff and alumni. Sporting clubs compete in local, regional...</p>
+                  <a href="{% url 'sportsandrecreation' %}" class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ MORE</a>
+                  </div>
+              </div>
+            </div>
+                  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

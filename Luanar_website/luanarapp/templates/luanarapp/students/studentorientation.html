@@ -1,0 +1,49 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Breadcrumbs Start -->
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/campus_life/orientation.jpg' %}">
+    <div class="container pt-120 pb-60">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-theme-colored2 text-center font-36">LUANAR | CAMPUS LIFE</h2>
+            <ol class="breadcrumb text-left mt-10 white">
+              <li><a href=" url '' ">LUANAR</a></li>
+              <li><a href="{% url 'about' %}">CAMPUS LIFE</a></li>
+              <li class="active">Student Orientation</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Breadcrumbs End -->
+<div class="rs-history sec-spacer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 rs-vertical-center mobile-mb-50 pl-30 pt-30">
+                <a href="#">
+                    <img src="{% static 'images/campus_life/orientationthumb.jpg' %}" alt="History Image"/>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="abt-title">
+                    <h2>Students Orientation</h2>
+                </div>
+                <div class="about-desc" style="text-align: justify; font-size: 16px;">
+                    <p>Once students come to LUANAR, the first step to their journey of studies is participation in the Orientation Program. What students do during the very beginning of their first semester of university life can set the foundation for the period of stay at the University. For this reason, LUANAR dedicates two weeks of orientation into the various aspects that would form part of students' lifestyle. The Orientation program is designed to make that transition easier. We want each student to settle down and adjust to the new environment with ease. </p>
+
+                  </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-lg-12 col-sm-12" style="padding-top: 10px;">
+            <p style="text-align: justify; font-size: 16px;">During this time you will be given a student handbook/code of conduct which you can also access through our website. The hand book will guide you on rules and regulations that you will be required to follow as a student at LUANAR. The office of the Director of Students Affairs is committed to assisting you begin your journey at LUANAR successfully.</p>   
+        </div>
+    </div>
+</div>
+<hr>
+
+{% endblock content %}

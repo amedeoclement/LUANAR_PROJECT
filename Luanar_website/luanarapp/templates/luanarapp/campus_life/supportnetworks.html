@@ -1,0 +1,66 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Breadcrumbs Start -->
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/campus_life/supportnetworks.jpg' %}">
+    <div class="container pt-120 pb-60">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-theme-colored2 text-center font-36"> CAMPUS LIFE | SUPPORT NETWORKS</h2>
+            <ol class="breadcrumb text-left mt-10 white">
+              <li><a href=" url '' ">LUANAR</a></li>
+              <li><a href="{% url 'about' %}">CAMPUS LIFE</a></li>
+              <li class="active">Support Networks</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Breadcrumbs End -->
+<div class="rs-history sec-spacer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mobile-mb-50  pl-30 pt-30">
+                <a href="#">
+                    <img src="{% static 'images/campus_life/supportthumb.jpg' %}" alt="History Image"/>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="abt-title">
+                    <h2>STUDENTS SUPPORT NETWORK AND SERVICES</h2>
+                </div>
+                <div class="about-desc" style="text-align: justify; font-size: 16px;">
+                    <p>The University through the office of Director of Student's Affairs will offer professional
+                         and impartial information and advice to current and prospective students on:</p>
+
+                    <ul>
+                        <li><i class="fa fa-arrow-right"></i>&nbsp;Discretionary and statutory funding</li>
+                        <li><i class="fa fa-arrow-right"></i>&nbsp;Eligibility criteria and how to apply for funding</li>
+                        <li><i class="fa fa-arrow-right"></i>&nbsp;Advice on money management and budgeting</li>
+                        <li><i class="fa fa-arrow-right"></i>&nbsp;Funding opportunities you can apply for</li>
+                        <li><i class="fa fa-arrow-right"></i>&nbsp;Student loan and repayment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-top: 10px;">
+            <div class="about-desc" style="text-align: justify; font-size: 16px;">
+                <p>As is mostly the case in universities worldwide, LUANAR students have their own governing body. 
+                    This is led by a President, seconded by the Vice President. The members include: Secretary, 
+                    Treasurer Director of Academics, Publications Director, Entertainment Director, Male Social 
+                    Welfare Directors, Female Social Welfare Directors, Sports Director, Speaker and Vice Speaker.In-order
+                     to form a more perfect union, establish justice, ensure domestic tranquility, provide for the common
+                      defense, promote the general welfare and secure
+                     the blessings of liberty to its members, there was need to establish a constitution for the student
+                      union.</p>
+    
+                  </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

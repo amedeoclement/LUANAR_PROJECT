@@ -1,0 +1,98 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+  <div class="container pt-120 pb-60">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-theme-colored2 text-uppercase text-center"  style="font-family: sans-serif; font-size: 46px;">Programs at City Campus</h2>
+          <ol class="breadcrumb text-left mt-10 white">
+            <li><a href=" url '' ">LUANAR</a></li>
+            <li><a href=" url 'citycampus' ">City Campus</a></li>
+            <li class="active">Programs</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 blog-pull-right">
+        <div class="single-service" style="font-family: sans-serif; font-size: 15px; text-align: justify;">
+
+          <img src="{% static 'images/about/front.jpg' %}" class="img-fluid img-responsive" style=" height: 350px; width: 100%; padding-bottom: 10px;" alt="" />
+          <p style="padding-top: 10px;">
+            City Campus offers ten undergraduate programs (8 Bsc and 2 Diplomas) and two postgraduate programs from five departments including Extension, Agribusiness, Agriculture and Applied Economics, Agricultural Communication and Human Ecology. These departments belong to two faculties thus Faculty Development Studies and Faculty of Food and Human Sciences. Teaching staff at City Campus comes from these departments as well as other supporting departments. The details of teaching staff, their positions and qualifications are presented by the respective departments and faculties offering programs at City Campus.</p>
+        </div>
+        <div class="col-md-12" style=" border-left: 5px solid; margin: 20px 0 10px 0; background-color: #f0f0f0;">
+            <div >
+              <h3 >
+                City campus offers the following programmes:
+              </h3>
+            </div>
+            
+        </div>
+        <div class="col-md-12 pl-0">
+            <div class="list-group">
+                {% for program in programs %}
+                <a href="{% url 'program_details' program.program_id %}" class="list-group-item">{{program.program_name}}</a>
+                {% endfor %}
+              </div>
+          </div>
+
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="sidebar sidebar-left mt-sm-30 ml-40">
+
+            <h3 class="widget-title line-bottom">
+                LUANAR <span class="text-theme-colored2">Campuses</span>
+            </h3>
+
+            <ul class="nav nav-pills nav-stacked nav-sidebar"  style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+              <li>
+                <a href="{% url 'citycampus' %}"
+                  >City Campus</a >
+              </li>
+              <li>
+                <a href="{% url 'citycampus' %}"
+                  >Bunda campus</a >
+              </li>
+              <li>
+                <a href="{% url 'naturalresourcescollege' %}" 
+                  >Natural Resources College Campus</a >
+              </li>
+              <li>
+                <a href="{% url 'virtualcampus' %}"
+                  >Virtual Campus</a >
+              </li>
+              <li>
+                <a href="{% url 'odl' %}"
+                  >ODL Campus </a >
+              </li>
+             
+             
+            </ul>
+          <div class="widget">
+                
+            <div class="c col-md-12">
+              <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 5px solid;">
+                <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top" style="padding-top: 15px;" alt="...">
+                <div class="card-body ">
+                  <h5 class="card-title font-weight-700 font-18 mt-20">Research and Outreach</h5>
+                  <p class="card-text" style="text-align: justify;">In keeping with LUANAR’s fundamental mission of conducting challenge-led research aimed at promoting a rich quality of life in Malawi and beyond...</p>
+                  <a href="{% url 'researchandoutreach' %}" class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ MORE</a>
+                  </div>
+              </div>
+            </div>
+                  </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

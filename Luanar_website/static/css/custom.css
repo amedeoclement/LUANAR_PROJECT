@@ -1,0 +1,48 @@
+.news-blog, .about, .luanar4moreimpact, .events-pro .events, .faculties{
+width: 95%;
+align-items: center;
+padding: auto;
+margin-left: 40px;
+
+}
+.events-pro{
+    width: 100%;
+    background-color: rgb(237, 243, 168);
+}
+
+.footer .container .col-md-3 .footer-list li a, .footer .container .col-md-3 .footer-list li{
+    color: rgb(255, 255, 255);
+}
+.footer .container .col-md-3 .footer-list li:hover a{
+    color: rgb(43, 182, 43);
+}
+
+.covid-alert {
+	background: #2eb135;
+	border-radius: 10px;
+}
+.covid-alert a {
+	color: #fff;
+  text-decoration: underline;
+  font-weight: 400;
+}
+.covid-alert .text{
+    width: 100%;
+    padding: 15px;
+    color: #fff;
+    font-size: 23px;
+	text-align: center;
+	font-weight: bold;
+	font-family: Inter, sans-serif;
+}
+
+.covid-alert {
+    animation: blinker 3s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0.2;
+    }
+  }
+  

@@ -1,0 +1,89 @@
+{% load static %}
+<footer id="footer" class="footer" style="background-color:rgb(55, 71, 100);">
+  <div class="container pt-10">
+    <div class="row ">
+      <div class="col-sm-6 col-md-3" style="border-right: solid 2px">
+      
+        <h3 class="text-theme-colored">GET IN TOUCH</h3>
+        <ul class="footer-list">
+          <li><i class="fa fa-phone"></i>&nbsp; &nbsp;  +(265) 01 277 222/260</li>
+          <li><i class="fa fa-envelope"></i>&nbsp;&nbsp; <a href="mailto:mco@luanar.ac.mw"> mco@luanar.ac.mw</a></li>
+          <li><i class="fa fa-globe"></i><a href="index-mp-layout1.html">&nbsp;&nbsp; www.luanar.ac.mw</a></li>
+          <li><i class="fa fa-map-marker"></i>&nbsp;&nbsp; Post Office Box 219, Lilongwe</li>
+          <li><i class="fa fa-map"></i>&nbsp;&nbsp; Malawi</li>
+          <li><i class="fa fa-facebook"></i>&nbsp;&nbsp; Facebook</li>
+          <li><i class="fa fa-twitter"></i>&nbsp;&nbsp; Twitter</li>
+          <li><i class="fa fa-instagram"></i>&nbsp;&nbsp; Instagram</li>
+        </ul>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+    <div class="col-sm-6 col-md-3">
+      <h3 class="text-theme-colored ">RESOURCES</h3>
+      <ul class="footer-list">
+        <li><a href="../media/service_charter/service_charter.pdf">LUANAR Service Charter</a></li>
+        <li><a href="http://www.luanar.ac.mw/library/">Library</a></li>
+        <li><a href="{% url 'support_services' %}">Clinic</a></li>
+        <li><a href="#">Security</a></li>
+        <li><a href="#">Academic Calendar</a></li>
+        <li><a href="#">Events Calendar</a></li>
+        <li><a href="{% url 'vacancies' %}">Vacancies</a></li>
+        <li><a href="../media/prospectus/20230819233628-Bachelors_Degree_pqjWSXX.pdf">Prospectus</a></li>
+        <li><a href="{% url 'downloads' %}">Downloads</a></li>
+        <li><a href="{% url 'marketing' %}">Marketing & Communications</a></li>
+        <li><a href="#">ICT Support</a></li>
+
+      </ul>
+  </div>
+  <div class="col-sm-6 col-md-3">
+      
+    <h3 class="text-theme-colored text-uppercase">STUDENTS</h3>
+    <ul class="footer-list">
+      <li><a href="{% url 'student_rules_and_regulations' %}">Students Rules & Regulations</a></li>
+      <li><a href="{% url 'campus_life' %}">Campus Life</a></li>
+      <li><a href="{% url 'office_of_ar' %}">Academics Office</a></li>
+      <li><a href="https://www.luanar.ac.mw/studentsportal/">Student Portal</a></li>
+      <li><a href="https://elearn.luanar.ac.mw/">E-Learning</a></li>
+      <li><a href="{% url 'accommodation' %}">Accommodation</a></li>
+      <li><a href="{% url 'studentunion' %}">Student Union Commitee</a></li>
+      <li><a href="{% url 'internationalstudents' %}">International Students</a></li>
+      <li><a href="{% url 'studentclubsandsociety' %}">Students Sports and Recreation</a></li>
+      <li><a href="{% url 'support_services' %}">Support Services</a></li>
+    </ul>
+</div>
+<div class="col-sm-6 col-md-3">
+      
+  <h3 class="text-theme-colored text-uppercase">STAFF</h3>
+  <ul class="footer-list">
+    <li><a href="#">Staff Directory</a></li>
+    <li><a href="#">Administration</a></li>
+    <li><a href="https://www.luanar.ac.mw/apps/">Staff Portal</a></li>
+    <li><a href="https://login.microsoftonline.com/common/oauth2/authorize?client_id=4345a7b9-9a63-4910-a426-35363201d503&redirect_uri=https%3A%2F%2Fwww.office.com%2Flanding&response_type=code%20id_token&scope=openid%20profile&response_mode=form_post&nonce=637278888775566596.YzgxNjU2MzctMWU1Yi00YTU1LWJkYmYtMjIzZGU0ODI2ZGY0NDg2NTM2OWYtMDIyNS00N2Q4LTgzMTktYTYzZTAzOGNhM2Yz&ui_locales=en-US&mkt=en-US&client-request-id=a8387bf2-a101-45f2-93d0-89596d7360aa&state=7NjQ1KEd46fffLBmLtuGXgZYj1sbesT9Kfp2I4i9jvGT3X1G496YQwnV4OAGibLmrmjZufZ1BCh-SsJVz7uBl6kVI9Ze1lGPsLucr6N8tro0PNvZSG3pQi4v9PNwJKHzr56lbmqYb4ylzmxdkx5zpj63efU75Y7rC2UeKf1Ghe1sIhm_NgR0Ug_0hH-EcRSlhqswA3V--KUa_NZTiyZacPrxo3QZzgIe-WcOApxujKUc6PFS-lg-RCJnlnd9E219loTgNuAGQB-1gw9adrROEA&x-client-SKU=ID_NETSTANDARD2_0&x-client-ver=6.5.0.0">Webmail</a></li>
+    <li><a href="#">Working at LUANAR</a></li>
+    <li><a href="{% url 'healthandwellbeing' %}">UNIMED</a></li>
+    <li><a href="{% url 'staff_sports' %}">Staff Sports & Recreation</a></li>
+    <li><a href="#">Forms</a></li>
+  </ul>
+</div>
+    
+    </div>
+  </div>
+  <div class="footer-bottom" style="background-color: #2eb135">
+    <div class="container pt-10 pb-5">
+        <div class=" col-lg-12 col-md-12   sm-text-center">
+          <p class="font-14  text-center text-white m-0">
+            
+            Copyright &copy; <span id="luanar"></span> &nbsp;Lilongwe University of Agriculture and Natural Resources
+          </p>
+
+          <script>
+            const d = new Date();
+            document.getElementById("luanar").innerHTML = d.getFullYear();
+            </script>
+        </div>
+    
+    </div>
+  </div>
+</footer>

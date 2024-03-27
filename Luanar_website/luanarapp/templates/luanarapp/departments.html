@@ -1,0 +1,117 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+  <div class="container pt-120 pb-60">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-theme-colored2 text-center" style="font-family: sans-serif; font-size: 46px;">{{ department.department_name}}</h2>
+          <ol class="breadcrumb text-left mt-10 white">
+            <li><a href=" url '' ">LUANAR</a></li>
+            <li><a href="{% url 'faculties' %}">Faculties</a></li>
+            <li class="active">Departments</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 blog-pull-left">
+        <div class="single-service">
+          <h3 class="line-bottom">
+            {{department.department_name}}
+          </h3>
+          <img src="{{department.department_image}}" class="img-fluid img-responsive" style=" height: 300px; width: 100%; padding-bottom: 10px;" alt="" />
+          <p>
+           {{department.department_details}}
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore
+            suscipit, inventore aliquid incidunt, quasi error! Natus esse rem
+            eaque asperiores eligendi dicta quidem iure, excepturi doloremque
+            eius neque autem sint error qui tenetur, modi provident aut, maiores
+            laudantium reiciendis expedita. Eligendi
+          </p>
+        </div>
+        <div class="list-group">
+          <h3 style="background-color: aquamarine;" class="list-group-item text-center">
+          Programs under {{department.department_name}} department
+          </h3>
+          {% for program in programs %}
+          <a href="{% url 'program_details' program.program_id %}" class="list-group-item">{{program.program_name}}</a>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="sidebar sidebar-right mt-sm-30 ml-40">
+            
+            <h4 class="widget-title line-bottom mt-30">
+              <i class="text-theme-colored"></i>Important 
+              <span class="text-theme-colored2">Information</span>
+            </h4>
+          
+            <ul class="nav nav-stacked nav-pills nav-sidebar"  style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+              <li>
+                 <a href="{% url 'about' %}"
+                 >About us</a >
+              </li>
+              <li>
+                 <a href="{% url 'howtoapply' %}"
+                 >How to Apply</a >
+              </li>
+              
+                 <li>
+                 <a href="{% url 'bundacampus' %}" 
+                   >Bunda campus</a >
+               </li>
+               <li>
+                 <a href="{% url 'citycampus' %}"
+                   >City Campus</a >
+               </li>
+               <li>
+                 <a href="{% url 'naturalresourcescollege' %}" 
+                   >NRC Campus</a >
+               </li>
+               <li>
+                 <a href="{% url 'virtualcampus' %}"
+                   >Virtual Campus</a >
+               </li>
+               <li>
+                 <a href="{% url 'odl' %}"
+                   >ODL Campus</a >
+               </li>
+              
+              
+             </ul>
+          <div class="widget pt-20">
+            <h4 class="widget-title line-bottom">
+              Head of <span class="text-theme-colored2">Department</span>
+            </h4>
+                <div class="col-xs-12 col-sm-12 col-md-12 ">
+                  <div class="team-members border-bottom-theme-colored2px text-center maxwidth400 mb-30">
+                    <div class="team-thumb">
+                      <a href=""> <img class="img-fullwidth" alt src="{% static 'images/team/1.jpg' %}"></a>
+                      <div class="team-overlay"></div>
+                      <ul class="styled-icons team-social icon-sm">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                      </ul>
+                    </div>
+                    <div class="team-details">
+                      <h4 class="text-uppercase line-bottom-centered mt-0 font-weight-600 m-5" style="padding-top: -50px;"><a href="">Professor Emmanuel Kaunda</a></h4>
+                     
+                    </div>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

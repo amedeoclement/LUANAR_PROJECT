@@ -1,0 +1,122 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+  <div class="container pt-120 pb-60">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-theme-colored2 text-center" style="font-family: sans-serif; font-size: 46px;">
+            LUANAR | OFFICE OF UR
+          </h2>
+          <ol class="breadcrumb text-left mt-10 white">
+            <li><a href="{% url '' %}">LUANAR</a></li>
+            <li><a href="#">OFFICES</a></li>
+            <li class="active">UNIVERSITY REGISTRAR</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="pb-0 mb-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 blog-pull-right">
+
+        <h2 class="text-center title">Functions of the Office of the University Registrar <span
+            class="text-theme-colored2"></span></h2>
+        <div class="line-bottom-centered"></div>
+
+        <div class="single-service"
+          style="font-family: sans-serif; font-size: 15px; border-bottom:#2eb135 3px solid; text-align: justify;">
+
+          <p>
+            The University Registrar is the Chief administration officer of the University. His office is responsible for managerial and administrative policy reforms geared towards enhancing efficiency and effectiveness of managerial and administrative structures, systems and procedures as well as Interpreting and implementing rules and regulations of the University.   
+        </p>
+       <p>
+        The office takes overall responsibility for human resources services including planning, performance appraisal system and staff welfare; Academic affairs, Marketing and Communication among others.
+       </p>
+       <p>
+        It also serves as secretary to University Council, Senate and other committees as prescribed in the Statutes; the office is also responsible for safe keeping and updating of staff and student records including a register of alumni and their qualifications; and Coordination of all university ceremonies.
+       </p>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="sidebar sidebar-left mt-sm-30 ml-40">
+
+            <h3 class="widget-title line-bottom">
+              Important <span class="text-theme-colored2">information</span>
+            </h3>
+
+            <ul class="nav nav-pills nav-stacked nav-sidebar" style="background-color: rgb(205, 218, 211);">
+              <li>
+                <a href="{% url 'aboutur' %}">About UR</a>
+              </li>
+              <li>
+                <a href="{% url 'office_of_doqa' %}">Quality Assurance</a>
+              </li>
+              <li>
+                <a href="{% url 'office_of_ar' %}" >Office of Academics</a>
+              </li>
+              <li>
+                <a href="{% url 'marketing' %}">Marketing and Communications</a>
+              </li>
+              <li>
+                <a href="{% url 'studentsgovernance' %}">Students Governance</a>
+              </li>
+              <li>
+                <a href="{% url 'accommodation' %}">Accommodation</a>
+              </li>
+
+            </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background-color: #ffffff;" class="pt-0 mt-0">
+  <div class="container">
+    <div class="container mt-0">
+      <div class="col-md-12 text-center">
+        <h2 class="text-uppercase title">Contact the <span class="text-theme-colored2"> University Registrar</span></h2>
+        <div class="line-bottom-centered"></div>
+      </div>
+    </div>
+      <div class="container col-md-12" style="text-align: justify;">
+        <div class="row">
+                   
+                      <div class="col-xs-12  col-md-4">
+                        <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#">
+                            <i class="pe-7s-map-marker text-theme-colored"></i></a>
+                          <div class="media-body">
+                            <p>The University Registrar, <br>
+                              Lilongwe University of Agriculture and Natural Resources (LUANAR), <br>
+                              Post Office Box 219, <br>
+                              Lilongwe, Malawi.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-md-4">
+                        <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#">
+                            <i class="pe-7s-call text-theme-colored"></i></a>
+                          <div class="media-body">
+                            <h5 class="mt-0">Contact Number</h5>
+                            <p>01 277 222/1016</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-xs-12 col-md-4">
+                        <div class="icon-box left media bg-deep p-30 mb-20"> <a class="media-left pull-left" href="#">
+                            <i class="pe-7s-mail text-theme-colored"></i></a>
+                          <div class="media-body">
+                            <h5 class="mt-0">Email Address</h5>
+                            <p><a href="mailto:vc@luanar.ac.mw">ur@luanar.ac.mw</a>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+          
+  </div>
+</section>
+
+{% endblock content %}

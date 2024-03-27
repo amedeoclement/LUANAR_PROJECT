@@ -1,0 +1,89 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+    <div class="container pt-120 pb-60">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-theme-colored2 text-center" style="font-family: sans-serif; font-size: 46px;">NEWS &
+                        EVENTS
+                    </h2>
+                    <ol class="breadcrumb text-left mt-10 white">
+                        <li><a href="{% url '' %}">LUANAR</a></li>
+                        <li><a href="#">UPDATES</a></li>
+                        <li class="active">NEWS</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="container">
+    <div class="row">
+        <div class="col-md-9 page-content">
+            <h2 class="page-title"> Events </h2>
+         
+          <div class="col-md-12" >
+            <div class="row">
+                {% for event in page %}
+                <a href="{% url 'eventsdetail' event.event_id %}">
+                    <div class="col-lg-6 col-md-6 col-sm-6 mt-20" >
+                        <img class="img img-responsive img-fluid" src="{{event.event_photo.url}}" style="height: 200px; width: 100%;"  />
+                        <div class="event"  style="background-color: rgb(0,124,187);">
+                            <h4 style="text-align: center; color: #ffffff;">
+                                <strong >{{event.date|date:"F d, Y"}}</strong><br>
+                                <span class="event-date">{{event.start_time}} - {{event.end_time}}</span>
+                            </h4><hr>
+                            <h4 style="text-align:center; color: #ffffff;">{{event.event_title}}</h4>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+            
+
+            <div class="container mb-30 mt-20">
+                {% if page.has_previous %}
+                <a class="btn btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?page=1">First</a>
+                <a class="btn btn-outline-primary" style="background-color:  rgb(204, 207, 207);"
+                  href="?page={{ page.previous_page_number }}">Previous</a>
+                {% endif %}
+                {% for num in page_range %}
+                {% if num == page.number %}
+                <span class="btn btn-primary" style="background-color:  rgb(204, 207, 207);">{{ num }}</span>
+                {% else %}
+                <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ num }}">{{ num }}</a>
+                {% endif %}
+                {% endfor %}
+                {% if page.has_next %}
+                <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);"
+                  href="?page={{ page.next_page_number }}">Next</a>
+                <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);"
+                  href="?page={{ page.paginator.num_pages }}">Last</a>
+                {% endif %}
+          
+              </div>
+        </div>
+        </div>
+        <div class="col-md-3">
+
+            <h3 class="widget-title line-bottom mt-30" style="font-family: sans-serif;">
+                <i class="text-theme-colored"></i>Quick
+                <span class="text-theme-colored2">Links</span>
+            </h3>
+
+            <ul class="nav nav-stacked nav-pills nav-sidebar"
+                style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+                <li> <a href="{% url 'newsandevents' %}">News</a></li>
+                <li> <a href="{% url 'announcements' %}">Announcements</a></li>
+                <li> <a href="{% url 'events' %}">Events</a></li>
+                <li> <a href="{% url 'researchandoutreach' %}">Research & Outreach</a></li>
+                <li> <a href="{% url 'vacancies' %}">Vacancies</a></li>
+                <li> <a href="{% url 'sportsandrecreation' %}">Sports & Recreation</a></li>
+                <li> <a href="{% url 'popularvideos' %}">Popular Videos</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock content %}

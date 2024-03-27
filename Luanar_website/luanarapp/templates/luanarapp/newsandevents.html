@@ -1,0 +1,112 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+  <div class="container pt-120 pb-60">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-theme-colored2 text-center" style="font-family: sans-serif; font-size: 46px;">NEWS & EVENTS
+          </h2>
+          <ol class="breadcrumb text-left mt-10 white">
+            <li><a href="{% url '' %}">LUANAR</a></li>
+            <li><a href="#">UPDATES</a></li>
+            <li class="active">NEWS</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container">
+  <div class="row">
+    <div class="col-md-9" style="padding-top: 7px;">
+      <div class="single-service">
+        <h3 class="line-bottom">
+          News
+        </h3>
+      </div>
+      <div class="section-content pb-20">
+        <div class="row">
+
+
+        {% for new in page %}
+        <div class="col-md-12" style="padding-bottom: 30px;">        
+          <div class="row">
+            <div class="col-md-4">
+              <img  alt="" src="{{new.news_photo.url}}" style="border-radius: 10px;"  width="275" height="200">
+            </div>
+            <div class="col-md-8" style="text-align: justify; font-size: 16px;">
+             <a href="{% url 'newsdetail' new.news_id %}"> <h3 style="color: #2eb125;">{{new.news_title}}</h3></a>
+              <p>{{new.news_body|truncatewords:40}}</p>
+              <a href="{% url 'newsdetail' new.news_id %}"
+              class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ MORE</a><span style="float: right;"><b>Posted:</b>  {{ new.updated_at|timesince }}
+                ago</span>
+            </div>
+          </div>
+            </div>
+<!-- 
+
+        <div class="col-md-6">
+          <div class="card mb-sm-30 bg-white pb-20" style="border-bottom:rgb(0,124,187) 5px solid;">
+            <img src="{{new.news_photo.url}}" class="card-img-top" style="padding-top: 15px; height: 300px;" alt="...">
+            <div class="card-body pl-20  pr-10">
+              <h4 class="entry-title font-weight-600 text-capitalize mb-10"><a class="text-theme-colored"
+                  href="{% url 'newsdetail' new.news_id %}">{{new.news_title}} </a></h4>
+              <p class="card-text" style="text-align: justify;"> {{new.news_body|truncatewords:15}} </p>
+              <a href="{% url 'newsdetail' new.news_id %}" class="text-theme-colored font-weight-600 font-12">View
+                Details</a> <span style="float: right;"><i class="fa fa-clock mr-5"></i> {{ new.updated_at|timesince }}
+                ago</span>
+
+            </div>
+          </div>
+        </div> -->
+
+        {% endfor %}
+      </div>
+
+    </div>
+    <div class="container mb-30">
+      {% if page.has_previous %}
+      <a class="btn btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?page=1">First</a>
+      <a class="btn btn-outline-primary" style="background-color:  rgb(204, 207, 207);"
+        href="?page={{ page.previous_page_number }}">Previous</a>
+      {% endif %}
+      {% for num in page_range %}
+      {% if num == page.number %}
+      <span class="btn btn-primary" style="background-color:  rgb(204, 207, 207);">{{ num }}</span>
+      {% else %}
+      <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ num }}">{{ num }}</a>
+      {% endif %}
+      {% endfor %}
+      {% if page.has_next %}
+      <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);"
+        href="?page={{ page.next_page_number }}">Next</a>
+      <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);"
+        href="?page={{ page.paginator.num_pages }}">Last</a>
+      {% endif %}
+
+    </div>
+
+  </div>
+  <div class="col-md-3">
+
+    <h3 class="widget-title line-bottom mt-30" style="font-family: sans-serif;">
+      <i class="text-theme-colored"></i>Quick
+      <span class="text-theme-colored2">Links</span>
+    </h3>
+
+    <ul class="nav nav-stacked nav-pills nav-sidebar"
+      style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+      <li> <a href="{% url 'newsandevents' %}">News</a></li>
+      <li> <a href="{% url 'announcements' %}">Announcements</a></li>
+      <li> <a href="{% url 'events' %}">Events</a></li>
+      <li> <a href="{% url 'researchandoutreach' %}">Research & Outreach</a></li>
+      <li> <a href="{% url 'vacancies' %}">Vacancies</a></li>
+      <li> <a href="{% url 'sportsandrecreation' %}">Sports & Recreation</a></li>
+      <li> <a href="{% url 'popularvideos' %}">Popular Videos</a></li>
+    </ul>
+  </div>
+  </div>
+</section>
+{% endblock content %}

@@ -1,0 +1,164 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+    <div class="container pt-120 pb-60">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-theme-colored2 text-center" style="font-family: sans-serif; font-size: 46px;">LUANAR
+                        | EVENTS</h2>
+                    <ol class="breadcrumb text-left mt-10 white">
+                        <li><a href=" url '' ">LUANAR</a></li>
+                        <li class="active">EVENTS</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <div class="container">
+        <div class="row">
+
+
+            <div class="col-md-8 page-content">
+                <h2 class="page-title" style="color: #2eb135;">{{event.event_title}}</h2>
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="news-date">
+                            &nbsp;
+                            <i class="fa fa-clock-o"></i>&nbsp;&nbsp;{{event.updated_at|date:"F d, Y"}}
+                        </div>
+
+                        <div class="well event-details" style="font-size: 16px;">
+                            <div class="row">
+                                <div class="col-xs-2 head">Host:</div>
+                                <div class="col-xs-7 item">{{event.host}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-2 head">Venue:</div>
+                                <div class="col-xs-7 item">{{event.venue}}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-2 head">Date:</div>
+                                <div class="col-xs-7 item">
+                                    {{event.date|date:"F d, Y"}} - {{event.start_time}}
+                                    - {{event.end_time}}
+
+
+                                    &nbsp;&nbsp;<span style="background-color: #eef2ee; color: #2eb135;"> {% if event.date > current_date %}
+                                               Coming Soon
+                                        
+                                            {% elif  event.date < current_date %}
+                                               Past event
+                                            {% else %}
+                                               Happening today
+                                            {% endif %} </span> 
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="event-detail-img"><img src="{{event.event_photo.url}}"
+                                style="height: 400px; width: 800px;">
+                        </div>
+
+                        <div class="news-content" style="padding-top:20px;">
+                         <p>
+                            {% autoescape off %}
+                            {{event.event_description|linebreaks}}
+                            {% endautoescape %}
+                         </p>
+                         
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-4">
+                <div class="sidebar sidebar-left mt-sm-30 ml-40">
+
+                    <h3 class="widget-title line-bottom">
+                        Quick <span class="text-theme-colored2">Links</span>
+                    </h3>
+
+                    <ul class="nav nav-pills nav-stacked nav-sidebar"
+                        style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+                        <li>
+                            <a href="{% url 'announcements' %}">Announcements</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'events' %}">Upcoming Events</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'immigration' %}">Immigration information</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'feesandfunding' %}">Fees & Funding</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'safetyoncampus' %}">Campus Life</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'accommodation' %}">Accommodation</a>
+                        </li>
+
+                    </ul>
+                
+
+                <div class="col-md-12 col-md-12 mt-sm-30 pt-40">
+                    <div class="mb-sm-30 bg-white pb-10">
+                        <img class="img-fullwidth" src="{% static 'images/about/mission.jpg' %}" alt="">
+
+                        <div class="pl-20  pr-10">
+                            <h4 class="font-weight-600 mt-20">Vision, Mission & Values</h4>
+                            <p style="text-align: justify;">We are committed to conduct ourselves in a manner consistent
+                                with the highest standards of integrity. We aim to be honest, ethical and fair in all
+                                our activities. We aim to keep...</p>
+                            <a href="{% url 'mission_vision_values' %}"
+                                class="text-theme-colored2 font-weight-600 font-14 text-center" >Read more →</a>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<section class="container">
+
+    <h3 class="margin-bottom-25">Related News</h3>
+    <ul class="row news-list">
+        {% for new in news %}
+        <li class="col-sm-6 col-md-3 margin-bottom-20 equal-height bg-dark">
+            <a class="overlay" href="{% url 'newsdetail' new.news_id %}">
+                <div class="feature-item">
+                    <div class="thumb">
+                        <img src="{{ new.news_photo.url }}" class="img-fluid  feature-item" style="height: 200px; width: 100%;" alt>
+                    </div>
+                </div>
+                <div class="bg-dark" style="background-color: rgb(87, 84, 84);">
+                    <div class="desc inherit-position"
+                        style="text-align: justify; padding: 0 10px 10px 10px; margin-bottom: 10px;">
+                        <span class="date">Date: {{new.updated_at|date:"F d, Y"}}</span>
+                        <h4 class="min-height text-white">{{new.news_title}}</h4>
+                    </div>
+                </div>
+
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+</section>
+
+
+{% endblock content %}

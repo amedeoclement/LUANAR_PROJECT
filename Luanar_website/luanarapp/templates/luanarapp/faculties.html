@@ -1,0 +1,95 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+  <div class="container pt-120 pb-60">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-theme-colored2 text-uppercase text-center" style="font-family: sans-serif; font-size: 46px;">Faculties</h2>
+          <ol class="breadcrumb text-left mt-10 white">
+            <li><a href=" url '' ">LUANAR</a></li>
+            <li><a href="#">Schools</a></li>
+            <li class="active">Faculties</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="container">
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-8 blog-pull-right">
+        <div class="single-service">
+          <h3 class="line-bottom">
+            {{firstfaculty.faculty_name}}
+          </h3>
+          {% if not firstfaculty.faculty_image%}
+
+          <p>{{ firstfaculty.faculty_name }} Image </p>
+
+          {% else %}
+
+          <img src="{{firstfaculty.faculty_image.url}}" class="img-fluid img-responsive"
+            style=" height: 300px; width: 100%; padding-bottom: 10px;" alt="" />
+          {% endif %}
+          <p style="text-align: justify; font-size: 16px;">
+
+            {% autoescape off %}
+            
+            {{firstfaculty.faculty_description|linebreaks}}
+
+            {% endautoescape %}
+          </p>
+       
+        </div>
+        <div class="list-group">
+          <h3 style="background-color: aquamarine;" class="list-group-item text-center">
+            Departments under this faculty
+          </h3>
+          {% for department in departments %}
+          <a href="{% url 'department_details' department.department_id %}"
+            class="list-group-item">{{department.department_name}}</a>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="sidebar sidebar-left mt-sm-30 ml-40">
+
+            <h4 class="widget-title line-bottom mt-30">
+              <i class="text-theme-colored"></i>Schools &
+              <span class="text-theme-colored2">Faculties</span>
+            </h4>
+            <ul class="nav nav-stacked nav-pills nav-sidebar" style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+          
+            {% for faculty in faculties %}
+               <li>
+                <a href="{% url 'faculty_details' faculty.faculty_id %}"
+                 >{{faculty.faculty_name}}</a>
+              </li>
+              {% endfor %}
+            </ul>
+      
+
+        <div class="widget pt-20"> 
+            
+            <div class="visible-md visible-lg">
+              <h4 class="widget-title line-bottom">
+                Dean of <span class="text-theme-colored2">Faculty</span>
+              </h4>
+              <div>
+                <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top" style="padding-top: 15px;"
+                  alt="...">
+                <a href="#"> </a>
+                <div class="rand_officer_date" style="padding: 10px 0"><strong>Prof C. Amedeo</strong> -
+                  Web developer</div>
+              </div>
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

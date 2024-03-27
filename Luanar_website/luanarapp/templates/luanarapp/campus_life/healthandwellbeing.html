@@ -1,0 +1,63 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Breadcrumbs Start -->
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/campus_life/studenthealth.jpg' %}">
+    <div class="container pt-120 pb-60">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-theme-colored2 text-center" style="font-family: sans-serif; font-size: 46px;">LUANAR | HEALTH & WELLBEING</h2>
+            <ol class="breadcrumb text-left mt-10 white">
+              <li><a href=" url '' ">LUANAR</a></li>
+              <li><a href="{% url 'about' %}">CAMPUS LIFE</a></li>
+              <li class="active">Student Health and Disabilities</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Breadcrumbs End -->
+<div class="rs-history sec-spacer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mobile-mb-50  pl-30 pt-30">
+                <a href="#">
+                    <img src="{% static 'images/campus_life/studenthealththumb.jpg' %}" alt="History Image"/>
+                </a>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="abt-title">
+                    <h2>STUDENT HEALTH and DISABILITies</h2>
+                </div>
+                <div class="about-desc" style="text-align: justify; font-size: 16px;">
+                    <p>Welcome to the University Health Service. We aim to provide a confidential service to support your physical and mental wellbeing. On the University campuses, there are fully qualified and experienced medical staff available. We provide:</p>
+                    <ul>
+                        <li><i class="fa fa-arrow-right"></i>&nbsp;Advice and support concerning asthma, diabetes and epilepsy.</li>
+                        <li><i class="fa fa-arrow-right"></i>&nbsp;Advice, counseling and support concerning contraception and pregnancy</li>
+                        <li><i class="fa fa-arrow-right"></i>&nbsp;Advice and treatment for examination stress.</li>
+                        <li><i class="fa fa-arrow-right"></i>&nbsp;Information on Travel vaccination.</li>
+                        <li><i class="fa fa-arrow-right"></i>&nbsp;Sexual Health information and referrals.</li>
+                        <li><i class="fa fa-arrow-right"></i>&nbsp;Assessment and Treatment of minor injuries and ailment.</li>
+                        <li><i class="fa fa-arrow-right"></i>&nbsp;HIV Testing and Counselling. Each student is encouraged to apply for a UNIMED Card and the forms are available at the campus clinic.</li>
+                       
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12" style="padding-top: 20px; text-align: justify; font-size: 16px;">
+          <p>
+
+         LUANAR is committed to developing inclusive environment for all students. We welcome enquiries from prospective students with specific learning difficulties such as dyslexia, sensory impairments, mobility difficulties, medical conditions or mental health concerns. We encourage students to disclose any disability or medical condition to ensure that appropriate support is arranged for them.
+        </p> 
+        <p> For more information on the health related issues, <a style="color: rgb(72, 72, 230);" href="{% url 'support_services' %}">click here to read more...</a> </p>
+        </div>
+    </div>
+</div>
+<hr>
+
+{% endblock content %}

@@ -1,0 +1,140 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+  <div class="container pt-120 pb-60">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-theme-colored2 text-center" style="font-family: sans-serif; font-size: 46px;">
+            LUANAR | BUNDA CAMPUS
+          </h2>
+          <ol class="breadcrumb text-left mt-10 white">
+            <li><a href="{% url '' %}">LUANAR</a></li>
+            <li><a href="#">CAMPUSES</a></li>
+            <li class="active">BUNDA</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 blog-pull-right">
+
+        <div class="section-content">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="box-hover-effect about-video mt-sm-30">
+                <div class="effect-wrapper">
+                  <div class="thumb">
+                    <img class="img-fullwidth" src="{% static 'images/about/1.jpg' %}" style="height: 250px;"
+                      alt="project" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6" style="font-family: sans-serif; font-size: 15px;">
+              <h3 class="text-uppercasetext-theme-colored mt-0" style="font-family: sans-serif; font-weight: bolder;">
+                Welcome to Bunda College, <span class="text-theme-colored2">Bunda campus</span>
+
+              </h3>
+              <hr>
+
+              <p>
+                The establishment of Bunda College of Agriculture was visualized in 1961 by the then Nyasaland
+                Department of Agriculture. </p>
+              <p>
+                The college was originally intended to serve as a vocational college that would initially offer a
+                three-year diploma level training in agriculture. </p>
+
+            </div>
+
+          </div>
+          <div class="col-md-12" style="border-bottom:#2eb135 3px solid; padding-left: 0;">
+            <p style="padding-top: 20px;">
+              In 1964, newly independent Malawi recognized agriculture as the backbone of the country’s economy and
+              reaffirmed the importance of the establishment of Bunda College of Agriculture to produce the needed
+              manpower for agricultural development.In September1966, the first cohort of 15 students was admitted into
+              a diploma course in agriculture on borrowed premises of Dedza Secondary School, in the Central Region
+              District of Malawi.
+            </p>
+            <p>
+              In January 1967, Bunda College of Agriculture was formally incorporated as a constituent college of
+              University of Malawi (UNIMA) which had been established in 1965.On 10th April, 1967 the college was
+              relocated from Dedza Secondary School to the current premises near Bunda foot Hill.
+            </p>
+            <p>
+              On 1st July 2011 Lilongwe University of Agriculture and Natural Resources (LUANAR) was established by Act.
+              No. 9 of Parliament. On 1st July, 2012, Bunda College of Agriculture was formerly delinked from UNIMA to
+              become the main campus of LUANAR.
+            </p>
+          </div>
+          <div class="col-md-12" style=" border-left: 5px solid; margin: 20px 0 10px 0; background-color: #f0f0f0;">
+            <div>
+              <h3>
+                Bunda College offers the following programmes:
+              </h3>
+            </div>
+
+          </div>
+          <div class="col-md-12 pl-0">
+            <div class="list-group">
+              {% for program in programs %}
+              <a href="{% url 'program_details' program.program_id %}"
+                class="list-group-item">{{program.program_name}}</a>
+              {% endfor %}
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="sidebar sidebar-left mt-sm-30 ml-40">
+
+            <h3 class="widget-title line-bottom">
+              Important <span class="text-theme-colored2">information</span>
+            </h3>
+
+            <ul class="nav nav-pills nav-stacked nav-sidebar" style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+              <li>
+                <a href="{% url 'accommodation' %}">Accommodation</a>
+              </li>
+              <li>
+                <a href="{% url 'citycampus' %}">City Campus</a>
+              </li>
+              <li>
+                <a href="{% url 'naturalresourcescollege' %}" >NRC Campus</a>
+              </li>
+              <li>
+                <a href="{% url 'virtualcampus' %}" >Virtual Campus</a>
+              </li>
+              <li>
+                <a href="{% url 'odl' %}" >ODL Campus </a>
+              </li>
+            </ul>
+          <div class="widget pt-20">
+
+            <div class="c col-md-12">
+              <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 5px solid;">
+                <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top" style="padding-top: 15px;"
+                  alt="...">
+                <div class="card-body ">
+                  <h5 class="card-title font-weight-700 font-18 mt-20">Admission</h5>
+                  <p class="card-text">LUANAR is a dynamic and vibrant community of learning that brings together
+                    administrators, academic staff and students from Malawi and abroad in an effort to provide sound...
+                  </p>
+                  <a href="{% url 'howtoapply' %}"
+                    class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ MORE</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

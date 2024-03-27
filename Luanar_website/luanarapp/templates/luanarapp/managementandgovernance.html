@@ -1,0 +1,61 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<section
+  class="inner-header divider layer-overlay overlay-dark-4"
+  data-bg-img="{% static 'images/bg/about.jpg' %}"
+>
+  <div class="container pt-120 pb-60">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-theme-colored2 text-center text-uppercase" style="font-family: sans-serif; font-size: 46px;">Management & Governance</h2>
+          <ol class="breadcrumb text-left mt-10 white">
+            <li><a href=" url '' ">LUANAR</a></li>
+            <li><a href=" url 'about' ">About</a></li>
+            <li class="active">Management & Governance</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-content">
+ 
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div>
+                <h2 class="text-theme-colored2">Management & Governance</h2>
+               
+               <p style=" font-size:16px;">As a vibrant hub of learning, research, and innovation, our university operates under a comprehensive framework of leadership, oversight, and strategic direction. The management structures of the University consist of <b>:</b>
+            </p> 
+            <hr>
+                </div>
+          <div class="font-15" style="font-family: Arial, Helvetica, sans-serif">
+
+            <ul class="list-icon" style="color: #2eb135;">
+                <li > <i class="fa fa-arrow-right "></i><a style="color: #2eb135;" href="{% url 'office_of_vc' %}">Vice Chancellor</a></li>
+                <li><i class="fa fa-arrow-right"></i><a style="color: #2eb135;" href="{% url 'office_of_dvc' %}">Deputy Vice Chancellor</a></li>
+                <li><i class="fa fa-arrow-right"></i><a style="color: #2eb135;" href="#">Executive</a>
+                    <ul>
+                     <li><i class="fa fa-arrow-right"></i><a style="color: #2eb135;" href="{% url 'office_of_ur' %}">University Registrar</a></li>
+                     <li><i class="fa fa-arrow-right"></i><a style="color: #2eb135;" href="#">Executive Directors</a></li>
+                    </ul>
+                 </li>
+                <li><i class="fa fa-arrow-right"></i><a style="color: #2eb135;"  href="{% url 'office_of_ar' %}">Academic Registrar</a></li>
+               
+                <li><i class="fa fa-arrow-right"></i>Faculties, departments, schools and such other academic structures as may be determined by the Council</li>
+                <li><i class="fa fa-arrow-right"></i><a style="color: #2eb135;" href="#">Council</a></li>
+                <li><i class="fa fa-arrow-right"></i><a style="color: #2eb135;" href="#">Senate</a></li>
+                <li><i class="fa fa-arrow-right"></i><a style="color: #2eb135;" href="{% url 'studentunion' %}">Students Representative Council</a></li>
+
+               
+            </ul>
+          </div>
+        </div>
+   
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

@@ -1,0 +1,180 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+    <div class="container pt-120 pb-60">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-theme-colored2 text-center" style="font-family: sans-serif; font-size: 46px;">
+                        OFFICE OF ACADEMICS AND ADMISSIONS
+                    </h2>
+                    <ol class="breadcrumb text-left mt-10 white">
+                        <li><a href="{% url '' %}">LUANAR</a></li>
+                        <li><a href="#">OFFICES</a></li>
+                        <li class="active">DEAN OF STUDENTS AFFAIRS</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="container pb-0">
+        <div class="row">
+            <div class="col-md-8 blog-pull-right">
+
+                <div class="section-content">
+                    
+
+                        <div class="col-md-12" style="font-family: sans-serif; font-size: 15px;">
+                            <h3 class="text-uppercasetext-theme-colored mt-0"
+                                style="font-family: sans-serif; font-weight: bolder;">
+                                The office of <span class="text-theme-colored2">Academics and Admissions </span>
+
+                            </h3>
+                            <hr>
+
+                            <p style="text-align: justify">
+                                The Academic Office is responsible for the development and management of the University’s academic, regulatory framework and quality assurance procedures and it supports faculties, departments and campuses to maintain learning and teaching excellence within the University. The Academic Registrar heads the Academic Office, and he/she reports to College Registrar. The Office has advisory and developmental roles concerning all aspects of academic policy, procedures and regulations for all programmes offered by the University.
+                            </p>
+                            <p  style="text-align: justify">
+                                The Office is broadly responsible for supporting individual students and members of staff on matters academic, coordination of exam administration in the University, graduation management and processing, preparing the academic calendar, managing and ensuring the integrity of the student records, facilitating and monitoring of assessment of all courses offered by the University, managing the student academic grievance process and supporting committees that ensure the quality of learning and teaching at LUANAR among other things. 
+                            </p>
+
+                        </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <div class="sidebar sidebar-left mt-sm-30 ml-40">
+
+                        <h3 class="widget-title line-bottom">
+                            Important <span class="text-theme-colored2">information</span>
+                        </h3>
+            
+                        <ul class="nav nav-stacked nav-pills nav-sidebar"  style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+                         <li>
+                            <a href="{% url 'about' %}"
+                            >About us</a >
+                         </li>
+                         <li>
+                            <a href="{% url 'faculties' %}"
+                            >Faculties</a >
+                         </li>
+                         
+                            <li>
+                            <a href="{% url 'bundacampus' %}" 
+                              >Bunda campus</a >
+                          </li>
+                          <li>
+                            <a href="{% url 'citycampus' %}"
+                              >City Campus</a >
+                          </li>
+                          <li>
+                            <a href="{% url 'naturalresourcescollege' %}" 
+                              >NRC Campus</a >
+                          </li>
+                          <li>
+                            <a href="{% url 'virtualcampus' %}"
+                              >Virtual Campus</a >
+                          </li>
+                          <li>
+                            <a href="{% url 'odl' %}"
+                              >ODL Campus</a >
+                          </li>
+                         
+                         
+                        </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="section-content">
+
+                <div class="container mt-5">
+                    <div class="container mt-0">
+                        <div class="col-md-12 text-center">
+                            <h2 class="text-uppercase title">OUR <span class="text-theme-colored2"> SERVICES</span></h2>
+                            <div class="line-bottom-centered"></div>
+                        </div>
+                    </div>
+                    <div class="row" style="font-size: 16px;">
+                        <div class="col-md-4" >
+                            <div class="card mb-sm-30 bg-white pb-20" style="border-bottom:#2eb135 5px solid;">
+                                <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top"
+                                    style="padding-top: 15px;" alt="...">
+                                <div class="card-body pt-15">
+                                    <h3 class="font-weight-600 mt-20 text-uppercase text-center"><a href="{% url 'howtoapply' %}">Admissions</a></h3>
+                                    <p class="card-text" style="text-align: justify">The University’s Admissions Office is key to ensuring that the University achieves its mission by admitting candidates applicants who have the potential to excel in the University...</p>
+                                     <a href="{% url 'howtoapply' %}"
+                                     class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ
+                                     MORE</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 5px solid;">
+                                <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top"
+                                    style="padding-top: 15px;" alt="...">
+                                <div class="card-body pt-15">
+                                    <h3 class="font-weight-600 mt-20 text-uppercase text-center"><a href="{% url 'student_rules_and_regulations' %}">Student Regulations</a></h3>
+                                   
+                                    <p class="card-text" style="text-align: justify">Every registered student who has been admitted to the Lilongwe University of Agriculture and Natural Resources (LUANAR) is bound by these regulations as prescribed and amended.</p>
+                                       
+                                     <a href="{% url 'student_rules_and_regulations' %}"
+                                        class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ MORE</a>
+
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 5px solid; ">
+                                <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top"
+                                    style="padding-top: 15px;" alt="...">
+                                <div class="card-body pt-15">
+                                    <h3 class="font-weight-600 mt-20 text-uppercase text-center"><a href="https://www.luanar.ac.mw/studentsportal/">Students Support</a></h3>
+                                    <p class="card-text" style="text-align: justify">The Office also provides advice and support to prospective students and academic departments on all matters relating to enrolling at LUANAR, including assessing the eligibility....</p>
+                                    <a href="https://www.luanar.ac.mw/studentsportal/"
+                                    class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">LOGIN NOW</a>
+
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-0" style="padding-top: 50px;">
+            <div class="col-md-12 text-center">
+                <h2 class="text-uppercase title">STUDENTS ADMISSIONS</h2>
+                <div class="line-bottom-centered"></div>
+            </div>
+        </div>
+        <div class="container col-md-12">
+            <div class="row">
+                <div class="col-md-6">
+                   
+                    <div class="card mb-sm-30" style="font-size: 16px; font-family: sans-serif; text-align: justify">
+                       
+                    <div class="card-body pl-20  pr-10" >
+                      <p class="card-text ">The University’s Admissions Office is key to ensuring that the University achieves its mission by admitting candidates applicants who have the potential to excel in the University. It is responsible for managing a fair, transparent and consistent admissions process for all undergraduate and postgraduate programmes. The Office also provides advice and support to prospective students and academic departments on all matters relating to enrolling at LUANAR, including assessing the eligibility of candidates for their desired programmes.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card mb-sm-30 bg-white " >
+                    <div class="card-body pl-20  pr-10 " style="font-size: 16px; font-family: sans-serif; text-align: justify">
+                       <p class="card-text">The Office also works with the broader University community and national agencies on a wide range of admissions-related issues, to ensure compliance with University regulations and relevant government legislation. The Office also contributes towards the creation of promotional literature for marketing the Universities programmes through availing to career advisers in Secondary Schools up to date information on the programmes their candidates can pursue during each academic year.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    
+
+    </div>
+
+
+</section>
+{% endblock content %}

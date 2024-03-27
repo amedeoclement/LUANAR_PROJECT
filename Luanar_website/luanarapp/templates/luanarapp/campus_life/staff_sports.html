@@ -1,0 +1,89 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Breadcrumbs Start -->
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+    <div class="container pt-120 pb-60">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-theme-colored text-center font-36" style="font-family: sans-serif;">LUANAR | STAFF SPORTS & RECREATION</h1>
+            <ol class="breadcrumb text-left mt-10 white">
+              <li><a href=" url '' ">LUANAR</a></li>
+              <li><a href="{% url 'about' %}">CAMPUS LIFE</a></li>
+              <li class="active">Staff Sports & Recreation</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Breadcrumbs End -->
+
+<div class="rs-history sec-spacer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12 mobile-mb-50 pl-30 pt-30">
+         
+                    <img src="{% static 'images/campus_life/studentsunionthumb.jpg' %}" alt="Sports Image"/>
+           
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="abt-title">
+                    <h2>Staff Sports & Recreation</h2>
+                </div>
+                <div class="about-desc" style="text-align: justify; font-size: 16px;">
+                    <p>LUANAR STAFF SPORTS ASSOCIATION (LUSSA) is a body that manages staff sports matters at LUANAR.
+                         It draws its membership from Bunda Campus, NRC campus and City Campus. It is expected that staff 
+                         from ODL satellite centers will also join the grouping. Each member is supposed to pay an annual membership fee of K5000.
+                         The membership fee is split between the campus committee and the overarching body (LUSSA) for LUANAR.
+
+                         However, the committees still relies on support from LUANAR management when the teams travel out of campuses. LUSSA is an affiliate member of University of Malawi Staff Sports Association (UMSSA). 
+                        </div>
+            </div>
+        </div>
+        <div class="col-md-12" style="padding-top: 15px;">
+            <p style="text-align: justify; font-size: 16px;">
+                UMSSA is an association of the four constituent colleges of UNIMA, plus two affiliate members namely MUST and LUANAR. The members participate in interuniversity sporting activities here in Malawi as well as internationally in the SADC region.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="rs-about" class="rs-about  pt-50">
+    <div class="container">
+        <div class="mb-50 text-center">    
+          <h3 style="color: #2eb135; font-weight: bolder; font-family: sans-serif;">Leadership & Sporting Codes</h3>
+          <div class="line-bottom-centered"></div>
+        </div>
+        <div class="row" style="font-size: 16px;">
+            <div class="col-lg-6 col-md-6">
+                <h2 class="text-center">Leadership</h2>
+
+                <p style="text-align: justify;">
+                    Every campus holds elections in which executive committee is chosen to run sporting affairs at the campus. 
+                    At the moment it is Bunda and NRC campuses that have active committees. From the campus committees the 
+                    executive committee for LUSSA is chosen to run affairs for a three year period.
+                </p>
+              
+            </div>
+            <div class="col-lg-6 col-md-6">
+             <h2 class="text-center">Sporting Codes</h2>
+              <p style="text-align: justify;">
+                Currently, the main sporting activities are in the following disciplines: football, netball, volleyball, 
+                darts, bawo and athletics. Every sporting code is headed by a captain who is elected by the members 
+                of a particular discipline. The individual disciplines are free to organize their own sporting 
+                activities apart from the campus and LUSSA organized activities. It is hoped in future endeavors 
+                will be made to introduce more sporting activities such as lawn tennis, basketball etc to provide
+                 more options to staff for doing physical activities. Our various teams have performed exceptionally
+                  well in a number of interuniversity games as evidenced by the number of different medals won.
+              </p> 
+          </div>
+            
+        </div>
+        <hr>
+    </div>
+</div>
+{% endblock content %}

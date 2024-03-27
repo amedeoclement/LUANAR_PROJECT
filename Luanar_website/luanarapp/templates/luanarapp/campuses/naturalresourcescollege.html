@@ -1,0 +1,150 @@
+{% extends "main.html" %} {% load static %} {% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+    <div class="container pt-120 pb-60">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-theme-colored2 text-center"  style="font-family: sans-serif; font-size: 44px;">
+                        LUANAR | BUNDA CAMPUS
+                    </h2>
+                    <ol class="breadcrumb text-left mt-10 white">
+                        <li><a href="{% url '' %}">LUANAR</a></li>
+                        <li><a href="#">CAMPUSES</a></li>
+                        <li class="active">BUNDA</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 blog-pull-right">
+            
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="box-hover-effect about-video mt-sm-30">
+                        <div class="effect-wrapper">
+                            <div class="thumb">
+                                <img class="img-fullwidth" src="{% static 'images/about/1.jpg' %}" style="height: 250px;" alt="project" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6" style="font-family: sans-serif; font-size: 15px;">
+                    <h3 class="text-uppercasetext-theme-colored mt-0" style="font-family: sans-serif; font-weight: bolder;">
+                        Welcome to <span class="text-theme-colored2">Natural Resources College</span>
+                     
+                    </h3>
+                    <hr>
+                   
+                    <p>
+                      In 1969 the Ministry of Agriculture established a Natural Resources College (NRC) to provide certificate level training for technical assistance in the field of agriculture for the Ministry.</p>
+                    <p>
+                      The College was built on land, which belonged to Colby College, which was built in 1956. </p>
+                   
+                </div>
+
+            </div>
+            <div class="col-md-12" style="border-bottom:#2eb135 3px solid; padding-left: 0;">
+                <p>
+                  In 1979 the Government of Malawi got assistance from the Government of Canada through the Canadian International Development Agency (CIDA) to develop the NRC. The first enrolment of students under NRC was in 1983.In 1999 the Malawi Government directed that the NRC should be turned into a semi-autonomous institution. On 8th August 2001, the NRC was registered as a Public Trust under the Trustees Incorporation Act of 1962.
+                </p>
+                <p >
+                  Under the new legal framework, the NRC broadened its training spectrum to embrace agricultural, environmental and Natural Resources Management.
+               </p>
+               <p>
+                On 14th December, 2014, the NRC was integrated into LUANAR, following the dissolution of the Public Trust, to become the second university campus.   
+              </p>
+            </div>
+            <div class="col-md-12" style=" border-left: 5px solid; margin: 20px 0 10px 0; background-color: #f0f0f0;">
+                <div >
+                  <h3 >
+                    NRC offers the following programmes:
+                  </h3>
+                </div>
+                
+            </div>
+          <div class="col-md-12 pl-0">
+            <div class="list-group">
+                {% for program in programs %}
+                <a href="{% url 'program_details' program.program_id %}" class="list-group-item">{{program.program_name}}</a>
+                {% endfor %}
+              </div>
+          </div>
+
+
+
+
+        </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+          <div class="sidebar sidebar-left mt-sm-30 ml-40">
+              
+              <h3 class="widget-title line-bottom">
+                  Important <span class="text-theme-colored2">information</span>
+              </h3>
+  
+              <ul class="nav nav-pills nav-stacked nav-sidebar" style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+                <li>
+                  <a href="luanar4moreimpact"
+                    >Luanar4more Impact</a >
+                </li>
+                <li>
+                  <a href="{% url 'howtoapply' %}"
+                    >How to Apply</a >
+                </li>
+                <li>
+                  <a href="{% url 'internationalstudents' %}"
+                    >International Students</a >
+                </li>
+                <li>
+                  <a href="https://login.microsoftonline.com/common/oauth2/authorize?client_id=4345a7b9-9a63-4910-a426-35363201d503&redirect_uri=https%3A%2F%2Fwww.office.com%2Flanding&response_type=code%20id_token&scope=openid%20profile&response_mode=form_post&nonce=637278888775566596.YzgxNjU2MzctMWU1Yi00YTU1LWJkYmYtMjIzZGU0ODI2ZGY0NDg2NTM2OWYtMDIyNS00N2Q4LTgzMTktYTYzZTAzOGNhM2Yz&ui_locales=en-US&mkt=en-US&client-request-id=a8387bf2-a101-45f2-93d0-89596d7360aa&state=7NjQ1KEd46fffLBmLtuGXgZYj1sbesT9Kfp2I4i9jvGT3X1G496YQwnV4OAGibLmrmjZufZ1BCh-SsJVz7uBl6kVI9Ze1lGPsLucr6N8tro0PNvZSG3pQi4v9PNwJKHzr56lbmqYb4ylzmxdkx5zpj63efU75Y7rC2UeKf1Ghe1sIhm_NgR0Ug_0hH-EcRSlhqswA3V--KUa_NZTiyZacPrxo3QZzgIe-WcOApxujKUc6PFS-lg-RCJnlnd9E219loTgNuAGQB-1gw9adrROEA&x-client-SKU=ID_NETSTANDARD2_0&x-client-ver=6.5.0.0"
+                    >Web Mail</a >
+                </li>
+                <li>
+                  <a href="https://www.luanar.ac.mw/apps/" 
+                    >Staff Portal</a >
+                </li>
+                <li>
+                  <a href="https://www.luanar.ac.mw/studentsportal/" 
+                    >Student Portal</a >
+                </li>
+               
+              </ul>
+            <div class="widget pt-20">
+                
+      <div class="c col-md-12">
+        <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 5px solid;">
+          <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top" style="padding-top: 15px;" alt="...">
+          <div class="card-body ">
+            <h5 class="card-title font-weight-700 font-18 mt-20">Admission</h5>
+            <p class="card-text" style=" text-align: justify;">LUANAR is a dynamic and vibrant community of learning that brings together administrators, academic staff and students from Malawi and abroad in an effort to provide sound...</p>
+            <a href="{% url 'howtoapply' %}" class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ MORE</a>
+            </div>
+        </div>
+      </div>
+            </div>
+            <div class="widget">
+                
+              <div class="col-md-12">
+                <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 5px solid;">
+                  <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top" style="padding-top: 15px;" alt="...">
+                  <div class="card-body ">
+                    <h5 class="card-title font-weight-700 font-18 mt-20">Research and Outreach</h5>
+                    <p class="card-text" style=" text-align: justify;">In keeping with LUANAR’s fundamental mission of conducting challenge-led research aimed at promoting a rich quality of life in Malawi and beyond...</p>
+                    <a href="{% url 'researchandoutreach' %}" class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ MORE</a>
+                    </div>
+                </div>
+              </div>
+                    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}

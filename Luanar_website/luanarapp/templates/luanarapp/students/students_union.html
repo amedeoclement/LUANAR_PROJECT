@@ -1,0 +1,65 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Breadcrumbs Start -->
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/campus_life/studentsunion.jpg' %}">
+    <div class="container pt-120 pb-60">
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-theme-colored2 text-center font-36">LUANAR | CAMPUS LIFE</h2>
+            <ol class="breadcrumb text-left mt-10 white">
+              <li><a href=" url '' ">LUANAR</a></li>
+              <li><a href="{% url 'campus_life' %}">CAMPUS LIFE</a></li>
+              <li class="active">Students Union</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Breadcrumbs End -->
+
+  <!-- Events Start -->
+   <div class="rs-history sec-spacer">
+     <div class="container">
+         <div class="row">
+             <div class="col-lg-6 col-md-12 mobile-mb-50 pl-30 pt-30">
+               
+                     <img src="{% static 'images/campus_life/studentsunionthumb.jpg' %}" alt="Students Union"/>
+              
+             </div>
+             <div class="col-lg-6 col-md-12">
+                 <div class="abt-title">
+                     <h2>Students Union</h2>
+                 </div>
+                 <div class="about-desc" style="text-align: justify; font-size: 16px;">
+                     <p>As is mostly the case in universities worldwide, LUANAR students have their own governing body. 
+                         This is led by a President, seconded by the Vice President. The members include: Secretary, 
+                         Treasurer Director of Academics, Publications Director, Entertainment Director, Male Social 
+                         Welfare Directors, Female Social Welfare Directors, Sports Director, Speaker and Vice Speaker.In-order
+                          to form a more perfect union, establish justice, ensure domestic tranquility, provide for the common
+                           defense, promote the general welfare and secure
+                          the blessings of liberty to its members, there was need to establish a constitution for the student
+                           union.</p>
+ 
+                       </div>
+             </div>
+         </div>
+         <div class="col-lg-12 col-md-12 col-sm-12" style="padding-top: 15px;">
+             <p style="text-align: justify; font-size: 16px;">Membership is open to all students, however, interested members of staff and alumni
+                 may become associate members of the Union after the approval of their application by the 
+                 Executive Council of the governing body following payment of an annual subscription laid down
+                  by the Union.Members shall be required to pay an annual subscription fee, the amount 
+                of which shall be determined by the Executive Council upon approval of the union from time to time.</p>
+     
+         </div>
+ 
+     </div>
+ </div>
+ <hr>
+
+<!-- Events End -->
+
+{% endblock content %}
