@@ -327,7 +327,7 @@
                           <div class="event-details p-15 mt-20">
                             <h5 class="media-heading text-uppercase font-weight-500">{{event.event_title|truncatewords:5}}</h5>
                             <p>{{event.event_description|truncatewords:10}}</p>
-                            <a href="#" class="btn btn-flat btn-dark btn-theme-colored btn-sm">Details <i
+                            <a href="{% url 'eventsdetail' event.event_id %}" class="btn btn-flat btn-dark btn-theme-colored btn-sm">Details <i
                                 class="fa fa-angle-double-right"></i></a>
                           </div>
                         </div>
