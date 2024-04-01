@@ -45,22 +45,6 @@
             </div>
           </div>
             </div>
-<!-- 
-
-        <div class="col-md-6">
-          <div class="card mb-sm-30 bg-white pb-20" style="border-bottom:rgb(0,124,187) 5px solid;">
-            <img src="{{new.news_photo.url}}" class="card-img-top" style="padding-top: 15px; height: 300px;" alt="...">
-            <div class="card-body pl-20  pr-10">
-              <h4 class="entry-title font-weight-600 text-capitalize mb-10"><a class="text-theme-colored"
-                  href="{% url 'newsdetail' new.news_id %}">{{new.news_title}} </a></h4>
-              <p class="card-text" style="text-align: justify;"> {{new.news_body|truncatewords:15}} </p>
-              <a href="{% url 'newsdetail' new.news_id %}" class="text-theme-colored font-weight-600 font-12">View
-                Details</a> <span style="float: right;"><i class="fa fa-clock mr-5"></i> {{ new.updated_at|timesince }}
-                ago</span>
-
-            </div>
-          </div>
-        </div> -->
 
         {% endfor %}
       </div>
@@ -103,10 +87,29 @@
       <li> <a href="{% url 'events' %}">Events</a></li>
       <li> <a href="{% url 'researchandoutreach' %}">Research & Outreach</a></li>
       <li> <a href="{% url 'vacancies' %}">Vacancies</a></li>
-      <li> <a href="{% url 'sportsandrecreation' %}">Sports & Recreation</a></li>
+      <li> <a href="{% url 'studentclubsandsociety' %}">Sports & Recreation</a></li>
       <li> <a href="{% url 'popularvideos' %}">Popular Videos</a></li>
     </ul>
+    <div class="col-md-12">
+      <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 3px solid; ">
+        <img src="/static/images/about/cr1.jpg" class="card-img-top"
+            style="padding-top: 15px;" alt="...">
+        <div class="card-body">
+            <h3 class="font-weight-600 mt-20 text-center"><a href="{% url 'studentclubsandsociety' %}">SPORTS AND RECREATION</a>
+            </h3>
+            <p class="card-text" style="text-align: justify">Clubs have been offering sporting opportunities for student
+                cohort for many years. Membership is open to students, staff and alumni.
+                Sporting clubs compete in local, regional...</p>
+            <a href="{% url 'studentclubsandsociety' %}"
+                class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ
+                MORE</a>
+        </div>
+    </div>
+    </div>
+    
   </div>
+
+
   </div>
 </section>
 {% endblock content %}

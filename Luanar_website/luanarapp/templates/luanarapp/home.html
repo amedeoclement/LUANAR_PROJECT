@@ -494,8 +494,6 @@
     </div>
   </section>
 
- 
-
  <section class="layer-overlay overlay-white-8 pt-0">
     <div class="container mt-0">
     <div class="col-md-12">
@@ -517,8 +515,7 @@
               <h4 class="font-weight-600">Our Mission</h4>
               <p style="text-align: justify;">
                 L4MI is about leveraging the much needed resources so that together we ascend to transform the agricultural and natural resources sectors for wealth creation and improved livelihoods – for the young and the old.
-
-              </p>
+                 </p>
               <a href="{% url 'luanar4moreimpact' %}" class="hvr-shutter-out-horizontal btn btn-theme-colored2 btn-flat btn-sm mt-10 mr-15 mb-sm-20">Read more</a>
             </div>
             <div class="col-md-6">
@@ -532,14 +529,10 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class="box-hover-effect mt-sm-30">
-            <div class="effect-wrapper">
-              <div class="thumb">
+              <div class="img-fluid">
                 {% for luanar4moreimpact in luanar4moreimpacts %}
-                <img class="img-fullwidth img-fluid" src="{{luanar4moreimpact.luanar4more_photo.url}}" alt="project">
+                <img class="img-fullwidth img-fluid" src="{{luanar4moreimpact.luanar4more_photo.url}}" style="height: 400px; width: 100%;" alt="project">
                 {% endfor %}
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -566,28 +559,6 @@
                 </span>
               </div>
             </form>
-
-            <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-            <script type="text/javascript">
-              $('#mailchimp-subscription-form-footer').ajaxChimp({
-                callback: mailChimpCallBack,
-                url: '//thememascot.us9.list-manage.com/subscribe/post?u=a01f440178e35febc8cf4e51f&amp;amp;amp;id=49d6d30e1e'
-              });
-
-              function mailChimpCallBack(resp) {
-                // Hide any previous response text
-                var $mailchimpform = $('#mailchimp-subscription-form-footer'),
-                  $response = '';
-                $mailchimpform.children(".alert").remove();
-                if (resp.result === 'success') {
-                  $response = '&amp;lt;div class="alert alert-success"&amp;gt;&amp;lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&amp;gt;&amp;lt;span aria-hidden="true"&amp;gt;&amp;amp;times;&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;' + resp.msg + '&amp;lt;/div&amp;gt;';
-                } else if (resp.result === 'error') {
-                  $response = '&amp;lt;div class="alert alert-danger"&amp;gt;&amp;lt;button type="button" class="close" data-dismiss="alert" aria-label="Close"&amp;gt;&amp;lt;span aria-hidden="true"&amp;gt;&amp;amp;times;&amp;lt;/span&amp;gt;&amp;lt;/button&amp;gt;' + resp.msg + '&amp;lt;/div&amp;gt;';
-                }
-                $mailchimpform.prepend($response);
-              }
-            </script>
-
           </div>
         </div>
       </div>

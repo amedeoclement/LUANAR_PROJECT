@@ -43,10 +43,13 @@
                                 <div class="news-image-caption" style="font-size: 16px;"><strong>
                                         Vice-Chancellor:&nbsp;</strong>{{vc.staff_name}}</div>
                             </div>
-                            {% autoescape off %}
-                            <p style="text-align: justify; font-size: 16px;">{{vc.about_staff|linebreaks}}</p>
-
-                            {% endautoescape %}
+                            <div style="text-align: justify; font-size: 15px;">
+                                {% autoescape off %}
+                                <p style="text-align: justify; font-size: 16px;">{{vc.about_staff|linebreaks}}</p>
+    
+                                {% endautoescape %}
+                            </div>
+                          
 
                         </div>
 

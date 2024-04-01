@@ -22,22 +22,35 @@
         <div class="col-md-8 blog-pull-right">
           <div class="single-service" style="font-family: sans-serif; font-size: 15px; border-bottom:#2eb135 3px solid;">
             <h2 style="text-align: justify;">{{new.news_title}}</h2>
-            <img src="{{new.news_photo.url}}" class="img-fluid img-responsive" style=" height: 350px; width: 100%; padding-bottom: 10px;" alt="" />
+            <img src="{{new.news_photo.url}}" class="img-fluid img-responsive" style=" height: 450px; width: 100%; padding-bottom: 10px;" alt="" />
+            {% if not new.photo_description %}
+             
+            {% else %}
+            <h4 style="padding-top: 10px; text-align: justify;">{{new.photo_description}}</h4>
+            {% endif %}
+
             <p>Posted: {{new.updated_at|timesince}} ago</p>
              {% if not new.news_subtitle %}
              
              {% else %}
              <h4 style="padding-top: 10px; text-align: justify;">{{new.news_subtitle}}</h4>
              {% endif %}
-             <p style="padding-top: 10px; text-align: justify;">
-                {{new.news_body}}
-            </p>
+
+             <div style="padding-top: 10px; text-align: justify; font-size: 16px;">
+              <p >
+                {% autoescape off %}
+                {{new.news_body|linebreaks}}
+                {% endautoescape %}
+                 
+              </p>
+             </div >
+          
           </div>
         </div>
         <div class="col-sm-12 col-md-4">
           <div class="sidebar sidebar-left mt-sm-30 ml-40">
               
-              <h3 class="widget-title line-bottom">
+              <h3 class="text-uppercase line-bottom" style="font-family: sans-serif;">
                  Quick <span class="text-theme-colored2">Links</span>
               </h3>
   
@@ -68,6 +81,21 @@
                 </li>
                
               </ul>
+              
+              <div class="col-md-12 pt-20">
+                <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 5px solid;">
+                  <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top" style="padding-top: 15px;"
+                    alt="...">
+                  <div class="card-body ">
+                    <h5 class="card-title font-weight-700 font-18 mt-20">Admission</h5>
+                    <p class="card-text" style="text-align: justify;">LUANAR is a dynamic and vibrant community of learning that brings together
+                      administrators, academic staff and students from Malawi and abroad in an effort to provide sound...
+                    </p>
+                    <a href="{% url 'howtoapply' %}"
+                      class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ MORE</a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

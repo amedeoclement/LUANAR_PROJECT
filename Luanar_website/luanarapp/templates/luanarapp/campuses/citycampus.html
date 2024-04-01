@@ -125,7 +125,7 @@
                                 <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top"
                                     style="padding-top: 15px;" alt="...">
                                 <div class="card-body pl-20  pr-10">
-                                    <h3 class="font-weight-600 mt-20 text-center"><a href="#">PROGRAMS AT CITY</a></h3>
+                                    <h3 class="font-weight-600 mt-20 text-center"><a href="{% url 'programs_at_city' %}">PROGRAMS AT CITY</a></h3>
                                     <p class="card-text" style="text-align: justify">City Campus offers ten undergraduate programs (8 Bsc and 2
                                         Diplomas) and two postgraduate programs from five departments including
                                         Extension Agribusiness, Agriculture and Applied .</p>
@@ -141,11 +141,11 @@
                                 <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top"
                                     style="padding-top: 15px;" alt="...">
                                 <div class="card-body pl-20  pr-10">
-                                    <h3 class="font-weight-600 mt-20 text-center"><a href="#">STUDENTS PORTAL</a></h3>
+                                    <h3 class="font-weight-600 mt-20 text-center"><a href="https://www.luanar.ac.mw/studentsportal/">STUDENTS PORTAL</a></h3>
                                     <p class="card-text" style="text-align: justify">Students portal allows you to access your academic records at
                                         LUANAR. During the orientations, students are given default passwords which
                                         enable them login for the first time into the portal.</p>
-                                    <a href="#"
+                                    <a href="https://www.luanar.ac.mw/studentsportal/"
                                         class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">LOGIN
                                         NOW</a>
                                 </div>
@@ -156,12 +156,12 @@
                                 <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top"
                                     style="padding-top: 15px;" alt="...">
                                 <div class="card-body pl-20  pr-10">
-                                    <h3 class="font-weight-600 mt-20 text-center"><a href="#">SPORTS AND RECREATION</a>
+                                    <h3 class="font-weight-600 mt-20 text-center"><a href="{% url 'studentclubsandsociety' %}">SPORTS AND RECREATION</a>
                                     </h3>
                                     <p class="card-text" style="text-align: justify">Clubs have been offering sporting opportunities for student
                                         cohort for many years. Membership is open to students, staff and alumni.
                                         Sporting clubs compete in local, regional...</p>
-                                    <a href="#"
+                                    <a href="{% url 'studentclubsandsociety' %}"
                                         class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ
                                         MORE</a>
                                 </div>
