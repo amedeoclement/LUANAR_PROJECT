@@ -436,6 +436,7 @@ class AcademicStaff(models.Model):
         PART_TIME_LECTURER = "Part-Time Lecturer", 'Part Time Lecturer'
 
     staff_position = models.CharField(max_length= 50, choices = Position.choices)
+    about_staff = models.TextField(blank = True, null = True)
     staff_contacts = models.CharField(max_length= 20)
     staff_email = models.EmailField(unique=True)
     profile_pic = models.ImageField(upload_to='profile_photos/', blank=True, null=True)
@@ -537,8 +538,6 @@ def delete_old_file_on_change(sender, instance, **kwargs):
        old_instance = AdministrationStaff.objects.get(pk=instance.pk)
        if old_instance.profile_pic != instance.profile_pic:
             old_instance.profile_pic.delete(False)
-
-
 
 class Vacancy(models.Model):
     vacancy_id = models.AutoField(primary_key = True)
