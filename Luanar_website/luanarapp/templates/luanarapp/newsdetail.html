@@ -2,129 +2,129 @@
 {% load static %}
 {% block content %}
 <section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
-    <div class="container pt-120 pb-60">
-      <div class="section-content">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="text-theme-colored2 text-center"  style="font-family: sans-serif; font-size: 46px;">LUANAR IN NEWS</h2>
-            <ol class="breadcrumb text-left mt-10 white">
-              <li><a href=" url '' ">LUANAR</a></li>
-              <li class="active">News</li>
-            </ol>
-          </div>
+  <div class="container pt-120 pb-60">
+    <div class="section-content">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-theme-colored2 text-center" style="font-family: sans-serif; font-size: 46px;">LUANAR IN NEWS
+          </h2>
+          <ol class="breadcrumb text-left mt-10 white">
+            <li><a href=" url '' ">LUANAR</a></li>
+            <li class="active">News</li>
+          </ol>
         </div>
       </div>
     </div>
-  </section>
-  <section>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8 blog-pull-right">
-          <div class="single-service" style="font-family: sans-serif; font-size: 15px; border-bottom:#2eb135 3px solid;">
-            <h2 style="text-align: justify;">{{new.news_title}}</h2>
-            <img src="{{new.news_photo.url}}" class="img-fluid img-responsive" style=" height: 450px; width: 100%; padding-bottom: 10px;" alt="" />
-            {% if not new.photo_description %}
-             
-            {% else %}
-            <h4 style="padding-top: 10px; text-align: justify;">{{new.photo_description}}</h4>
-            {% endif %}
+  </div>
+</section>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 blog-pull-right">
+        <div class="single-service" style="font-family: sans-serif; font-size: 15px; border-bottom:#2eb135 3px solid;">
+          <h2 style="text-align: justify;">{{new.news_title}}</h2>
+          <img src="{{new.news_photo.url}}" class="img-fluid img-responsive"
+            style=" height: 450px; width: 100%; padding-bottom: 10px;" alt="" />
+          {% if not new.photo_description %}
 
-            <p>Posted: {{new.updated_at|timesince}} ago</p>
-             {% if not new.news_subtitle %}
-             
-             {% else %}
-             <h4 style="padding-top: 10px; text-align: justify;">{{new.news_subtitle}}</h4>
-             {% endif %}
+          {% else %}
+          <h4 style="padding-top: 10px; text-align: justify;">{{new.photo_description}}</h4>
+          {% endif %}
+          <div>
+            Posted: {{new.updated_at|timesince}} ago <span style="float: right;"> Posted By: {{new.user.first_name}}</span>
 
-             <div style="padding-top: 10px; text-align: justify; font-size: 16px;">
-              <p >
-                {% autoescape off %}
-                {{new.news_body|linebreaks}}
-                {% endautoescape %}
-                 
-              </p>
-             </div >
-          
           </div>
+          {% if not new.news_subtitle %}
+
+          {% else %}
+          <h4 style="padding-top: 10px; text-align: justify;">{{new.news_subtitle}}</h4>
+          {% endif %}
+
+          <div style="padding-top: 10px; text-align: justify; font-size: 16px;">
+            <p>
+              {% autoescape off %}
+              {{new.news_body|linebreaks}}
+              {% endautoescape %}
+
+            </p>
+          </div>
+
         </div>
-        <div class="col-sm-12 col-md-4">
-          <div class="sidebar sidebar-left mt-sm-30 ml-40">
-              
-              <h3 class="text-uppercase line-bottom" style="font-family: sans-serif;">
-                 Quick <span class="text-theme-colored2">Links</span>
-              </h3>
-  
-              <ul class="nav nav-pills nav-stacked nav-sidebar" style="background-color: rgb(205, 218, 211); border-radius: 10px;">
-                <li>
-                  <a href="{% url 'announcements' %}"
-                    >Announcements</a >
-                </li>
-                <li>
-                  <a href="{% url 'events' %}"
-                    >Upcoming Events</a >
-                </li>
-                <li>
-                  <a href="{% url 'immigration' %}"
-                    >Immigration information</a >
-                </li>
-                <li>
-                  <a href="{% url 'feesandfunding' %}"
-                    >Fees & Funding</a >
-                </li>
-                <li>
-                  <a href="{% url 'safetyoncampus' %}"
-                    >Campus Life</a >
-                </li>
-                <li>
-                  <a href="{% url 'accommodation' %}"
-                    >Accommodation</a >
-                </li>
-               
-              </ul>
-              
-              <div class="col-md-12 pt-20">
-                <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 5px solid;">
-                  <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top" style="padding-top: 15px;"
-                    alt="...">
-                  <div class="card-body ">
-                    <h5 class="card-title font-weight-700 font-18 mt-20">Admission</h5>
-                    <p class="card-text" style="text-align: justify;">LUANAR is a dynamic and vibrant community of learning that brings together
-                      administrators, academic staff and students from Malawi and abroad in an effort to provide sound...
-                    </p>
-                    <a href="{% url 'howtoapply' %}"
-                      class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ MORE</a>
-                  </div>
-                </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="sidebar sidebar-left mt-sm-30 ml-40">
+
+          <h3 class="text-uppercase line-bottom" style="font-family: sans-serif;">
+            Quick <span class="text-theme-colored2">Links</span>
+          </h3>
+
+          <ul class="nav nav-pills nav-stacked nav-sidebar"
+            style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+            <li>
+              <a href="{% url 'announcements' %}">Announcements</a>
+            </li>
+            <li>
+              <a href="{% url 'events' %}">Upcoming Events</a>
+            </li>
+            <li>
+              <a href="{% url 'immigration' %}">Immigration information</a>
+            </li>
+            <li>
+              <a href="{% url 'feesandfunding' %}">Fees & Funding</a>
+            </li>
+            <li>
+              <a href="{% url 'safetyoncampus' %}">Campus Life</a>
+            </li>
+            <li>
+              <a href="{% url 'accommodation' %}">Accommodation</a>
+            </li>
+
+          </ul>
+
+          <div class="col-md-12 pt-20">
+            <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 5px solid;">
+              <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top" style="padding-top: 15px;" alt="...">
+              <div class="card-body ">
+                <h5 class="card-title font-weight-700 font-18 mt-20">Admission</h5>
+                <p class="card-text" style="text-align: justify;">LUANAR is a dynamic and vibrant community of learning
+                  that brings together
+                  administrators, academic staff and students from Malawi and abroad in an effort to provide sound...
+                </p>
+                <a href="{% url 'howtoapply' %}"
+                  class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ MORE</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+  </div>
+</section>
 <section class="container">
- 
-    <h3 class="margin-bottom-25">Related News</h3>
-    <ul class="row news-list">
-         {% for new in news %}
-  <li class="col-sm-6 col-md-3 margin-bottom-20 equal-height bg-dark" >
-  <a class="overlay" href="{% url 'newsdetail' new.news_id %}">
-<div class="feature-item">
-    <div class="thumb">
-        <img src="{{ new.news_photo.url }}" class="img-fluid  feature-item" style="height: 200px; width:100%;" alt>
-    </div>
-</div>
-<div class="bg-dark" style="background-color: rgb(87, 84, 84);">
-    <div class="desc inherit-position" style="text-align: justify; padding: 0 10px 10px 10px; margin-bottom: 10px;">
-        <span class="date">Date: {{new.updated_at|date:"F d, Y"}}</span>
-        <h4 class="min-height text-white">{{new.news_title}}</h4>
-        </div>
-</div>
 
-</a>
-          </li>
-          {% endfor %}
-      </ul>
+  <h3 class="margin-bottom-25">Related News</h3>
+  <ul class="row news-list">
+    {% for new in news %}
+    <li class="col-sm-6 col-md-3 margin-bottom-20 equal-height bg-dark">
+      <a class="overlay" href="{% url 'newsdetail' new.news_id %}">
+        <div class="feature-item">
+          <div class="thumb">
+            <img src="{{ new.news_photo.url }}" class="img-fluid  feature-item" style="height: 200px; width:100%;" alt>
+          </div>
+        </div>
+        <div class="bg-dark" style="background-color: rgb(87, 84, 84);">
+          <div class="desc inherit-position"
+            style="text-align: justify; padding: 0 10px 10px 10px; margin-bottom: 10px;">
+            <span class="date">Date: {{new.updated_at|date:"F d, Y"}}</span>
+            <h4 class="min-height text-white">{{new.news_title}}</h4>
+          </div>
+        </div>
+
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
 
 </section>
 
