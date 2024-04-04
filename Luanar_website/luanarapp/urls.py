@@ -116,15 +116,5 @@ path('announcement_detail/<str:id>', views.announcement_detail, name = 'announce
 path('gallery', views.gallery , name = "gallery"),
 path('social_media_links', views.social_media_links , name = "social_media_links"),
 path('downloads', views.downloads , name = "downloads"),
-
-
-#dummy
-path('citycampus', views.citycampus , name = "citycampus"),
-path('citycampus', views.citycampus , name = "citycampus"),
-path('citycampus', views.citycampus , name = "citycampus"),
-path('citycampus', views.citycampus , name = "citycampus"),
-path('citycampus', views.citycampus , name = "citycampus"),
-path('citycampus', views.citycampus , name = "citycampus"),
-
-
+ 
 ]

@@ -591,8 +591,6 @@ def social_media_links(request):
 def downloads(request):
     return render(request, 'luanarapp/downloads.html')
 
-
-
 # staff profiles
 
 def aboutvc(request):
