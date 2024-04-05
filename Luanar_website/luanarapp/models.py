@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class News(models.Model):
     news_id = models.AutoField(primary_key=True)
     news_title = models.CharField(max_length=200)
-    user = models.ForeignKey(User, on_delete= models.DO_NOTHING, blank=True, null=True)
+    added_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)  # Field to store the name of the staff member who added the news
     news_subtitle = models.CharField(max_length= 400, null = True, blank = True)
     news_body = models.TextField()
     news_photo = models.ImageField(upload_to='news_photos/', blank=True, null=True)

@@ -152,7 +152,8 @@ def newsandevents(request):
 def newsdetail(request, id):
     news = News.objects.all().order_by('?')[:4]
     new = News.objects.get(news_id = id )
-    context = {'new': new , 'news':news}
+    added_by_user = new.added_by  # Retrieve the user who added the news
+    context = {'new': new , 'news':news, 'added_by_user':added_by_user}
     return render(request, 'luanarapp/newsdetail.html', context)
 
 def events(request):

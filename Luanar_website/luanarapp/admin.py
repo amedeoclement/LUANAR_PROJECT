@@ -9,10 +9,22 @@ class EventAdmin(admin.ModelAdmin):
     list_per_page = 5
     
 class NewAdmin(admin.ModelAdmin):
-    list_display= ('news_title', 'news_subtitle','news_body', 'created_at')
-    list_display_links = ('news_title', 'news_subtitle','news_body', 'created_at')
+    list_display= ('news_title', 'news_subtitle', 'added_by_full_name', 'news_body')
+    list_display_links = ('news_title', 'news_subtitle','news_body')
     search_fields =('news_title', 'news_header')
     list_per_page = 5
+    readonly_fields = ['added_by']
+
+    def save_model(self, request, obj, form, change):
+        if not obj.added_by_id:
+            obj.added_by = request.user  # Assign the currently logged-in staff member to the added_by field if it's not already set
+        super().save_model(request, obj, form, change)
+
+    def added_by_full_name(self, obj):
+        if obj.added_by:
+            return f"{obj.added_by.first_name} {obj.added_by.last_name}"
+        return "Unknown"
+    added_by_full_name.short_description = 'Added By'
 
 class AnnouncementAdmin(admin.ModelAdmin):
     list_display= ('title', 'description', 'created_at')

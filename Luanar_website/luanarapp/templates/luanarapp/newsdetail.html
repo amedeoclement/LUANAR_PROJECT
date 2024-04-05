@@ -22,18 +22,24 @@
     <div class="row">
       <div class="col-md-8 blog-pull-right">
         <div class="single-service" style="font-family: sans-serif; font-size: 15px; border-bottom:#2eb135 3px solid;">
-          <h2 style="text-align: justify;">{{new.news_title}}</h2>
+          <p style="text-align: justify; font-size: 16px;"><b>{{new.news_title}}</b></p>
           <img src="{{new.news_photo.url}}" class="img-fluid img-responsive"
             style=" height: 450px; width: 100%; padding-bottom: 10px;" alt="" />
           {% if not new.photo_description %}
 
           {% else %}
-          <h4 style="padding-top: 10px; text-align: justify;">{{new.photo_description}}</h4>
+          <div class="blockquote">
+                       <footer class="blockquote-footer">PICTURE:<cite title="Source Title"> {{new.photo_description}}</cite></footer>
+          </div>
+          <h4 style="padding-top: 10px; text-align: justify;"> </h4>
           {% endif %}
+
           <div>
-            Posted: {{new.updated_at|timesince}} ago <span style="float: right;"> Posted By: {{new.user.first_name}}</span>
+            <b>Posted:</b> {{new.updated_at|timesince}} ago <span style="float: right;"> <b>Posted By:</b> {{ added_by_user.get_full_name }}</span>
 
           </div>
+
+         
           {% if not new.news_subtitle %}
 
           {% else %}
