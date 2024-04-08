@@ -3,6 +3,51 @@
 
 {% block content %} 
 
+<!-- Banner Wrapper Start -->
+
+
+<!-- 
+<div class="banner-wrapper">
+  <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+   
+    <div class="overlay"></div>
+  
+    <ol class="carousel-indicators">
+      <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+      <li data-target="#bs-carousel" data-slide-to="1"></li>
+      <li data-target="#bs-carousel" data-slide-to="2"></li>
+    </ol>
+   
+    <div class="carousel-inner ">
+      <div class="item slides active">
+        <div class="item">
+          <img class="img-fluid" src="{% static 'images/bg/bg1.jpg' %}" alt="Slide3" />
+        </div>  
+
+      </div>
+      <div class="item slides">
+        <div class="item">
+          <img class="img-fluid" src="{% static 'images/bg/bg1.jpg' %}" alt="Slide3" />
+        </div>  
+        <div class="hero">
+          <h1 class="animated1">Education World</h1>
+          <h3 class="animated2">Duis aute irure dolor in reprehenderit in voluptate velit esse</h3>
+        </div>
+      </div>
+      <div class="item slides">
+        <div class="item">
+          <img class="img-fluid" src="{% static 'images/bg/bg1.jpg' %}" alt="Slide3" />
+        </div>  
+        <div class="hero">
+          <h1 class="animated1">Education World</h1>
+          <h3 class="animated2">Duis aute irure dolor in reprehenderit in voluptate velit esse</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
   <section id="home">
     <div class="container-fluid p-0">
     
@@ -312,7 +357,7 @@
     </div>
     </div>
   </section>
-
+ 
   <div class="mb-0 pt-50" style="background-color: #efe6b2e0;">
     <section class="container events">
         <div class="col-md-12 col-lg-12">
@@ -382,7 +427,7 @@
           </div>
         </div>
     </section>
-</div>
+</div> 
 
  <section id="faculties" class="container mb-50">
   <div class="col-md-12 pt-30">
@@ -460,7 +505,7 @@
     </div>
     <div class="section-content">
     <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12 col-sm-12">
     <div class="owl-carousel-3col owl-nav-top" data-nav="true">
     {% for new in news %}
     <div class="item">
@@ -494,14 +539,12 @@
     </div>
   </section>
 
- <section class="layer-overlay overlay-white-8 pt-0">
-    <div class="container mt-0">
-    <div class="col-md-12">
-      <div class="section-title-wrapper">
-        <h2 class="text-uppercase line-bottom-theme-colored-2 text-center line-height-1 mt-0 mt-sm-30" style="font-size: 42px; font-family: sans-serif;">Join our <span
+<section id="about" class="container mb-50">
+  <div class="container col-md-12">
+  <h2 class="text-uppercase text-center" style="font-size: 42px; font-family: sans-serif;">Join our <span
           class="text-theme-colored2">Campaign</span></h2>
-      </div>
-
+           <div class="line-bottom-centered"></div> 
+           
       <div class="row">
         <div class="col-md-6">
           <h2 class="text-uppercasetext-theme-colored mt-0">LUANAR<span class="text-theme-colored2">4MoreImpact</span>
@@ -528,6 +571,7 @@
             </div>
           </div>
         </div>
+      
         <div class="col-md-6">
               <div class="img-fluid">
                 {% for luanar4moreimpact in luanar4moreimpacts %}
@@ -536,10 +580,8 @@
           </div>
         </div>
       </div>
-    </div>
-    </div>
-  </section>
-
+  </div>
+   </section>
 
     <div class="col-md-12 col-lg-12 bg-theme-colored2">
       <div class="row ">
@@ -562,5 +604,5 @@
           </div>
         </div>
       </div>
-    </div> 
+    </div>
 {% endblock content %}

@@ -45,4 +45,97 @@ margin-left: 40px;
       opacity: 0.2;
     }
   }
-  
+
+/* .banner-wrapper .fade-carousel {
+    height: 200px;
+    }
+.banner-wrapper .fade-carousel .carousel-inner .item {
+    height: 200px;
+    }
+.banner-wrapper .fade-carousel .slides .slide-1, .banner-wrapper .fade-carousel .slides .slide-2, .banner-wrapper .fade-carousel .slides .slide-3 {
+    height: 200px;
+    } */
+   
+    .banner-wrapper {
+      width: 100%;
+      float: left;
+      position: relative;
+    }
+    .banner-wrapper .fade-carousel {
+      position: relative;
+    }
+    .banner-wrapper .fade-carousel .carousel-indicators > li {
+      margin: 0 2px;
+      background-color: none;
+      border-color: #fff;
+      border-width: 2px;
+      border-style: solid;
+      width: 12px;
+      height: 12px;
+    }
+    .banner-wrapper .fade-carousel .carousel-indicators > li.active {
+      width: 12px;
+      height: 12px;
+    }
+    .hero {
+      position: absolute;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      text-align: center;
+      color: white;
+      text-align: center;
+      text-transform: uppercase;
+      -webkit-transform: translate3d(-50%, -50%, 0);
+      -moz-transform: translate3d(-50%, -50%, 0);
+      -ms-transform: translate3d(-50%, -50%, 0);
+      -o-transform: translate3d(-50%, -50%, 0);
+      transform: translate3d(-50%, -50%, 0);
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+    .banner-wrapper .carousel .item.active .hero {
+      opacity: 1;
+    }
+    .hero h1 {
+      font-size: 30px;
+      font-weight: 700;
+      margin: 0 0 8px 0;
+      display:inline-block;
+      ;
+      padding: 10px;
+      font-family: 'Open Sans', sans-serif;
+     
+      color:#2eb135;
+    }
+    .hero h3 {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      padding: 10px;
+      color:#ffffff;
+      text-transform:capitalize;
+    }
+    .banner-wrapper .carousel .item.active .animated1 {
+      animation: 1s ease-in 500ms normal both 1 running flipInX;
+    }
+    .banner-wrapper .carousel .item.active .animated2 {
+      animation: 1s ease-in-out 100ms normal both 1 running bounceInLeft;
+    }
+    /* Slides backgrounds */
+    .fade-carousel .slides .slide-1, .fade-carousel .slides .slide-2, .fade-carousel .slides .slide-3 {
+      height: 500px;
+      background-size: cover;
+      background-position: left center;
+      background-repeat: no-repeat;
+    }
+    .fade-carousel .slides .slide-1:before, .fade-carousel .slides .slide-2:before, .fade-carousel .slides .slide-3:before {
+      background: #000 none repeat scroll 0 0;
+      bottom: 0;
+      content: "";
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
