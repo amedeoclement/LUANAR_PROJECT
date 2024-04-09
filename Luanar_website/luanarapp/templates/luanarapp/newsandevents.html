@@ -28,16 +28,15 @@
       </div>
       <div class="section-content pb-20">
         <div class="row">
-
-
         {% for new in page %}
         <div class="col-md-12" style="padding-bottom: 30px;">        
           <div class="row">
             <div class="col-md-4">
               <img  alt="" src="{{new.news_photo.url}}" style="border-radius: 10px;"  width="275" height="200">
             </div>
-            <div class="col-md-8" style="text-align: justify; font-size: 16px;">
-             <a href="{% url 'newsdetail' new.news_id %}"> <h3 style="color: #2eb125;">{{new.news_title}}</h3></a>
+            <div class="col-md-8 " style="text-align: justify; font-size: 14px; margin-top: -20px;">
+             <a href="{% url 'newsdetail' new.news_id %}">
+               <h3 style="color: #2eb125;">{{new.news_title}}</h3></a>
               <p>{{new.news_body|truncatewords:40}}</p>
               <a href="{% url 'newsdetail' new.news_id %}"
               class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ MORE</a><span style="float: right;"><b>Posted:</b>  {{ new.updated_at|timesince }}
@@ -108,7 +107,6 @@
     </div>
     
   </div>
-
 
   </div>
 </section>
