@@ -37,7 +37,7 @@ def logoutUser(request):
     return redirect('home')
 
 def home(request):
-    announcements= Announcement.objects.all().order_by('-announcement_id')[:2]
+    announcements= Announcement.objects.all().order_by('-announcement_id')[:3]
     events = Event.objects.all().order_by('-event_id')[:2]
     faculties = Faculty.objects.all().order_by('faculty_id')[:3]
     news = News.objects.all().order_by('-news_id')[:6]

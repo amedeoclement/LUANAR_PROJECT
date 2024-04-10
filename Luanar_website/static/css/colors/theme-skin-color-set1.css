@@ -198,7 +198,7 @@ blockquote.gray.bg-theme-colored footer {
 }
 .list-icon.theme-colored.square li i,
 .list-icon.theme-colored.rounded li i {
-  background: #1f406d;
+  background: rgb(0,124,187);
 }
 .bg-theme-colored-transparent-9 {
   background-color: rgba(31, 64, 109, 0.9) !important;

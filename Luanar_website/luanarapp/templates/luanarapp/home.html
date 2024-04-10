@@ -71,7 +71,7 @@
        style="z-index: 7; white-space: nowrap; font-weight:400; border-radius: 30px;">Welcome to the
       </div>
       
-      <div class="tp-caption tp-resizeme text-theme-colored font-raleway pl-30 pr-30" id="rs-2-layer-2"
+      <div class="tp-caption tp-resizeme text-white font-raleway pl-30 pr-30" id="rs-2-layer-2"
        data-x="['center']" data-hoffset="['0']" data-y="['middle']" data-voffset="['-70']" data-fontsize="['48']" data-lineheight="['50']" 
        data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" 
        data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
@@ -101,7 +101,7 @@
     <img src="{% static 'images/bg/bg2.jpg' %}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina="">
     
     
-    <div class="tp-caption tp-resizeme text-theme-colored" id="rs-1-layer-2" data-x="['middle']" data-hoffset="['35']"
+    <div class="tp-caption tp-resizeme text-white" id="rs-1-layer-2" data-x="['middle']" data-hoffset="['35']"
      data-y="['middle']" data-voffset="['-120']" data-fontsize="['48']" data-lineheight="['94']" data-width="none" data-height="none" 
      data-whitespace="nowrap" data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" 
      data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
@@ -136,7 +136,7 @@
     <img src="{% static 'images/bg/bg3.jpg' %}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg"
      data-bgparallax="10" data-no-retina="">
       
-    <div class="tp-caption tp-resizeme text-theme-colored" id="rs-3-layer-2" data-x="['middle']" data-hoffset="['35']" data-y="['middle']" 
+    <div class="tp-caption tp-resizeme text-white" id="rs-3-layer-2" data-x="['middle']" data-hoffset="['35']" data-y="['middle']" 
     data-voffset="['-100']" data-fontsize="['48']" data-lineheight="['94']" data-width="none" data-height="none" data-whitespace="nowrap" 
     data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;" 
     data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" 
@@ -220,7 +220,7 @@
               INTRODUCING OUR CAMPUS
             </div>
             <div class="col-md-12 wow slideInUp" data-wow-duration="1.5s" data-wow-offset="10">
-              <h2 style="font-family: sans-serif;">A good education is a foundation for a better future</h2>
+              <h2 style="font-family: sans-serif; color: #2eb135;">A good education is a foundation for a better future</h2>
             </div>
             <div class="row wow slideInUp" data-wow-duration="1.5s" data-wow-offset="10">
               <div class="col-md-6">
@@ -255,60 +255,65 @@
         </div>
         <div class="container pt-50 pb-10">
           <div class="row">
-            <div class="col-md-4" style="border: rgb(228, 218, 218) 1px solid;">
-              <div class="col-md-6 wow slideInRight" data-wow-duration="1.5s" data-wow-offset="10"
-              style="background-color: rgb(0,124,187);">
-                <h3 class="text-white" style=" font-family: sans-serif;">Our Vision</h3>
-              </div>
-
-              <div class="col-md-12 wow slideInUp" data-wow-duration="1.5s" data-wow-offset="10">
-                <p style="font-size: 17px;">To be a world class University. By providing quality education and training
-                  in agricultural and natural resources science, engineering and irrigation technologies,
-                  agro-processing...</p>
-              </div>
-              <div class="col-md-6">
-                <a href="{% url 'mission_vision_values' %}" class="read-more text-theme-colored font-17"> Read more
-                  <i class="ri-arrow-right-line"></i>
-                </a>
+            <div class="col-md-4">
+              <div class="col-md-12"  style="border: rgb(228, 218, 218) 1px solid;">
+                <div class="col-md-6 wow slideInRight" data-wow-duration="1.5s" data-wow-offset="10"
+                style="background-color: rgb(0,124,187);">
+                  <h3 class="text-white text-center" style=" font-family: sans-serif; margin-top: 0px;">Our Vision</h3>
+                </div>
+  
+                <div class="col-md-12 wow slideInUp" data-wow-duration="1.5s" data-wow-offset="10">
+                 <p style="font-size: 16px; text-align: justify;"> To be a world class University. By providing quality education and training
+                    in agricultural and natural resources science, engineering and irrigation technologies,
+                    agro-processing...</p>
+                </div>
+                <div class="col-md-6">
+                  <a href="{% url 'mission_vision_values' %}" class="read-more text-theme-colored font-17"> Read more
+                    <i class="ri-arrow-right-line"></i>
+                  </a>
+                </div>
               </div>
             </div>
-            <div class="col-md-4" style="border: rgb(228, 218, 218) 1px solid;">
+            <div class="col-md-4">
+<div class="col-md-12" style="border: rgb(228, 218, 218) 1px solid;">
+  <div class="col-md-6 wow slideInRight" data-wow-duration="2s" data-wow-offset="10"
+  style="background-color: rgb(0,124,187);">
+    <h3 class="text-white text-center" style=" font-family: sans-serif; margin-top: 0px;">Our Mission</h3>
+  </div>
 
-              <div class="col-md-6 wow slideInRight" data-wow-duration="2s" data-wow-offset="10"
-              style="background-color: rgb(0,124,187);">
-                <h3 class="text-white" style=" font-family: sans-serif;">Our Mission</h3>
-              </div>
+  <div class="col-md-12 wow slideInUp" data-wow-duration="1.5s" data-wow-offset="10">
+    <p style="font-size: 16px; text-align: justify;">To advance knowledge and produce relevant graduates with entrepreneurship
+      skills for agricultural growth, food security, wealth creation and sustainable natural resources
+      management...</p>
+  </div>
+  <div class="col-md-6">
+    <a href="{% url 'mission_vision_values' %}" class="read-more text-theme-colored font-17"> Read more
+      <i class="ri-arrow-right-line"></i>
+    </a>
+  </div>
 
-              <div class="col-md-12 wow slideInUp" data-wow-duration="1.5s" data-wow-offset="10">
-                <p style="font-size: 17px;">To advance knowledge and produce relevant graduates with entrepreneurship
-                  skills for agricultural growth, food security, wealth creation and sustainable natural resources
-                  management...</p>
-              </div>
-              <div class="col-md-6">
-                <a href="{% url 'mission_vision_values' %}" class="read-more text-theme-colored font-17"> Read more
-                  <i class="ri-arrow-right-line"></i>
-                </a>
-              </div>
-
+</div>
             </div>
-            <div class="col-md-4" style="background-color: rgb(0,124,187);">
-              <div class="col-md-6 wow slideInRight" data-wow-duration="3s" data-wow-offset="10"
-                style="background-color: rgb(255, 255, 255);">
-                <h3 style=" font-family: sans-serif;">Our History</h3>
-              </div>
+            <div class="col-md-4">
+         <div class="col-md-12" style="background-color: rgb(0,124,187);">
+          <div class="col-md-6 wow slideInRight" data-wow-duration="3s" data-wow-offset="10"
+          style="background-color: rgb(255, 255, 255);">
+          <h3 style=" font-family: sans-serif; margin-top: 0px;">Our History</h3>
+        </div>
 
-              <div class="col-md-12 wow slideInUp" data-wow-duration="1.5s" data-wow-offset="10">
-                <p style="font-size: 17px; color: white;" >In a landmark address to the Malawi parliament on 24th May 2010, the third
-                  State President of
-                  the Republic of Malawi,
-                  His Excellency the late Professor Bingu wa Mutharika shared his vision of...</p>
-              </div>
+        <div class="col-md-12 wow slideInUp" data-wow-duration="1.5s" data-wow-offset="10">
+          <p style="font-size: 16px; color: white; text-align: justify;" >In a landmark address to the Malawi parliament on 24th May 2010, the third
+            State President of
+            the Republic of Malawi,
+            His Excellency the late Professor Bingu wa Mutharika shared his vision of...</p>
+        </div>
 
-              <div class="col-md-6">
-                <a href="{% url 'luanar_history' %}" class="read-more text-theme-colored font-17"> Read more
-                  <i class="ri-arrow-right-line"></i>
-                </a>
-              </div>
+        <div class="col-md-6">
+          <a href="{% url 'luanar_history' %}" class="read-more text-theme-colored font-17"> Read more
+            <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+         </div>
             </div>
           </div>
         </div>
@@ -362,16 +367,16 @@
     <section class="container events">
         <div class="col-md-12 col-lg-12">
           <div class="row">         
-                  <div class="col-md-6 blog-pull-left">
-                    <h3 class="text-uppercase line-bottom-theme-colored-2 mt-0 pb-10 line-height-1"><i
+            <div class="col-md-6">
+                    <h3 class="text-uppercase line-bottom-theme-colored-2 mt-0 pb-10" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight:bold;"><i
                       class="fa fa-calendar mr-10"></i>Upcoming <span class="text-theme-colored2">Events</span></h3>
                       {% for event in events %}
                       <div class="upcoming-events bg-white-f3 mb-20 pl-10">
                       <div class="row">
                         <div class="col-sm-6 pl-0 pl-sm-15">
                           <div class="event-details p-15 mt-20">
-                            <h5 class="media-heading text-uppercase font-weight-500">{{event.event_title|truncatewords:5}}</h5>
-                            <p>{{event.event_description|truncatewords:10}}</p>
+                            <a href="{% url 'eventsdetail' event.event_id %}">  <p class="media-heading font-weight-500" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px;">{{event.event_title|truncatewords:6}}</p></a>
+                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px;">{{event.event_description|truncatewords:10}}</p>
                             <a href="{% url 'eventsdetail' event.event_id %}" class="btn btn-flat btn-dark btn-theme-colored btn-sm">Details <i
                                 class="fa fa-angle-double-right"></i></a>
                           </div>
@@ -393,20 +398,21 @@
                       </div>
                     </div>
                     {% endfor %}
-                  </div>
-            <div class="col-md-6">
-              <img scr="{% static 'images/logo-wide.png' %}" alt="" class="img-responsive"></img>
-              <h2 class="text-uppercase line-bottom-theme-colored-2 line-height-1 mt-0 mt-sm-30">Latest <span
-                  class="text-theme-colored2">Announcements</span></h2>
-
+            </div>
+            <div class="col-md-6" style="padding-top: 0px;">
+             
+                <h3 class="text-uppercase mt-0 " style="padding-bottom: 20px;   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Latest <span
+                  class="text-theme-colored2">Announcements</span></h3>
+          
+            
               {% for announcement in announcements %}
-              <div class="col-md-12">
+              <div class="col-md-12" style="padding-bottom: 20px;">
                 <div class="col-md-12 col-xs-12 col-sm-12">
-                  <h3> <a href="{% url 'announcement_detail' announcement.announcement_id %}"> {{announcement.title}}</a></h3>
+                  <a href="{% url 'announcement_detail' announcement.announcement_id %}">   <p style="text-align: justify; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px;"> {{announcement.title}}</p></a>
                 </div>
                 <div class="col-md-12">
                   <p class="text-dark" style="text-align: justify;">
-                    {{announcement.description}}
+                    {{announcement.description|truncatewords:20}}
                   </p>
                 </div>
                 <div class="row col-md-12">
@@ -415,13 +421,13 @@
                       Details →</a>
                   </div>
                   <div class="col-md-8">
-                    <p class="mb-5 text-gray-darkgray" style="float:right;"><i
-                        class="fa fa-clock-o mr-5 text-theme-colored2"></i>Posted :
-                      {{announcement.updated_at|timesince}} ago</p>
+                    <p class="mb-5 text-gray-darkgray" style="float:right;"><i class="fa fa-clock-o mr-5 text-theme-colored2"></i>
+                      Posted : {{announcement.updated_at|timesince}} ago</p>
                   </div>
                 </div>
+                
               </div>
-              <hr>
+            
               {% endfor %}
             </div>
           </div>
@@ -438,8 +444,8 @@
         <div class="col-md-9" style=" border: black 1px solid; font-size: 1.5em; text-align: center; ">OUR FACULTIES
           & SCHOOLS
         </div>
-        <div class="col-md-12 wow slideInUp" data-wow-duration="1.5s" data-wow-offset="10">
-          <h2 style="font-family: sans-serif; text-align: justify;">Advancing knowledge and innovation for a better world</h2>
+        <div class="col-md-12 wow slideInUp pb-15" data-wow-duration="1.5s" data-wow-offset="10">
+          <p style="font-family: sans-serif; text-align: justify; font-size: 30px;"><b>Advancing knowledge and innovation for a better world</b></p>
         </div>
 
       </div>
