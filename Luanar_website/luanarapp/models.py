@@ -560,3 +560,9 @@ class GalleryImage(models.Model):
     image = models.ImageField(upload_to='gallery_images/')
     def __str__(self):
         return self.image
+
+class Calendar(models.Model):
+    calendar_id = models.AutoField(primary_key=True)
+    calendar_date = models.DateField(blank= True, null=True)
+    calendar_event = models.TextField( blank= True, null = True)
+    venue = models.CharField(max_length=200, blank = True, null = True)

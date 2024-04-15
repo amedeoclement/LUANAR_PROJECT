@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import  Event, News, Announcement, ProgramNature, AcademicStaff, Program, Faculty, ResearchAndOutreach, QuickAnnouncement, AdministrationStaff,Luanar4moreImpact,Vacancy, Department, College,Campus, AdministrationOffice
+from .models import  Event, News, Announcement, ProgramNature, AcademicStaff,Calendar, Program, Faculty, ResearchAndOutreach, QuickAnnouncement, AdministrationStaff,Luanar4moreImpact,Vacancy, Department, College,Campus, AdministrationOffice
 
 #Register your models here.
 class EventAdmin(admin.ModelAdmin):
@@ -107,6 +107,11 @@ class QuickAnnouncementAdmin(admin.ModelAdmin):
     list_display_links = ('announcement_title','description')
     search_fields =('announcement_title','description')
     list_per_page = 5
+
+class CalendarAdmin(admin.ModelAdmin):
+    list_display= ('calendar_date','calendar_event','venue')
+    list_display_links = ('calendar_date','calendar_event','venue')
+    search_fields =('calendar_event','venue')
     
 admin.site.register(QuickAnnouncement, QuickAnnouncementAdmin)
 admin.site.register(Event, EventAdmin)
@@ -124,3 +129,4 @@ admin.site.register(Luanar4moreImpact, Luanar4moreImpactAdmin)
 admin.site.register(ResearchAndOutreach, ResearchAndOutreachAdmin)
 admin.site.register(AdministrationOffice, AdministrationOfficeAdmin)
 admin.site.register(ProgramNature, ProgramNatureAdmin)
+admin.site.register(Calendar, CalendarAdmin)
