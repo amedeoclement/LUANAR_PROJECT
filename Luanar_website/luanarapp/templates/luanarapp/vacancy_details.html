@@ -31,14 +31,17 @@
 
                 <div class="icon-box mb-0 p-0">
 
-                    <a href="#" class="icon pull-left mb-0 mr-10"> <i class="pe-7s-users"></i> </a>
-
-                    <h3 class="icon-box-title pt-15 mt-0 mb-40">{{vacancy.position}}</h3>
-                     <h4><b>Job description</b></h4>
+                    <!-- <a href="#" class="icon pull-left mb-0 mr-10"> <i class="pe-7s-users"></i> </a> -->
+                <div>
+                  <h3><b>Position</b></h3>
+                  <p class="icon-box-title mb-10" style="font-size: 20px;">{{vacancy.position}}</p>
+                  <hr>
+                 
+                </div>
                     
+                     <h4><b>Job description</b></h4>
                      <div style="text-align: justify; font-size: 16px;">
                       <p>{{vacancy.job_description}}</p>
-
 
                       <h4><b>Requirements</b></h4>
                      <p>{{vacancy.requirements}}</p>
@@ -48,9 +51,15 @@
                    
                      <h4>Mode of Application</h4>
                     </div>
+                    {% if not vacancy.vacancy_file %}
+                    
+
+                    {% else %}
+                    <a href="{{vacancy.vacancy_file.url}}" class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat"><i class="fa fa-download fa-lg"></i>&nbsp; Download pdf</a>
+              
+                    {% endif %}
              
-                <a href="{{vacancy.vacancy_file.url}}" class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat"><i class="fa fa-download fa-lg"></i>&nbsp; Download pdf</a>
-                <hr>
+                 <hr>
             </div>
             <div class="col-sm-12 col-md-3">
               <h3 class=" mt-30">
