@@ -270,7 +270,9 @@ def message_from_vcView(request):
     return render(request,'luanarapp/about/message_from_vc.html')
 
 def mission_vision_valuesView(request):
-    return render(request, 'luanarapp/about/mission_vision_values.html')
+    vc = AdministrationStaff.objects.get(office_code_id = 2)
+  
+    return render(request, 'luanarapp/about/mission_vision_values.html', {'vc':vc})
 
 def luanarhistoryView(request):
     return render(request, 'luanarapp/about/luanar_history.html')

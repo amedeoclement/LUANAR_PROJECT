@@ -23,42 +23,61 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3">
-        <h5 class="widget-title line-bottom">Quick links</h5>
-        <div class="list-group">
-          <a href="{% url 'message_from_vc' %}" class="list-group-item">Message from VC</a>
-          <a href="{% url 'luanar_history' %}" class="list-group-item">Luanar History</a>
-          <a href="#" class="list-group-item">Management & Governance</a>
-          <a href="#" class="list-group-item">Policies</a>
-          <a href="#" class="list-group-item">News & Events</a>
-        </div>
+        <div class="sidebar sidebar-left mt-sm-30">
 
+          <h3 class="widget-title line-bottom">
+            Important <span class="text-theme-colored2">information</span>
+          </h3>
+          <ul class="nav nav-pills nav-stacked nav-sidebar" style="background-color: rgb(205, 218, 211);">
+            <li>
+              <a href="{% url 'researchandoutreach' %}">Research & Outreach</a>
+            </li>
+            <li>
+              <a href="{% url 'office_of_dvc' %}">Office of the DVC</a>
+            </li>
+            <li>
+              <a href="{% url 'office_of_ar' %}">Office of Academics</a>
+            </li>
+            <li>
+              <a href="{% url 'feesandfunding' %}">Fees & Funding</a>
+            </li>
+            <li>
+              <a href="{% url 'studentsgovernance' %}">Students Governance</a>
+            </li>
+            <li>
+              <a href="{% url 'accommodation' %}">Accommodation</a>
+            </li>
 
-        <h4 class="widget-title line-bottom">
-          Featured <span class="text-theme-colored2">Staff</span>
-        </h4>
-        <div class="col-xs-12 col-sm-12 col-md-12 ">
-          <div class="team-members border-bottom-theme-colored2px text-center maxwidth400 mb-30">
-            <div class="team-thumb">
-              <img class="img-fullwidth" alt src="{% static 'images/team/1.jpg' %}">
-              <div class="team-overlay"></div>
-              <ul class="styled-icons team-social icon-sm">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              </ul>
-            </div>
-            <div class="team-details">
-              <h4 class="text-uppercase  font-weight-600 m-5"><a href="">Professor Emmanuel Kaunda</a></h4>
-              <h6 class="text-gray font-18 line-bottom-centered font-weight-400  mt-0">Vice Chancellor</h6>
-              <p class="hidden-md">Lorem ipsum dolor sit ametcon secte adipis elit. dignissimos saperator ellium</p>
+          </ul>
+        <div class="pt-20">
+          <h3 class="widget-title line-bottom">
+            Featured <span class="text-theme-colored2">Staff</span>
+          </h3>
+          <div class="col-md-12">
+            <div class="card mb-sm-30 pb-20 " style="border-bottom: #2eb135 1px solid; background-color: antiquewhite;">
+              <img src="{{vc.profile_pic.url}}" class="card-img-top img-fluid" style="padding-top: 15px;"
+                alt="">
+              <div class="card-body ">
+                <h2 class="card-title font-weight-700 font-18 mt-20"><a href="{% url 'aboutvc' %}">{{vc.staff_name}}</a></h2>
+                <h4 class="card-text">The Vice Chancellor</h4>
+                <a href="{% url 'aboutvc' %}"
+                  class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ MORE</a>
+              </div>
             </div>
           </div>
         </div>
+        
+      </div>
       </div>
       <div class="col-md-9">
-
-        <div class="col-md-12" style="padding-top: 70px;">
-
+        <div class="col-md-12">
+          <h2 class="text-uppercase text-center" style="color: #2eb135; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+               MISSION <span style="color: rgb(0,124,187);">&nbsp; VISION</span>  &nbsp;<span style="color: #808080;">VALUES</span>
+          </h2>
+          <p style="text-align: justify; font-size: 16px;">At LUANAR, we are driven by a steadfast commitment to excellence, innovation, and sustainability in agriculture. Our mission is to pioneer agricultural education, research, and outreach, shaping future leaders who will address global agricultural challenges with creativity and compassion. Grounded in a set of core values including excellence, collaboration, and diversity, we strive to cultivate an inclusive environment where knowledge thrives and communities flourish. Our vision is ambitious yet achievable: to be a global leader in agricultural education and research, recognized for our transformative impact on agriculture, food security, and rural development. Through interdisciplinary collaboration and a relentless pursuit of excellence, we aim to revolutionize agriculture, empower communities, and build a sustainable future for generations to come.</p>
+         </div>
+        <div class="col-md-12" style="padding-top: 20px; font-size: 16px; text-align: justify;">
+    
           
           <div class="custom-div" style=" border-left: 5px solid; background-color: #f0f0f0;  padding: 5px 20px 20px 20px; margin-bottom: 10px;">
             <div >
@@ -110,13 +129,13 @@
     </div>
   </div>
 </section>
-<section>
+<section class="pt-20">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="heading-line-bottom">
-          <h4 class="heading-title">Our Core Values</h4>
-        </div>
+        <h3 class="text-uppercase mt-0 " style="padding-bottom: 20px;   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Our Core <span
+          class="text-theme-colored2">Values</span></h3>
+  
       </div>
       <div class="col-md-4 mb-30 " >
         <div class="card effect__hover " >
@@ -142,7 +161,7 @@
                 <div class="display-table">
                   <div class="display-table-cell">
                     <h3 style="font-weight: bold;">Innovativeness</h3>
-                    <p  style=" margin: 0 auto; text-align: justify; ">
+                    <p  style=" margin: 0 auto; text-align: justify; font-size: 16px;">
                       We are committed to conduct ourselves in a manner consistent with the highest standards of integrity. We aim to be honest, ethical and fair in all our activities. We aim to keep our word, deliver on our promises and acknowledge our mistakes. In all that we do, we aim to guard our good reputation as it is more important than any rewards.
                       </p>
                   </div>
@@ -176,7 +195,7 @@
                 <div class="display-table">
                   <div class="display-table-cell">
                     <h3  style="font-weight: bold;">Integrity</h3>
-                    <p  style=" margin: 0 auto; text-align: justify; ">We prioritize creativity and innovation in teaching, learning, and services, aiming to redefine excellence. Open to unconventional ideas, we embrace change and adapt to evolving societal needs, continually seeking innovative approaches to further LUANAR's mission through development, implementation, and evaluation of practices.</p>
+                    <p  style=" margin: 0 auto; text-align: justify; font-size: 16px;">We prioritize creativity and innovation in teaching, learning, and services, aiming to redefine excellence. Open to unconventional ideas, we embrace change and adapt to evolving societal needs, continually seeking innovative approaches to further LUANAR's mission through development, implementation, and evaluation of practices.</p>
                    </div>
                 </div>
               </div>
@@ -208,7 +227,7 @@
                 <div class="display-table">
                   <div class="display-table-cell">
                     <h3  style="font-weight: bold;">Excellence</h3>
-                    <p  style=" margin: 0 auto; text-align: justify; ">
+                    <p  style=" margin: 0 auto; text-align: justify; font-size: 16px; ">
 We value excellence in teaching, learning, research and support services while recognizing the needs and rights of others in all aspects of the University’s operations, and fulfill their employment obligations both in spirit and in fact.</p>
               
                   </div>
@@ -242,7 +261,7 @@ We value excellence in teaching, learning, research and support services while r
                 <div class="display-table">
                   <div class="display-table-cell">
                     <h3  style="font-weight: bold;">Environmental Stewardship</h3>
-                    <p  style=" margin: 0 auto; text-align: justify; ">
+                    <p  style=" margin: 0 auto; text-align: justify; font-size: 16px;">
                       We aim to provide safe working and operating conditions for our employees. We understand our role as stewards of the environment and incorporate this value into our teaching, research and consultancy as well as all operations of the University.</p>
                   </div>
                 </div>
@@ -275,7 +294,7 @@ We value excellence in teaching, learning, research and support services while r
                 <div class="display-table">
                   <div class="display-table-cell">
                     <h3  style="font-weight: bold;">Openness & Transparency</h3>
-                    <p  style=" margin: 0 auto; text-align: justify; ">
+                    <p  style=" margin: 0 auto; text-align: justify; font-size: 16px;">
                       At LUANAR we are transparent, accessible to anyone, anytime, anywhere; and responsive to new ideas and demands. We strive to lead by example, aligning disclosure and dissemination procedures with modern information management practices.</p>
                   
                   </div>
@@ -309,7 +328,7 @@ We value excellence in teaching, learning, research and support services while r
                 <div class="display-table">
                   <div class="display-table-cell">
                     <h3  style="font-weight: bold;">Professionalism</h3>
-                    <p style=" margin: 0 auto; text-align: justify; " >
+                    <p style=" margin: 0 auto; text-align: justify; font-size: 16px;" >
                       We demonstrate professionalism through collegiality, respect, and recognition for each other. We aim to exercise the highest professional standards in the use of time and resources. We recognize the necessity of many roles in the educational enterprise, and work in such a manner as to enhance cooperation and collegiality among students, faculty, administrators, and staff.</p>
             
                   </div>
