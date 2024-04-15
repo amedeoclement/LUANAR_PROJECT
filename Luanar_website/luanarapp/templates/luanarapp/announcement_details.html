@@ -24,12 +24,28 @@
             <h2 style="text-align: justify;">{{announcement_detail.title}}</h2>
             <p> <i class="fa fa-clock-o"></i> {{announcement_detail.updated_at|timesince}} ago</p>
              
+
+            
             <p style="padding-top: 10px; text-align: justify;">
               {% autoescape off %}
               {{announcement_detail.description|linebreaks}}
               {% endautoescape %}
-               
+
             </p>
+
+            {% if not announcement_detail.application_form %}  
+
+            {% else %}
+            <a href="{{announcement_detail.application_form.url}}" class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat"><i class="fa fa-download fa-lg"></i>&nbsp; Download Application Form</a>
+      
+            {% endif %}
+
+            {% if not announcement_detail.file %}  
+
+            {% else %}
+            <a href="{{announcement_detail.file.url}}" class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat"><i class="fa fa-download fa-lg"></i>&nbsp; Download File</a>
+            {% endif %}
+     
           </div>
         </div>
         <div class="col-sm-12 col-md-4">
