@@ -34,13 +34,18 @@
                     <a href="#" class="icon pull-left mb-0 mr-10"> <i class="pe-7s-users"></i> </a>
 
                     <h3 class="icon-box-title pt-15 mt-0 mb-40">{{vacancy.position}}</h3>
-                     <h4>Job description</h4>
-                    <p class="text-gray">{{vacancy.job_description}}</p>
+                     <h4><b>Job description</b></h4>
+                    
+                     <div style="text-align: justify; font-size: 16px;">
+                      <p>{{vacancy.job_description}}</p>
 
 
-                     <h4>Requirements</h4>
-                    <p>{{vacancy.requirements}}</p>
-
+                      <h4><b>Requirements</b></h4>
+                     <p>{{vacancy.requirements}}</p>
+ 
+                     </div>
+                    
+                   
                      <h4>Mode of Application</h4>
                     </div>
              
@@ -48,10 +53,10 @@
                 <hr>
             </div>
             <div class="col-sm-12 col-md-3">
-              <h4 class="widget-title line-bottom mt-30">
+              <h3 class=" mt-30">
                 <i class="text-theme-colored"></i>Quick
                 <span class="text-theme-colored2">Links</span>
-              </h4>
+              </h3>
               <ul class="nav nav-stacked nav-pills nav-sidebar" style="background-color: rgb(205, 218, 211); border-radius: 10px;">
                 <li><a href="{% url 'office_of_hr' %}">Office of Human Resources</a></li>
                 <li><a href="{% url 'newsandevents' %}">News and Events</a></li>
@@ -61,9 +66,9 @@
               </ul>
                 <div class="sidebar sidebar-left mt-sm-30 pt-20">
                   <div class="widget">
-                    <h4 class="widget-title line-bottom">
+                    <h3>
                       Featured <span class="text-theme-colored2">Staff</span>
-                    </h4>
+                    </h3>
                     <div class="col-md-12">
                       <div class="card mb-sm-30 bg-white" style="border-bottom:#2eb135 4px solid;">
                         <a href="#"><img src="/static/images/about/cr1.jpg" class="card-img-top" style="padding-top: 15px;"
