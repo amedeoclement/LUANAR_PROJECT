@@ -255,7 +255,7 @@
         </div>
         <div class="container pt-50 pb-10">
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 pb-10">
               <div class="col-md-12"  style="border: rgb(228, 218, 218) 1px solid;">
                 <div class="col-md-6 wow slideInRight" data-wow-duration="1.5s" data-wow-offset="10"
                 style="background-color: rgb(0,124,187);">
@@ -274,7 +274,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 pb-10">
 <div class="col-md-12" style="border: rgb(228, 218, 218) 1px solid;">
   <div class="col-md-6 wow slideInRight" data-wow-duration="2s" data-wow-offset="10"
   style="background-color: rgb(0,124,187);">
@@ -294,8 +294,8 @@
 
 </div>
             </div>
-            <div class="col-md-4">
-         <div class="col-md-12" style="background-color: rgb(0,124,187);">
+            <div class="col-md-4 pb-10">
+         <div class="col-md-12" style="background-color: rgb(0,124,187); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
           <div class="col-md-6 wow slideInRight" data-wow-duration="3s" data-wow-offset="10"
           style="background-color: rgb(255, 255, 255);">
           <h3 style=" font-family: sans-serif; margin-top: 0px;">Our History</h3>
@@ -368,9 +368,11 @@
         <div class="col-md-12 col-lg-12">
           <div class="row">         
             <div class="col-md-6">
+             
                     <h3 class="text-uppercase line-bottom-theme-colored-2 mt-0 pb-10" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight:bold;"><i
                       class="fa fa-calendar mr-10"></i>Upcoming <span class="text-theme-colored2">Events</span></h3>
                       {% for event in events %}
+<!--                       
                       <div class="upcoming-events bg-white-f3 mb-20 pl-10">
                       <div class="row">
                         <div class="col-sm-6 pl-0 pl-sm-15">
@@ -396,7 +398,26 @@
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </div> -->
+                    <article>
+                      <div class="event-block">
+                      <div class="event-date text-center">
+                      <ul class="text-white font-18 font-weight-600">
+                      <li class="border-bottom">{{ event.date|date:"d" }}</li>
+                      <li class>{{ event.date|date:"M" }}</li>
+                      </ul>
+                      </div>
+                      <div class="event-meta border-1px pl-40">
+                      <div class="event-content pull-left flip">
+                      <h4 class="event-title media-heading font-roboto-slab font-weight-700"><a href="{% url 'eventsdetail' event.event_id %}">{{event.event_title|truncatewords:10}}</a></h4>
+                      <span class="mb-10 text-gray-darkgray mr-10"><i class="fa fa-clock-o mr-5 text-theme-colored2"></i> at {{event.start_time}} - {{event.end_time}}</span>
+                      <span class="text-gray-darkgray"><i class="fa fa-map-marker mr-5 text-theme-colored2"></i>{{event.venue}}</span>
+                      <p class="mt-5">{{event.event_description|truncatewords:15}}</p>
+                      </div>
+                      </div>
+                      </div>
+                      </article>
+
                     {% endfor %}
             </div>
             <div class="col-md-6" style="padding-top: 0px;">
@@ -511,10 +532,9 @@
     </div>
     <div class="section-content">
     <div class="row">
-    <div class="col-md-12 col-sm-12">
-    <div class="owl-carousel-3col owl-nav-top" data-nav="true">
     {% for new in news %}
-    <div class="item">
+    <div class="col-md-4 col-lg-4">
+ <div class="item">
     <article class="post maxwidth400 border-1px mb-30">
     <div class="entry-header">
     <div class="post-thumb thumb">
@@ -537,16 +557,16 @@
     </div>
     </article>
     </div>
+    </div>
+   
     {% endfor %}
-    </div>
-    </div>
     </div>
     </div>
     </div>
   </section>
 
-<section id="about" class="container mb-50">
-  <div class="container col-md-12">
+<section style="background-color: rgb(242, 249, 247);">
+  <div class="container">
   <h2 class="text-uppercase text-center" style="font-size: 42px; font-family: sans-serif;">Join our <span
           class="text-theme-colored2">Campaign</span></h2>
            <div class="line-bottom-centered"></div> 
@@ -588,27 +608,29 @@
       </div>
   </div>
    </section>
+<section>
 
-    <div class="col-md-12 col-lg-12 bg-theme-colored2">
-      <div class="row ">
-        <div class="call-to-action sm-text-center">
-          <div class="col-md-7">
-            <h2 class="text-white text-uppercase mt-0">Subscribe to our Newsletter!</h2>
-          </div>
-          <div class="col-md-5">
+  <div class="col-md-12 col-lg-12 bg-theme-colored2">
+    <div class="row ">
+      <div class="call-to-action sm-text-center">
+        <div class="col-md-7">
+          <h2 class="text-white text-uppercase mt-0">Subscribe to our Newsletter!</h2>
+        </div>
+        <div class="col-md-5">
 
-            <form id="mailchimp-subscription-form-footer" class="newsletter-form mt-5 pt-2">
-              <div class="input-group">
-                <input value name="EMAIL" placeholder="Enter your Email" class="form-control input-lg font-16"
-                  data-height="45px" id="mce-EMAIL-footer" style="height: 45px;" type="email">
-                <span class="input-group-btn">
-                  <button data-height="45px" class="btn btn-theme-colored text-white btn-xs m-0 font-14" type="submit"
-                    style="height: 45px;">Subscribe</button>
-                </span>
-              </div>
-            </form>
-          </div>
+          <form id="mailchimp-subscription-form-footer" class="newsletter-form mt-5 pt-2">
+            <div class="input-group">
+              <input value name="EMAIL" placeholder="Enter your Email" class="form-control input-lg font-16"
+                data-height="45px" id="mce-EMAIL-footer" style="height: 45px;" type="email">
+              <span class="input-group-btn">
+                <button data-height="45px" class="btn btn-theme-colored text-white btn-xs m-0 font-14" type="submit"
+                  style="height: 45px;">Subscribe</button>
+              </span>
+            </div>
+          </form>
         </div>
       </div>
     </div>
+  </div>
+</section>
 {% endblock content %}

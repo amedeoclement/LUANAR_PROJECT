@@ -2,15 +2,15 @@
 import datetime
 from django import forms
 from django.http import HttpResponse
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from django.contrib.auth.models import User
 from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from .models import *
 from .forms import GalleryForm
+from .forms import SearchForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
 
 #create your views here
 
@@ -40,7 +40,7 @@ def home(request):
     announcements= Announcement.objects.all().order_by('-announcement_id')[:3]
     events = Event.objects.all().order_by('-event_id')[:2]
     faculties = Faculty.objects.all().order_by('faculty_id')[:3]
-    news = News.objects.all().order_by('-news_id')[:6]
+    news = News.objects.all().order_by('-news_id')[:3]
     luanar4moreimpacts = Luanar4moreImpact.objects.all().order_by('-luanar4more_id')[:1]
     context = {'faculties': faculties, 'news':news,'events':events, 'announcements':announcements,'luanar4moreimpacts':luanar4moreimpacts , 'prospectus':prospectus}
     return render(request, 'luanarapp/home.html', context)
@@ -73,9 +73,10 @@ def policies(request):
 
 def faculties(request):
     firstfaculty = Faculty.objects.get(faculty_id = 1)
+    news = News.objects.all().order_by('-news_id')[:3]
     departments = Department.objects.filter(faculty_code_id = 3)
     faculties = Faculty.objects.all().order_by('faculty_code')[:6]
-    context = {'faculties':faculties, 'firstfaculty':firstfaculty, 'departments':departments}
+    context = {'faculties':faculties, 'firstfaculty':firstfaculty, 'departments':departments, 'news':news}
     
     return render(request, 'luanarapp/faculties.html', context)
    
@@ -152,8 +153,9 @@ def newsandevents(request):
 def newsdetail(request, id):
     news = News.objects.all().order_by('?')[:4]
     new = News.objects.get(news_id = id )
+    events = Event.objects.all().order_by('-event_id')[:2]
     added_by_user = new.added_by  # Retrieve the user who added the news
-    context = {'new': new , 'news':news, 'added_by_user':added_by_user}
+    context = {'new': new , 'news':news, 'added_by_user':added_by_user,'events':events}
     return render(request, 'luanarapp/newsdetail.html', context)
 
 def events(request):
@@ -353,7 +355,9 @@ def undergraduateprograms(request):
             page_range = range(total_pages - 9, total_pages + 1)
         else:
             page_range = range(current_page - 4, current_page + 5)
-    return render(request, 'luanarapp/students/undergraduateprograms.html',  {'page': page, 'page_range': page_range})
+    
+    form = SearchForm()
+    return render(request, 'luanarapp/students/undergraduateprograms.html',  {'page': page, 'page_range': page_range,'form':form})
 
 
 
@@ -395,7 +399,8 @@ def postgraduateprograms(request):
             page_range = range(total_pages - 9, total_pages + 1)
         else:
             page_range = range(current_page - 4, current_page + 5)
-    return render(request, 'luanarapp/students/postgraduateprograms.html',  {'page': page, 'page_range': page_range})
+    form = SearchForm()
+    return render(request, 'luanarapp/students/postgraduateprograms.html',  {'page': page, 'page_range': page_range, 'form':form})
 
 def howtoapplyView(request):
     return render(request, 'luanarapp/students/howtoapply.html')
@@ -608,3 +613,17 @@ def aboutur(request):
     ur = AdministrationStaff.objects.get(office_code_id = 4)
     new = News.objects.filter().order_by('-news_id')[0]
     return render(request, 'luanarapp/staff/ur.html', {'ur':ur,'new':new})
+
+
+def search_view(request):
+    if request.method == 'GET':
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data.get('query')
+            # Perform search in the database
+            results = Program.objects.filter(program_name__icontains=query)
+            form = SearchForm()
+            return render(request, 'luanarapp/search_results.html', {'results': results, 'query': query,'form':form})
+    else:
+        form = SearchForm()
+    return render(request, 'luanarapp/students/undergraduateprograms.html', {'form': form})

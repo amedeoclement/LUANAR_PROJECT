@@ -1,3 +1,4 @@
+
 {% extends "main.html" %} {% load static %} {% block content %}
 <section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
   <div class="container pt-120 pb-60">
@@ -5,12 +6,11 @@
       <div class="row">
         <div class="col-md-12">
           <h2 class="text-theme-colored2 text-center " style="font-family: sans-serif; font-size: 46px;">
-            PROGRAMS | UNDERGRADUATE
+            PROGRAMS | PROGRAMMES
           </h2>
           <ol class="breadcrumb text-left mt-10 white">
             <li><a href="{% url '' %}">LUANAR</a></li>
-            <li><a href="{% url '' %}">PROGRAMS</a></li>
-            <li class="active">UNDERGRADUATE</li>
+            <li><a class="active">PROGRAMMES</a></li>
           </ol>
         </div>
       </div>
@@ -25,48 +25,45 @@
 
         <div class="section-content">
             <div class="col-md-12" style="font-family: sans-serif; font-size: 15px;">
-
-              <div class="row">
+             <div class="row">
                 <div class="col-md-6">
-                  <h3 class="text-uppercasetext-theme-colored mt-0" style="font-family: sans-serif; font-weight: bolder;">
-                    Undergraduate <span class="text-theme-colored2">Programs</span>
-    
-                  </h3>
+                    <h3 class="text-uppercasetext-theme-colored mt-0" style="font-family: sans-serif; font-weight: bolder;">
+                        Search Results for  <span class="text-theme-colored2">"{{ query }}"</span>
+        
+                      </h3>
                 </div>
-                
                 <div class="col-md-6">
-                  <form method="GET" action="{% url 'search_view' %}">
-                       {{ form }}
-                </form>
+                    <form method="GET" action="{% url 'search_view' %}">
+                        {{ form }}
+                     </form>
                 </div>
-              </div>
-             
+             </div>
               <hr>
             </div>
-            
+            {% if results %}
          <div class="col-md-12" style="border-bottom:#2eb135 3px solid; padding-left: 0;">
           <div class="row">
-            {% for program in page %}
+            {% for result in results %}
              <div class="col-md-6 d-flex align-items-stretch">
                 <div class="table" >
                   <div class="card-body d-flex flex-column">
                     <div class="col-md-12" style="background-color: #e7e6c5; margin: 5px; border-radius: 10px;">
 
-                      <h4 class=" mb-2 "><a href="{% url 'program_details' program.program_id %}">{{ program.program_name }}</a></h4>
+                      <h4 class=" mb-2 "><a href="{% url 'program_details' result.program_id %}">{{ result.program_name }}</a></h4>
                       <hr>
-                      <p class="card-text" style="text-align: justify;">Duration:  {{program.duration}}</p>
-                      {% if program.campus_code_id is 2 %}
+                      <p class="card-text" style="text-align: justify;">Duration:  {{result.duration}}</p>
+                      {% if result.campus_code_id is 2 %}
                       <p class="card-text" style="text-align: justify;">Offered at Bunda Campus </p>
-                      {% elif program.campus_code_id is 1 %}
+                      {% elif result.campus_code_id is 1 %}
                       <p class="card-text" style="text-align: justify;">Offered at City Campus </p>
-                      {% elif program.campus_code_id is 3 %}
+                      {% elif result.campus_code_id is 3 %}
                       <p class="card-text" style="text-align: justify;">Offered at NRC Campus </p>
-                      {% elif program.campus_code_id is 4 %} 
+                      {% elif result.campus_code_id is 4 %} 
                       <p class="card-text" style="text-align: justify;">Offered at ODL Campus </p>
                       {% else %}
                       <p class="card-text" style="text-align: justify;"> Campus to be Verified</p>
                       {% endif %}
-                      <a href="{% url 'program_details' program.program_id %}">Read more...</a> 
+                      <a href="{% url 'program_details' result.program_id %}">Read more...</a> 
                  
                   </div>
                   </div>
@@ -94,6 +91,11 @@
     {% endif %}
       </div>
           </div> 
+          {% else %}
+          <div>
+            <p>No results found.</p>
+          </div>
+{% endif %}
         </div>
       </div>
       <div class="col-sm-12 col-md-4">

@@ -21,6 +21,8 @@ path('faculty_details/<str:code>', views.faculty_detailsView, name="faculty_deta
 path('department_details/<str:id>', views.department_detailsView, name = "department_details"),
 path('program_details/<str:id>', views.program_detailsView, name= "program_details"),
 
+path('search/', views.search_view, name='search_view'),
+
 
 
 path('partinerships', views.partinerships, name = "partinerships"),

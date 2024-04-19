@@ -58,7 +58,7 @@
         </div>
       </div>
       <div class="col-sm-12 col-md-4">
-        <div class="sidebar sidebar-left mt-sm-30 ml-40">
+        <div class="sidebar sidebar-left mt-sm-30">
 
           <h3 class="text-uppercase line-bottom" style="font-family: sans-serif;">
             Quick <span class="text-theme-colored2">Links</span>
@@ -101,6 +101,31 @@
               </div>
             </div>
           </div>
+
+          <h3 class="widget-title mt-30" style="font-family: sans-serif;">
+            <i class="text-theme-colored"></i>Upcoming
+            <span class="text-theme-colored2">Events</span>
+          </h3>
+          {% for event in events %}
+                              <article>
+                                <div class="event-block">
+                                <div class="event-date text-center">
+                                <ul class="text-white font-18 font-weight-600">
+                                <li class="border-bottom">{{ event.date|date:"d" }}</li>
+                                <li class>{{ event.date|date:"M" }}</li>
+                                </ul>
+                                </div>
+                                <div class="event-meta border-1px pl-40">
+                                <div class="event-content pull-left flip">
+                                <h4 class="event-title media-heading font-roboto-slab font-weight-700"><a href="{% url 'eventsdetail' event.event_id %}">{{event.event_title}}</a></h4>
+                                <span class="mb-10 text-gray-darkgray mr-10"><i class="fa fa-clock-o mr-5 text-theme-colored2"></i> at {{event.start_time}} - {{event.end_time}}</span>
+                                <span class="text-gray-darkgray"><i class="fa fa-map-marker mr-5 text-theme-colored2"></i>{{event.venue}}</span>
+                              
+                                </div>
+                                </div>
+                                </div>
+                                </article>
+        {% endfor %}
         </div>
       </div>
     </div>
@@ -122,8 +147,8 @@
         <div class="bg-dark" style="background-color: rgb(87, 84, 84);">
           <div class="desc inherit-position"
             style="text-align: justify; padding: 0 10px 10px 10px; margin-bottom: 10px;">
-            <span class="date">Date: {{new.updated_at|date:"F d, Y"}}</span>
-            <h4 class="min-height text-white">{{new.news_title}}</h4>
+            <p class="date text-white text-center">Date: {{new.updated_at|date:"F d, Y"}}</p>
+            <h4 class="min-height text-white">{{new.news_title|truncatewords:10}}</h4>
           </div>
         </div>
 
