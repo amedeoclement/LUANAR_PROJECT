@@ -40,16 +40,16 @@
              </div>
               <hr>
             </div>
-            {% if results %}
+            {% if page %}
          <div class="col-md-12" style="border-bottom:#2eb135 3px solid; padding-left: 0;">
           <div class="row">
-            {% for result in results %}
+            {% for result in page %}
              <div class="col-md-6 d-flex align-items-stretch">
                 <div class="table" >
                   <div class="card-body d-flex flex-column">
                     <div class="col-md-12" style="background-color: #e7e6c5; margin: 5px; border-radius: 10px;">
 
-                      <h4 class=" mb-2 "><a href="{% url 'program_details' result.program_id %}">{{ result.program_name }}</a></h4>
+                     <a href="{% url 'program_details' result.program_id %}"> <h4 class=" mb-2">{{ result.program_name }}</h4></a>
                       <hr>
                       <p class="card-text" style="text-align: justify;">Duration:  {{result.duration}}</p>
                       {% if result.campus_code_id is 2 %}
@@ -72,24 +72,26 @@
              </div>
             {% endfor %}
           </div>
-          
+         
     <div class="col-md-12 mb-30 mt-20" >
         {% if page.has_previous %}
-        <a class="btn btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?page=1">First</a>
-        <a class="btn btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?page={{ page.previous_page_number }}">Previous</a>
+        <a class="btn btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?query={{query}}&&page=1">First</a>
+        <a class="btn btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?query={{query}}&&page={{ page.previous_page_number }}">Previous</a>
     {% endif %}
     {% for num in page_range %}
         {% if num == page.number %}
             <span class="btn btn-primary" style="background-color:  rgb(204, 207, 207);">{{ num }}</span>
         {% else %}
-            <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ num }}">{{ num }}</a>
+            <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?query={{query}}&&page={{ num }}">{{ num }}</a>
         {% endif %}
     {% endfor %}
     {% if page.has_next %}
-        <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ page.next_page_number }}">Next</a>
-        <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ page.paginator.num_pages }}">Last</a>
+        <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?query={{query}}&&page={{ page.next_page_number }}">Next</a>
+        <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?query={{query}}&&page={{ page.paginator.num_pages }}">Last</a>
     {% endif %}
-      </div>
+      </div> 
+
+    
           </div> 
           {% else %}
           <div>

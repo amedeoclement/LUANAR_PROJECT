@@ -20,47 +20,11 @@
 <section>
   <div class="container">
     <div class="row">
-      <div class="col-md-8 blog-pull-right">
-        <div class="single-service" style="font-family: sans-serif; font-size: 15px; border-bottom:#2eb135 3px solid;">
-          <p style="text-align: justify; font-size: 16px;"><b>{{new.news_title}}</b></p>
-          <img src="{{new.news_photo.url}}" class="img-fluid img-responsive"
-            style=" height: 450px; width: 100%; padding-bottom: 10px;" alt="" />
-          {% if not new.photo_description %}
 
-          {% else %}
-          <div class="blockquote">
-                       <footer class="blockquote-footer">PICTURE:<cite title="Source Title"> {{new.photo_description}}</cite></footer>
-          </div>
-          <h4 style="padding-top: 10px; text-align: justify;"> </h4>
-          {% endif %}
-
-          <div>
-            <b>Posted:</b> {{new.updated_at|timesince}} ago <span style="float: right;"> <b>Posted By:</b> {{ added_by_user.get_full_name }}</span>
-
-          </div>
-
-         
-          {% if not new.news_subtitle %}
-
-          {% else %}
-          <h4 style="padding-top: 10px; text-align: justify;">{{new.news_subtitle}}</h4>
-          {% endif %}
-
-          <div style="padding-top: 10px; text-align: justify; font-size: 16px;">
-            <p>
-              {% autoescape off %}
-              {{new.news_body|linebreaks}}
-              {% endautoescape %}
-
-            </p>
-          </div>
-
-        </div>
-      </div>
       <div class="col-sm-12 col-md-4">
         <div class="sidebar sidebar-left mt-sm-30">
 
-          <h3 class="text-uppercase line-bottom" style="font-family: sans-serif;">
+          <h3 class="text-uppercase" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
             Quick <span class="text-theme-colored2">Links</span>
           </h3>
 
@@ -87,8 +51,8 @@
 
           </ul>
 
-          <div class="col-md-12 pt-20">
-            <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 5px solid;">
+          <div class="col-md-12 pt-20 pb-30 ">
+            <div class="card mb-sm-30 bg-white pb-5" style="border-bottom:#2eb135 3px solid;">
               <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top" style="padding-top: 15px;" alt="...">
               <div class="card-body ">
                 <h5 class="card-title font-weight-700 font-18 mt-20">Admission</h5>
@@ -128,6 +92,47 @@
         {% endfor %}
         </div>
       </div>
+
+      <div class="col-md-8 blog-side">
+        <div style="text-align: justify; border-bottom:#2eb135 3px solid;">
+          <p style="text-align: justify; font-size: 16px;color: rgb(0,124,187);"><b>{{new.news_title}}</b></p>
+          <p><b>Posted:</b> {{new.updated_at|date:"F d, Y"}} <span style="float: right;"> <b>Posted By:</b> {{ added_by_user.get_full_name }}</span>
+          </p>
+            <div class="col-md-8" style="float: right; margin-left: 10px;"> <img src="{{new.news_photo.url}}" class="img-fluid img-responsive"
+              style=" width: 100%;" alt="" />
+                <div class="news-image-caption" style="font-size: 16px;">
+                  {% if not new.photo_description %}
+  
+                  {% else %}
+                  <div class="col-md-12">
+                               <footer class="blockquote-footer">PIC:<cite title="Source Title" style="font-size: 14px;"> {{new.photo_description}}</cite></footer>
+                  </div>
+                  <h4 style="padding-top: 10px; text-align: justify;"> </h4>
+                  {% endif %}
+                </div>
+            </div>
+            <div style="text-align: justify; font-size: 15px;">
+              {% if not new.news_subtitle %}
+
+              {% else %}
+              <p style="padding-top: 10px; text-align: justify;"><b>{{new.news_subtitle}}</b></p>
+              {% endif %}
+
+               <div style="padding-top: 10px; text-align: justify; font-size: 16px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            <p>
+              {% autoescape off %}
+              {{new.news_body|linebreaks}}
+              {% endautoescape %}
+
+            </p>
+          </div>
+            </div>
+          
+
+        </div>
+
+    </div>
+
     </div>
   </div>
   </div>
@@ -137,11 +142,11 @@
   <h3 class="margin-bottom-25">Related News</h3>
   <ul class="row news-list">
     {% for new in news %}
-    <li class="col-sm-6 col-md-3 margin-bottom-20 equal-height bg-dark">
+    <li class="col-sm-6 col-md-3 margin-bottom-20 equal-height">
       <a class="overlay" href="{% url 'newsdetail' new.news_id %}">
         <div class="feature-item">
           <div class="thumb">
-            <img src="{{ new.news_photo.url }}" class="img-fluid  feature-item" style="height: 200px; width:100%;" alt>
+            <img src="{{ new.news_photo.url }}" class="img-fluid  feature-item" style="height: 150px; width:100%;" alt>
           </div>
         </div>
         <div class="bg-dark" style="background-color: rgb(87, 84, 84);">

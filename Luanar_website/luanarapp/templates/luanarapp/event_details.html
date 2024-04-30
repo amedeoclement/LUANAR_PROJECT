@@ -61,11 +61,11 @@
                             </div>
                         </div>
 
-                        <div class="event-detail-img"><img src="{{event.event_photo.url}}"
-                                style="height: 400px; width: 800px;">
+                        <div class="col-md-12 event-detail-img"><img src="{{event.event_photo.url}}"
+                              class="img-fluid img-responsive"  style=" width:100%;">
                         </div>
 
-                        <div class="news-content" style="padding-top:20px; text-align: justify;">
+                        <div class="col-md-12 news-content" style="padding-top:20px; text-align: justify;">
                          <p>
                             {% autoescape off %}
                             {{event.event_description|linebreaks}}

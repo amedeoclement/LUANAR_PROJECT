@@ -17,4 +17,49 @@
         </div>
     </div>
 </section>
+
+
+<section style="background-color: rgb(242, 249, 247);">
+    <div class="container">
+    <h2 class="text-uppercase text-center" style="font-size: 42px; font-family: sans-serif;">Join our <span
+            class="text-theme-colored2">Campaign</span></h2>
+             <div class="line-bottom-centered"></div> 
+             
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="text-uppercasetext-theme-colored mt-0">LUANAR<span class="text-theme-colored2">4MoreImpact</span>
+            </h2>
+            <div class="diamond-line-left-theme-colored-2"></div>
+            <p>L4MI is about having a deep conversation on how we can further enhance the life and quality of LUANAR students and graduates, and how we can play a more impactful role in Malawi's 2063 Agenda.
+              <a class="text-theme-colored2 font-13 ml-5" href="{% url 'luanar4moreimpact' %}">read more →</a>
+            </p>
+            <div class="row">
+              <div class="col-md-6">
+                <h4 class="font-weight-600">Our Mission</h4>
+                <p style="text-align: justify;">
+                  L4MI is about leveraging the much needed resources so that together we ascend to transform the agricultural and natural resources sectors for wealth creation and improved livelihoods – for the young and the old.
+                   </p>
+                <a href="{% url 'luanar4moreimpact' %}" class="hvr-shutter-out-horizontal btn btn-theme-colored2 btn-flat btn-sm mt-10 mr-15 mb-sm-20">Read more</a>
+              </div>
+              <div class="col-md-6">
+                <h4 class="font-weight-600">Our Vission</h4>
+                <p>
+                  Host collaborative workshops involving diverse stakeholders to brainstorm and refine ideas for LUANAR's mission statement. Encourage participants to express their aspirations for the university's role in the community.
+  
+                </p>
+                <a href="{% url 'luanar4moreimpact' %}" class="hvr-shutter-out-horizontal btn btn-theme-colored2 btn-flat btn-sm mt-10" >Read more</a>
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-md-6">
+                <div class="img-fluid">
+                  {% for luanar4moreimpact in luanar4moreimpacts %}
+                  <img class="img-fullwidth img-fluid" src="{{luanar4moreimpact.luanar4more_photo.url}}" style="height: 400px; width: 100%;" alt="project">
+                  {% endfor %}
+            </div>
+          </div>
+        </div>
+    </div>
+     </section>
 {% endblock content %}

@@ -118,5 +118,8 @@ path('announcement_detail/<str:id>', views.announcement_detail, name = 'announce
 path('gallery', views.gallery , name = "gallery"),
 path('social_media_links', views.social_media_links , name = "social_media_links"),
 path('downloads', views.downloads , name = "downloads"),
+
+path('adminstrative_staff_view/<str:id>', views.adminstrative_staff_view, name = 'adminstrative_staff_view'),
+path('academic_staff_view/<str:id>', views.academic_staff_view, name = 'academic_staff_view'),
  
 ]

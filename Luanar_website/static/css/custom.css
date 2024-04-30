@@ -19,7 +19,6 @@ margin-left: 40px;
 
 .covid-alert {
 	background: #2eb135;
-	border-radius: 10px;
 }
 .covid-alert a {
 	color: #fff;
@@ -36,15 +35,6 @@ margin-left: 40px;
 	font-family: Inter, sans-serif;
 }
 
-.covid-alert {
-    animation: blinker 3s linear infinite;
-  }
-  
-  @keyframes blinker {
-    50% {
-      opacity: 0.2;
-    }
-  }
 
 /* .banner-wrapper .fade-carousel {
     height: 200px;

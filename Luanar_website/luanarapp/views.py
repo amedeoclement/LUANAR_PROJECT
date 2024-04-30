@@ -41,8 +41,8 @@ def home(request):
     events = Event.objects.all().order_by('-event_id')[:2]
     faculties = Faculty.objects.all().order_by('faculty_id')[:3]
     news = News.objects.all().order_by('-news_id')[:3]
-    luanar4moreimpacts = Luanar4moreImpact.objects.all().order_by('-luanar4more_id')[:1]
-    context = {'faculties': faculties, 'news':news,'events':events, 'announcements':announcements,'luanar4moreimpacts':luanar4moreimpacts , 'prospectus':prospectus}
+   
+    context = {'faculties': faculties, 'news':news,'events':events, 'announcements':announcements, 'prospectus':prospectus}
     return render(request, 'luanarapp/home.html', context)
 
 
@@ -76,7 +76,8 @@ def faculties(request):
     news = News.objects.all().order_by('-news_id')[:3]
     departments = Department.objects.filter(faculty_code_id = 3)
     faculties = Faculty.objects.all().order_by('faculty_code')[:6]
-    context = {'faculties':faculties, 'firstfaculty':firstfaculty, 'departments':departments, 'news':news}
+    staff = AcademicStaff.objects.get(faculty_code_id = "FAG", staff_position = "HEAD OF FACULTY")
+    context = {'faculties':faculties, 'firstfaculty':firstfaculty, 'departments':departments, 'news':news, 'staff':staff}
     
     return render(request, 'luanarapp/faculties.html', context)
    
@@ -85,7 +86,8 @@ def faculty_detailsView(request, code):
     firstfaculty = Faculty.objects.get(faculty_id= code)
     departments = Department.objects.filter(faculty_code_id = code)
     faculties = Faculty.objects.all().order_by('faculty_code')[:6]
-    context = {'faculties':faculties, 'firstfaculty':firstfaculty, 'departments':departments}
+    staff = AcademicStaff.objects.get(faculty_code_id = firstfaculty.faculty_code, staff_position = "HEAD OF FACULTY")
+    context = {'faculties':faculties, 'firstfaculty':firstfaculty, 'departments':departments, 'staff':staff}
     return render(request, 'luanarapp/faculties.html', context)
 
 def department_detailsView(request, id):
@@ -109,6 +111,7 @@ def popularvideos(request):
 
 def newsandevents(request):
     news = News.objects.all().order_by('-news_id')
+    staff = AdministrationStaff.objects.order_by('?').first()
     # Your queryset
 
     # Number of items per page
@@ -148,7 +151,7 @@ def newsandevents(request):
             page_range = range(current_page - 4, current_page + 5)
 
     # Pass the page object and page range to the template
-    return render(request, 'luanarapp/newsandevents.html', {'page': page, 'page_range': page_range})
+    return render(request, 'luanarapp/newsandevents.html', {'page': page, 'page_range': page_range, 'staff': staff})
 
 def newsdetail(request, id):
     news = News.objects.all().order_by('?')[:4]
@@ -260,7 +263,8 @@ def vacancy_detailsView(request, id):
     return render(request, 'luanarapp/vacancy_details.html', context)
 
 def luanar4moreimpact(request):
-    return render(request, 'luanarapp/luanar4moreimpact.html')
+    luanar4moreimpacts = Luanar4moreImpact.objects.all().order_by('-luanar4more_id')[:1]
+    return render(request, 'luanarapp/luanar4moreimpact.html', {'luanar4moreimpacts':luanar4moreimpacts})
 
 def undergraduate(request):
     return render(request, 'luanarapp/undergraduate.html')
@@ -585,7 +589,7 @@ def announcements(request):
     return render(request, 'luanarapp/announcements.html', {'page': page, 'page_range': page_range})
 
 def announcement_detail(request, id):
-    announcement_detail = Announcement.objects.get(announcement_id=id)
+    announcement_detail = Announcement.objects.get(title=id)
     news = News.objects.all().order_by('?')[:4]
     context = {'news':news,'announcement_detail':announcement_detail}
     return render(request, 'luanarapp/announcement_details.html' , context)
@@ -623,7 +627,53 @@ def search_view(request):
             # Perform search in the database
             results = Program.objects.filter(program_name__icontains=query)
             form = SearchForm()
-            return render(request, 'luanarapp/search_results.html', {'results': results, 'query': query,'form':form})
+            # Number of items per page
+            items_per_page = 6
+
+            # Create a Paginator object
+            paginator = Paginator(results, items_per_page)
+
+            # Get the page number from the request
+            page_number = request.GET.get('page')
+
+            try:
+                # Get the specified page
+                page = paginator.page(page_number)
+            except PageNotAnInteger:
+                # If page is not an integer, deliver first page.
+                page = paginator.page(1)
+            except EmptyPage:
+                # If page is out of range (e.g. 9999), deliver last page of results.
+                page = paginator.page(paginator.num_pages)
+
+            # Get the current page number
+            current_page = page.number
+
+            # Get the total number of pages
+            total_pages = paginator.num_pages
+
+            # Calculate the range of pages to display
+            if total_pages <= 6:
+                page_range = paginator.page_range
+            else:
+                if current_page <= 3:
+                    page_range = range(1, 7)
+                elif current_page >= total_pages - 2:
+                    page_range = range(total_pages - 5, total_pages + 1)
+                else:
+                    page_range = range(current_page - 2, current_page + 3)
+
+            # Pass the page object and page range to the template
+            return render(request, 'luanarapp/search_results.html', {'query': query,'form':form, 'page': page, 'page_range': page_range})
     else:
         form = SearchForm()
+
     return render(request, 'luanarapp/students/undergraduateprograms.html', {'form': form})
+
+def adminstrative_staff_view(request, id):
+    staff = AdministrationStaff.objects.get(staff_id =id)
+    return render(request, 'luanarapp/staff/administrative_staff.html', {'staff':staff})
+
+def academic_staff_view(request, id):
+    staff = AcademicStaff.objects.get(staff_id =id)
+    return render(request, 'luanarapp/staff/academic_staff.html', {'staff':staff})

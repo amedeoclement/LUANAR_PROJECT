@@ -105,9 +105,25 @@
         </div>
     </div>
     </div>
+    <div class="col-md-12 pt-20 mb-10">
+      <h3 class="widget-title line-bottom">
+        Featured <span class="text-theme-colored2">Staff</span>
+      </h3>
+      
+        <div class="pb-10" style="border-bottom: #2eb135 1px solid; background-color: antiquewhite;">
+         
+          
+          <a href="{% url 'adminstrative_staff_view' staff.staff_id %}"> <img src="{{staff.profile_pic.url}}" class="card-img-top img-fluid" style="width: 100%; height: 200px; vertical-align: auto;" alt=""></a>
+            <div class="col-md-12 text-center  pb-10" style=" background-color: antiquewhite;">
+            <h2 class="card-title font-weight-700 font-18 mt-20">{{staff.staff_name}}</h2>
+            <p class="text-capitalize" style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{ staff.staff_position}}</p>
+            <a href="{% url 'adminstrative_staff_view' staff.staff_id %}"
+              class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat ">READ MORE</a>
+        </div>
+        </div>
+      </div>
+    </div>
     
-  </div>
-
   </div>
 </section>
 {% endblock content %}

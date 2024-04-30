@@ -3,51 +3,6 @@
 
 {% block content %} 
 
-<!-- Banner Wrapper Start -->
-
-
-<!-- 
-<div class="banner-wrapper">
-  <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
-   
-    <div class="overlay"></div>
-  
-     <ol class="carousel-indicators">
-      <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
-      <li data-target="#bs-carousel" data-slide-to="1"></li>
-      <li data-target="#bs-carousel" data-slide-to="2"></li>
-    </ol>
-    
-    <div class="carousel-inner ">
-      <div class="item slides active">
-        <div class="item">
-          <img class="img-fluid" src="{% static 'images/bg/bg1.jpg' %}" alt="Slide3" />
-        </div>  
-
-      </div>
-      <div class="item slides">
-        <div class="item">
-          <img class="img-fluid" src="{% static 'images/bg/bg1.jpg' %}" alt="Slide3" />
-        </div>  
-        <div class="hero">
-          <h1 class="animated">Education World</h1>
-          <h3 class="animated2">Duis aute irure dolor in reprehenderit in voluptate velit esse</h3>
-        </div>
-      </div>
-      <div class="item slides">
-        <div class="item">
-          <img class="img-fluid" src="{% static 'images/bg/bg1.jpg' %}" alt="Slide3" />
-        </div>  
-        <div class="hero">
-          <h1 class="animated">Education World</h1>
-          <h3 class="animated2">Duis aute irure dolor in reprehenderit in voluptate velit esse</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>  -->
-
-
   <section id="home">
     <div class="container-fluid p-0">
     
@@ -99,7 +54,7 @@
     <li data-index="rs-1" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="{% static 'images/bg/bg2.jpg' %}" data-rotate="0" data-saveperformance="off" data-title="Slide 1" data-description="">
     
     <img src="{% static 'images/bg/bg2.jpg' %}" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina="">
-    
+  
     
     <div class="tp-caption tp-resizeme text-white" id="rs-1-layer-2" data-x="['middle']" data-hoffset="['35']"
      data-y="['middle']" data-voffset="['-120']" data-fontsize="['48']" data-lineheight="['94']" data-width="none" data-height="none" 
@@ -119,14 +74,13 @@
        designed to help you <br>
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; achieve your goals.
     </div>
-    
     <div class="tp-caption tp-resizeme" id="rs-1-layer-4" data-x="['middle']" data-hoffset="['35']" data-y="['middle']" data-voffset="['40']" 
     data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;" 
     data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" 
     data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1400" data-splitin="none" data-splitout="none" data-responsive_offset="on" 
     style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a class="btn btn-theme-colored btn-circled pl-20 pr-20" 
     href="{% url 'about' %}">Read more</a>
-    </div>
+    
     </li>
 
     <li data-index="rs-3" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" 
@@ -173,7 +127,7 @@
                   sliderType:"standard",
                   sliderLayout: "auto",
                   dottedOverlay: "none",
-                  delay: 5000,
+                  delay: 10000,
                   navigation: {
                       keyboardNavigation: "off",
                       keyboard_direction: "horizontal",
@@ -216,11 +170,11 @@
             </div>
           </div>
           <div class="col-md-6">
-            <div class="col-md-8" style=" border: black 1px solid; font-size: 1.5em; text-align: center; ">
+            <div class="col-md-8" style=" border: black 1px solid; font-size: 1.5em; text-align: center; font-weight: 800px;  color: #2eb135; ">
               INTRODUCING OUR CAMPUS
             </div>
-            <div class="col-md-12 wow slideInUp" data-wow-duration="1.5s" data-wow-offset="10">
-              <h2 style="font-family: sans-serif; color: #2eb135;">A good education is a foundation for a better future</h2>
+            <div class="col-md-12 wow slideInUp pl-0 pt-10" data-wow-duration="1.5s" data-wow-offset="10" style="text-align: justify; font-size: 16px; color: black;">
+             <p>Delve into campus life, connect with a diverse community of global students, and join our esteemed network of alumni, all while embracing a culture of giving back and making a difference. Welcome to a place where your aspirations meet endless possibilities.</p>
             </div>
             <div class="row wow slideInUp" data-wow-duration="1.5s" data-wow-offset="10">
               <div class="col-md-6">
@@ -517,9 +471,15 @@
  
   </section>
 
-<div class="covid-alert mb-20 mt-10">
-    <p class="text">SEXUAL MISCONDUCT AND HARASSMENT INFORMATION:  <a  href="{% url 'gbv' %}">Click here for the latest information</a>
-    </p>  
+<div class="container">
+  <div class="col-md-12">
+    <a  href="{% url 'gbv' %}">
+      <img src="{% static 'images/bg/banner.jpg' %}" alt="" style="width: 100%; " srcset=""></a>
+    
+  </div>
+ <!--   
+  <p class="text">SEXUAL MISCONDUCT AND HARASSMENT INFORMATION:  <a  href="{% url 'gbv' %}">Click here for the latest information</a>
+    </p>   -->
 </div>
 
   <section class="container">
@@ -564,61 +524,14 @@
     </div>
     </div>
   </section>
-
-<section style="background-color: rgb(242, 249, 247);">
-  <div class="container">
-  <h2 class="text-uppercase text-center" style="font-size: 42px; font-family: sans-serif;">Join our <span
-          class="text-theme-colored2">Campaign</span></h2>
-           <div class="line-bottom-centered"></div> 
-           
-      <div class="row">
-        <div class="col-md-6">
-          <h2 class="text-uppercasetext-theme-colored mt-0">LUANAR<span class="text-theme-colored2">4MoreImpact</span>
-          </h2>
-          <div class="diamond-line-left-theme-colored-2"></div>
-          <p>L4MI is about having a deep conversation on how we can further enhance the life and quality of LUANAR students and graduates, and how we can play a more impactful role in Malawi's 2063 Agenda.
-            <a class="text-theme-colored2 font-13 ml-5" href="{% url 'luanar4moreimpact' %}">read more →</a>
-          </p>
-          <div class="row">
-            <div class="col-md-6">
-              <h4 class="font-weight-600">Our Mission</h4>
-              <p style="text-align: justify;">
-                L4MI is about leveraging the much needed resources so that together we ascend to transform the agricultural and natural resources sectors for wealth creation and improved livelihoods – for the young and the old.
-                 </p>
-              <a href="{% url 'luanar4moreimpact' %}" class="hvr-shutter-out-horizontal btn btn-theme-colored2 btn-flat btn-sm mt-10 mr-15 mb-sm-20">Read more</a>
-            </div>
-            <div class="col-md-6">
-              <h4 class="font-weight-600">Our Vission</h4>
-              <p>
-                Host collaborative workshops involving diverse stakeholders to brainstorm and refine ideas for LUANAR's mission statement. Encourage participants to express their aspirations for the university's role in the community.
-
-              </p>
-              <a href="{% url 'luanar4moreimpact' %}" class="hvr-shutter-out-horizontal btn btn-theme-colored2 btn-flat btn-sm mt-10" >Read more</a>
-            </div>
-          </div>
-        </div>
-      
-        <div class="col-md-6">
-              <div class="img-fluid">
-                {% for luanar4moreimpact in luanar4moreimpacts %}
-                <img class="img-fullwidth img-fluid" src="{{luanar4moreimpact.luanar4more_photo.url}}" style="height: 400px; width: 100%;" alt="project">
-                {% endfor %}
-          </div>
-        </div>
-      </div>
-  </div>
-   </section>
 <section>
-
   <div class="col-md-12 col-lg-12 bg-theme-colored2">
     <div class="row ">
-      <div class="call-to-action sm-text-center">
         <div class="col-md-7">
-          <h2 class="text-white text-uppercase mt-0">Subscribe to our Newsletter!</h2>
+          <h2 class="text-white text-uppercase pt-0">Subscribe to our Newsletter!</h2>
         </div>
         <div class="col-md-5">
-
-          <form id="mailchimp-subscription-form-footer" class="newsletter-form mt-5 pt-2">
+          <form id="mailchimp-subscription-form-footer" class="newsletter-form " style="padding-top: 15px;">
             <div class="input-group">
               <input value name="EMAIL" placeholder="Enter your Email" class="form-control input-lg font-16"
                 data-height="45px" id="mce-EMAIL-footer" style="height: 45px;" type="email">
@@ -628,7 +541,7 @@
               </span>
             </div>
           </form>
-        </div>
+       
       </div>
     </div>
   </div>

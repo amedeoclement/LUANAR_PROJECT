@@ -428,9 +428,9 @@ class AcademicStaff(models.Model):
     staff_id = models.AutoField(primary_key=True)
     staff_name = models.CharField(max_length=100)
     class Position(models.TextChoices):
-        HEAD_OF_FACULTY = "HEAD OF FACULTY" , 'Head of FACULTY'
-        DEPUTY_HEAD_OF_FACULTY = "DEPUTY HEAD OF FACULTY" , 'Deputy Head of FACULTY'
-        HEAD_OF_DEPARTMENT = "HEAD OF DEPARTMENT" , 'Head of Department'
+        HEAD_OF_FACULTY = "Head of Faculty" , 'Head of Faculty'
+        DEPUTY_HEAD_OF_FACULTY = "Deputy Head of Faculty" , 'Deputy Head of Faculty'
+        HEAD_OF_DEPARTMENT = "Head of Department" , 'Head of Department'
         LECTURER = "Lecturer" , 'Lecturer'
         ASSOCIATE_LECTURER = "Associate lecturer", 'Associate lecturer'
         PART_TIME_LECTURER = "Part-Time Lecturer", 'Part Time Lecturer'
@@ -440,7 +440,7 @@ class AcademicStaff(models.Model):
     staff_contacts = models.CharField(max_length= 20)
     staff_email = models.EmailField(unique=True)
     profile_pic = models.ImageField(upload_to='profile_photos/', blank=True, null=True)
-    department_code = models.ForeignKey(Department, on_delete = models.DO_NOTHING)
+    department_code = models.ForeignKey(Department, on_delete = models.DO_NOTHING, null = True, blank = True)
     faculty_code = models.ForeignKey(Faculty, on_delete = models.DO_NOTHING, to_field='faculty_code')
     def __str__(self):
         return self.staff_name
@@ -491,10 +491,10 @@ class AdministrationStaff(models.Model):
     staff_id = models.AutoField(primary_key=True)
     staff_name = models.CharField(max_length=100)
     class Position(models.TextChoices):
-        VICE_CHANCELLOR = "VICE CHANCELLOR" , 'Vice chancellor'
-        DEPUTY_VICE_CHANCELLOR = "DEPUTY VICE CHANCELLOR" , 'Deputy Vice Chancellor'
-        UNIVERSITY_REGISTRAR = "UNIVERSITY REGISTRAR", 'University Registrar'
-        DOSA = "DEAN OF STUDENTS AFFAIRS", 'Dean of Students Affairs'
+        VICE_CHANCELLOR = "Vice Chancellor" , 'Vice chancellor'
+        DEPUTY_VICE_CHANCELLOR = "Deputy Vice Chancellor" , 'Deputy Vice Chancellor'
+        UNIVERSITY_REGISTRAR = "University Registrar", 'University Registrar'
+        DOSA = "Dean of Students Affairs", 'Dean of Students Affairs'
 
     staff_position = models.CharField(max_length=100, choices= Position.choices)
     staff_contacts = models.CharField(max_length= 20)
