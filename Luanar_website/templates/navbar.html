@@ -15,7 +15,7 @@
             </div>
           </div>
           <div class="col-md-8">
-            <ul class="list-inline sm-pull-none sm-text-center text-right text-white mb-sm-20 mt-10">
+            <ul class="list-inline sm-pull-none sm-text-center text-right text-white mb-sm-20 mt-5">
               <li class="m-0 pl-10"> <a href="https://www.luanar.ac.mw/apps/" class="text-white ">Staff Portal</a> </li>|
               <li class="m-0 pl-0 pr-8"> <a href="https://www.luanar.ac.mw/studentsportal/" class="text-white ">Students Portal</a></li>|
               <li class="m-0 pl-0 pr-9"> <a href="https://www.luanar.ac.mw/mdl_land_page/" class="text-white ">MOODLE</a> </li>|
@@ -30,11 +30,11 @@
       <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
         <div class="container">
           <nav id="menuzord-right" class="menuzord default menuzord-responsive">
-            <ul class="col-md-2">
+            <ul class="col-md-1">
               <a class="pull-left flip mb-15 " href="/"><img src="{% static 'images/logo-wide.png' %}" class="img-fluid" style="padding-top: 10px;height: 70px;width: 55px;" alt="">
               
               </a></ul>
-            <ul class="menuzord-menu col-md-10 col-lg-10">
+            <ul class="menuzord-menu col-md-11 col-lg-11" style="padding-left: 30px;">
               <li><a href="#">ABOUT</a>
                 <ul class="dropdown">
                   <li><a href="{% url 'about' %}">The LUANAR Story </a></li>
@@ -156,7 +156,13 @@
                   <li><a href="{% url 'downloads' %}">Downloads</a></li>
                   <li><a href="{% url 'vacancies' %}">Vacancies</a></li>
                 </ul>
-              </li>
+              </li> 
+<li>
+  <div class="pl-50">
+    <a href="{% url 'general_search' %}"><i style="color: rgb(0, 124, 187);"  class="fa fa-2x fa-search"></i></a>
+  
+  </div>
+</li>
             </ul>
           </nav>
         </div>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
 .news-blog, .about, .luanar4moreimpact, .events-pro .events, .faculties{
 width: 95%;
 align-items: center;
@@ -5,6 +7,21 @@ padding: auto;
 margin-left: 40px;
 
 }
+
+.source-sans-3-homecontent {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.merriweather-sans-heading1 {
+  font-family: "Merriweather Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+  
 .events-pro{
     width: 100%;
     background-color: rgb(237, 243, 168);

@@ -153,7 +153,7 @@
     </div>
   </section>
  
-  <section id="about" class="container mb-50">
+  <section id="about" class="container homecontent mb-50">
     
     <div class="col-md-12 col-lg-12 col-sm-12">
     <div class=" pt-50 ">
@@ -173,8 +173,8 @@
             <div class="col-md-8" style=" border: black 1px solid; font-size: 1.5em; text-align: center; font-weight: 800px;  color: #2eb135; ">
               INTRODUCING OUR CAMPUS
             </div>
-            <div class="col-md-12 wow slideInUp pl-0 pt-10" data-wow-duration="1.5s" data-wow-offset="10" style="text-align: justify; font-size: 16px; color: black;">
-             <p>Delve into campus life, connect with a diverse community of global students, and join our esteemed network of alumni, all while embracing a culture of giving back and making a difference. Welcome to a place where your aspirations meet endless possibilities.</p>
+            <div class="col-md-12 wow slideInUp pl-0 pt-10" data-wow-duration="1.5s" data-wow-offset="10" style="text-align: justify;">
+             <p class = "">Delve into campus life, connect with a diverse community of global students, and join our esteemed network of alumni, all while embracing a culture of giving back and making a difference. Welcome to a place where your aspirations meet endless possibilities.</p>
             </div>
             <div class="row wow slideInUp" data-wow-duration="1.5s" data-wow-offset="10">
               <div class="col-md-6">
@@ -323,7 +323,7 @@
           <div class="row">         
             <div class="col-md-6">
              
-                    <h3 class="text-uppercase line-bottom-theme-colored-2 mt-0 pb-10" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight:bold;"><i
+                    <h3 class="text-uppercase line-bottom-theme-colored-2 mt-0 pb-10" style="font-family:  'Merriweather Sans', sans-serif; font-weight:bold;"><i
                       class="fa fa-calendar mr-10"></i>Upcoming <span class="text-theme-colored2">Events</span></h3>
                       {% for event in events %}
 <!--                       
@@ -376,14 +376,14 @@
             </div>
             <div class="col-md-6" style="padding-top: 0px;">
              
-                <h3 class="text-uppercase mt-0 " style="padding-bottom: 20px;   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Latest <span
+                <h3 class="heading1 text-uppercase mt-0"  style="padding-bottom: 20px; font-weight: 700; font-family:  'Merriweather Sans', sans-serif;">Latest <span
                   class="text-theme-colored2">Announcements</span></h3>
           
             
               {% for announcement in announcements %}
               <div class="col-md-12" style="padding-bottom: 20px;">
                 <div class="col-md-12 col-xs-12 col-sm-12">
-                  <a href="{% url 'announcement_detail' announcement.announcement_id %}">   <p style="text-align: justify; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px;"> {{announcement.title}}</p></a>
+                  <a href="{% url 'announcement_detail' announcement.announcement_id %}">   <p style="text-align: justify; font-family:  'Merriweather Sans', sans-serif; font-size: 20px;"> {{announcement.title}}</p></a>
                 </div>
                 <div class="col-md-12">
                   <p class="text-dark" style="text-align: justify;">
@@ -420,7 +420,7 @@
           & SCHOOLS
         </div>
         <div class="col-md-12 wow slideInUp pb-15" data-wow-duration="1.5s" data-wow-offset="10">
-          <p style="font-family: sans-serif; text-align: justify; font-size: 30px;"><b>Advancing knowledge and innovation for a better world</b></p>
+          <p style="font-family:  'Merriweather Sans', sans-serif; text-align: justify; font-size: 29px;"><b>Advancing knowledge and innovation for a better world</b></p>
         </div>
 
       </div>

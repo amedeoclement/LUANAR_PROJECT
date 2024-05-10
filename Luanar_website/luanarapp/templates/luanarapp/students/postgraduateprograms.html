@@ -62,19 +62,19 @@
           
     <div class="col-md-12 mb-30 mt-20" >
         {% if page.has_previous %}
-        <a class="btn btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?page=1">First</a>
-        <a class="btn btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?page={{ page.previous_page_number }}">Previous</a>
+        <a class="btn btn-xs btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?page=1">First</a>
+        <a class="btn btn-xs btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?page={{ page.previous_page_number }}">Previous</a>
     {% endif %}
     {% for num in page_range %}
         {% if num == page.number %}
-            <span class="btn btn-primary" style="background-color:  rgb(204, 207, 207);">{{ num }}</span>
+            <span class="btn btn-xs btn-primary" style="background-color:  rgb(204, 207, 207);">{{ num }}</span>
         {% else %}
-            <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ num }}">{{ num }}</a>
+            <a class="btn btn-xs btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ num }}">{{ num }}</a>
         {% endif %}
     {% endfor %}
     {% if page.has_next %}
-        <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ page.next_page_number }}">Next</a>
-        <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ page.paginator.num_pages }}">Last</a>
+        <a class="btn btn-xs btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ page.next_page_number }}">Next</a>
+        <a class="btn btn-xs btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ page.paginator.num_pages }}">Last</a>
     {% endif %}
     
       </div>

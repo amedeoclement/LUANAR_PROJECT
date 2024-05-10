@@ -41,8 +41,9 @@ def home(request):
     events = Event.objects.all().order_by('-event_id')[:2]
     faculties = Faculty.objects.all().order_by('faculty_id')[:3]
     news = News.objects.all().order_by('-news_id')[:3]
-   
-    context = {'faculties': faculties, 'news':news,'events':events, 'announcements':announcements, 'prospectus':prospectus}
+
+    form = SearchForm()
+    context = {'faculties': faculties, 'news':news,'events':events, 'announcements':announcements, 'prospectus':prospectus, 'form':form}
     return render(request, 'luanarapp/home.html', context)
 
 
@@ -589,7 +590,7 @@ def announcements(request):
     return render(request, 'luanarapp/announcements.html', {'page': page, 'page_range': page_range})
 
 def announcement_detail(request, id):
-    announcement_detail = Announcement.objects.get(title=id)
+    announcement_detail = Announcement.objects.get(announcement_id=id)
     news = News.objects.all().order_by('?')[:4]
     context = {'news':news,'announcement_detail':announcement_detail}
     return render(request, 'luanarapp/announcement_details.html' , context)
@@ -664,11 +665,71 @@ def search_view(request):
                     page_range = range(current_page - 2, current_page + 3)
 
             # Pass the page object and page range to the template
-            return render(request, 'luanarapp/search_results.html', {'query': query,'form':form, 'page': page, 'page_range': page_range})
+            context =  {'query': query,'form':form, 'page': page, 'page_range': page_range}
+            return render(request, 'luanarapp/search_results.html', context)
     else:
         form = SearchForm()
 
     return render(request, 'luanarapp/students/undergraduateprograms.html', {'form': form})
+
+def general_search(request):
+    if request.method == 'GET':
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data['query']
+            # Perform search across different models
+            faculties = Faculty.objects.filter(faculty_name__icontains=query) | Faculty.objects.filter(faculty_description__icontains=query)
+            news = News.objects.filter(news_title__icontains=query) | News.objects.filter(news_body__icontains=query)
+            events = Event.objects.filter(event_title__icontains=query) | Event.objects.filter(event_description__icontains=query) | Event.objects.filter(host__icontains=query)
+            announcements = Announcement.objects.filter(title__icontains=query) | Announcement.objects.filter(description__icontains=query)
+            administrationOffices = AdministrationOffice.objects.filter(office_name__icontains=query) | AdministrationOffice.objects.filter(office_remarks__icontains=query)
+            academicStaffs = AcademicStaff.objects.filter(staff_name__icontains=query) | AcademicStaff.objects.filter(staff_position__icontains=query)
+            adminstrationStaffs = AdministrationStaff.objects.filter(staff_name__icontains=query) | AdministrationStaff.objects.filter(staff_position__icontains=query)
+            # Combine querysets from both models
+            combined_results = list(faculties) + list(news) + list(events) + list(announcements) + list(administrationOffices)+ list(academicStaffs)+ list(adminstrationStaffs)
+
+            # Number of items per page
+            items_per_page = 6
+
+            # Create a Paginator object
+            paginator = Paginator(combined_results, items_per_page)
+
+            # Get the page number from the request
+            page_number = request.GET.get('page')
+
+            try:
+                # Get the specified page
+                page = paginator.page(page_number)
+            except PageNotAnInteger:
+                # If page is not an integer, deliver first page.
+                page = paginator.page(1)
+            except EmptyPage:
+                # If page is out of range (e.g. 9999), deliver last page of results.
+                page = paginator.page(paginator.num_pages)
+
+            # Get the current page number
+            current_page = page.number
+
+            # Get the total number of pages
+            total_pages = paginator.num_pages
+
+            # Calculate the range of pages to display
+            if total_pages <= 6:
+                page_range = paginator.page_range
+            else:
+                if current_page <= 3:
+                    page_range = range(1, 7)
+                elif current_page >= total_pages - 2:
+                    page_range = range(total_pages - 5, total_pages + 1)
+                else:
+                    page_range = range(current_page - 2, current_page + 3)
+
+            # Pass the page object and page range to the template
+            context =  {'query': query, 'form': form, 'page': page, 'page_range': page_range}
+            return render(request, 'luanarapp/general_search.html', context)
+    else:
+        form = SearchForm()
+    return render(request, 'luanarapp/general_search.html', {'form': form})
 
 def adminstrative_staff_view(request, id):
     staff = AdministrationStaff.objects.get(staff_id =id)

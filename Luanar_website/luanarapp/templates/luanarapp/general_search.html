@@ -1,0 +1,180 @@
+{% extends "main.html" %}
+{% load static %}
+
+{% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+    <div class="container pt-120 pb-60">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-theme-colored2 text-center " style="font-family: sans-serif; font-size: 46px;">
+                        LUANAR | SEARCH WEB
+                    </h2>
+                    <ol class="breadcrumb text-left mt-10 white">
+                        <li><a href="{% url '' %}">LUANAR</a></li>
+                        <li><a href="#">SEARCH</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- search_results file -->
+<div class="content-area" style="background-color: azure;">
+    <div class="bg-color-01 padding-top-15 padding-bottom-30">
+        <div class="container">
+            <h2 class="margin-bottom-25">Search</h2>
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url '' %}">LUANAR</a></li>
+                <li class="breadcrumb-item active">Search</li>
+            </ul>
+            <div class="container">
+                <div class="col-md-12" style="background-color: aquamarine; margin-bottom: 10px;">
+                    <form id="searchfrm" name="searchfrm" method="GET" action="{% url 'general_search' %}"
+                        class="zp-validate-standard-form">
+                        <div class="input-group">
+                            <input name="query" type="text" class="form-control" style="margin-top: 15px; height: 40px;"
+                                placeholder="Type a text to search..." value="{{query}}">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" style="margin-top: 13px;" type="submit"
+                                    aria-label="Search"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section style="background-color: azure;">
+    <div id="slider">
+        <ul class="slides" style="font-family: 'Merriweather Sans', sans-serif;">
+
+            <div class="container d-block">
+                {% for result in page %}
+                {% if result.faculty_name %}
+                <div class="col-md-12" style="text-align: justify;">
+                    <a href="{% url 'faculty_details' result.faculty_id %}" title="Click to find out more">
+                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187); display: inline-block;">{{ result.faculty_name}}</h3>
+                    </a>
+                    <p>
+
+                        <b style="color: #2eb135;"> LUANAR | Faculties</b>
+                        <br>
+                        {{result.faculty_description|truncatewords:50}}
+                    </p>
+                </div>
+            </div>
+            <div class="container d-block">
+                {% elif result.news_title %}
+                <div class="col-md-12" style="text-align: justify;">
+                    <a class="d-block" href="{% url 'newsdetail' result.news_id %}" title="Click to find out more">
+                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.news_title}}</h3>
+                    </a>
+                    <p>
+                        <b style="color: #2eb135;"> LUANAR | Updates | News</b>
+                        <br>
+                        {{result.news_body|truncatewords:50}}
+                    </p>
+                </div>
+            </div>
+            <div class="container d-block">
+                {% elif result.title %}
+                <div class="col-md-12" style="text-align: justify;">
+                    <a class="d-block" href="{% url 'announcement_detail' result.announcement_id %}"
+                        title="Click to find out more">
+                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.title}}</h3>
+                    </a>
+                    <p>
+                        <b style="color: #2eb135;"> LUANAR | Updates | Announcements</b>
+                        <br>
+                        {{result.description|truncatewords:50}}
+                    </p>
+                </div>
+            </div>
+            <div class="container d-block">
+                {% elif result.event_title %}
+                <div class="col-md-12" style="text-align: justify;">
+                    <a href="{% url 'eventsdetail' result.event_id %}" title="Click to find out more">
+                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.event_title}}</h3>
+                    </a>
+                    <p>
+                        <b style="color: #2eb135;">LUANAR | Updates | Events</b>
+                        <br>
+                        {{result.event_description|truncatewords:50}}
+                    </p>
+                </div>
+                
+            </div>
+            <div class="container d-block">
+                {% elif result.office_name %}
+                <div class="col-md-12" style="text-align: justify;">
+                    <a class="d-block" href="#" title="Click to find out more">
+                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.office_name}}</h3>
+                    </a>
+                    <p>
+                        <b style="color: #2eb135;">LUANAR | Administrative office</b>
+                        <br>
+                        {{result.office_remarks|truncatewords:50}}
+                    </p>
+                </div>
+            </div>
+            <div class="container d-block">
+                {% elif result.office_code %}
+                <div class="col-md-12" style="text-align: justify;">
+                    <a class="d-block" href="{% url 'adminstrative_staff_view' result.staff_id %}"
+                        title="Click to find out more">
+                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.staff_name}}</h3>
+                    </a>
+                    <p>
+                        <b style="color: #2eb135;"> LUANAR | Administrative Staff |
+                            {{result.staff_position}}</b>
+                        <br>
+                        {{result.about_staff|truncatewords:50}}
+                    </p>
+                </div>
+            </div>
+            <div class="container d-block">
+                {% elif result.staff_name %}
+                <div class="col-md-12" style="text-align: justify;">
+                    <a class="d-block" href="{% url 'academic_staff_view' result.staff_id %}"
+                        title="Click to find out more">
+                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.staff_name}}</h3>
+                    </a>
+                    <p>
+                        <b style="color: #2eb135;">LUANAR | Academic Staff | {{result.staff_position}}</b>
+                        <br>
+                        {{result.about_staff|truncatewords:50}}
+                    </p>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </ul>
+    </div>
+    {% if page.has_other_pages %}
+    <div class="container pt-10 pb-10">
+        {% if page.has_previous %}
+        <a class="btn btn-xs btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?query={{query}}&&page=1">First</a>
+        <a class="btn btn-xs btn-outline-primary" style="background-color:  rgb(204, 207, 207);"
+          href="?query={{query}}&&page={{ page.previous_page_number }}">Previous</a>
+        {% endif %}
+        {% for num in page_range %}
+        {% if num == page.number %}
+        <span class="btn btn-xs btn-primary" style="background-color:  rgb(204, 207, 207);">{{ num }}</span>
+        {% else %}
+        <a class="btn btn-xs btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?query={{query}}&&page={{ num }}">{{ num }}</a>
+        {% endif %}
+        {% endfor %}
+        {% if page.has_next %}
+        <a class="btn btn-xs btn-outline-primary" style="background-color: rgb(204, 207, 207);"
+          href="?query={{query}}&&page={{ page.next_page_number }}">Next</a>
+        <a class="btn btn-xs btn-outline-primary" style="background-color: rgb(204, 207, 207);"
+          href="?query={{query}}&&page={{ page.paginator.num_pages }}">Last</a>
+        {% endif %}
+      </div>
+{% endif %}
+
+</section>
+
+{% endblock content %}

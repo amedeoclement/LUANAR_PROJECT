@@ -23,6 +23,8 @@ path('program_details/<str:id>', views.program_detailsView, name= "program_detai
 
 path('search/', views.search_view, name='search_view'),
 
+path('general_search/', views.general_search, name ="general_search"),
+
 
 
 path('partinerships', views.partinerships, name = "partinerships"),
