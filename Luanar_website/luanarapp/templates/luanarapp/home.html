@@ -174,9 +174,9 @@
               INTRODUCING OUR CAMPUS
             </div>
             <div class="col-md-12 wow slideInUp pl-0 pt-10" data-wow-duration="1.5s" data-wow-offset="10" style="text-align: justify;">
-             <p class = "">Delve into campus life, connect with a diverse community of global students, and join our esteemed network of alumni, all while embracing a culture of giving back and making a difference. Welcome to a place where your aspirations meet endless possibilities.</p>
+             <p style="font-family:  'Merriweather Sans', sans-serif; color: rgb(8, 8, 8);">Delve into campus life, connect with a diverse community of global students, and join our esteemed network of alumni, all while embracing a culture of giving back and making a difference. Welcome to a place where your aspirations meet endless possibilities.</p>
             </div>
-            <div class="row wow slideInUp" data-wow-duration="1.5s" data-wow-offset="10">
+            <div class="row wow slideInUp"  data-wow-duration="1.5s" data-wow-offset="10">
               <div class="col-md-6">
                 <ul class="list-icon theme-colored rounded">
                   <li><a href="{% url 'postgraduateprograms' %}" style="font-size: 17px; color: black;"><i class="fa fa-arrow-right"></i>Postgraduate
@@ -326,33 +326,7 @@
                     <h3 class="text-uppercase line-bottom-theme-colored-2 mt-0 pb-10" style="font-family:  'Merriweather Sans', sans-serif; font-weight:bold;"><i
                       class="fa fa-calendar mr-10"></i>Upcoming <span class="text-theme-colored2">Events</span></h3>
                       {% for event in events %}
-<!--                       
-                      <div class="upcoming-events bg-white-f3 mb-20 pl-10">
-                      <div class="row">
-                        <div class="col-sm-6 pl-0 pl-sm-15">
-                          <div class="event-details p-15 mt-20">
-                            <a href="{% url 'eventsdetail' event.event_id %}">  <p class="media-heading font-weight-500" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px;">{{event.event_title|truncatewords:6}}</p></a>
-                            <p style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 14px;">{{event.event_description|truncatewords:10}}</p>
-                            <a href="{% url 'eventsdetail' event.event_id %}" class="btn btn-flat btn-dark btn-theme-colored btn-sm">Details <i
-                                class="fa fa-angle-double-right"></i></a>
-                          </div>
-                        </div>
-                        <div class="col-sm-6">
-                          <div class="event-count p-15 mt-15">
-                            <ul class="event-date list-inline font-16 text-uppercase mt-10 mb-20">
-                              <li class="p-15 mr-5 bg-lightest text-theme-colored">{{ event.date|date:"M" }}</li>
-                              <li class="p-15 pl-20 pr-20 mr-5 bg-lightest text-theme-colored"> {{ event.date|date:"d" }}</li>
-                              <li class="p-15 bg-lightest text-theme-colored" >{{ event.date|date:"Y" }}</li>
-                            </ul>
-                            <ul>
-                              <li class="mb-10 "><i class="fa fa-clock-o mr-5"></i> at {{event.start_time}} - {{event.end_time}}
-                                </li>
-                              <li class="text-theme-colored"><i class="fa fa-map-marker mr-5"></i>  {{event.venue}}</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div> -->
+
                     <article>
                       <div class="event-block">
                       <div class="event-date text-center">
@@ -378,8 +352,7 @@
              
                 <h3 class="heading1 text-uppercase mt-0"  style="padding-bottom: 20px; font-weight: 700; font-family:  'Merriweather Sans', sans-serif;">Latest <span
                   class="text-theme-colored2">Announcements</span></h3>
-          
-            
+                  
               {% for announcement in announcements %}
               <div class="col-md-12" style="padding-bottom: 20px;">
                 <div class="col-md-12 col-xs-12 col-sm-12">

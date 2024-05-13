@@ -7,7 +7,7 @@
         <div class="section-content">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="text-theme-colored2 text-center " style="font-family: sans-serif; font-size: 46px;">
+                    <h2 class="text-white text-center " style="font-family: sans-serif; font-size: 46px;">
                         LUANAR | SEARCH WEB
                     </h2>
                     <ol class="breadcrumb text-left mt-10 white">
@@ -22,8 +22,8 @@
 <!-- search_results file -->
 <div class="content-area" style="background-color: azure;">
     <div class="bg-color-01 padding-top-15 padding-bottom-30">
-        <div class="container">
-            <h2 class="margin-bottom-25">Search</h2>
+        <div class="container" style="font-family:  'Merriweather Sans', sans-serif; font-weight: bold;">
+            <h2 class="margin-bottom-25" >Search</h2>
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{% url '' %}">LUANAR</a></li>
                 <li class="breadcrumb-item active">Search</li>
@@ -48,8 +48,16 @@
 </div>
 <section style="background-color: azure;">
     <div id="slider">
-        <ul class="slides" style="font-family: 'Merriweather Sans', sans-serif;">
+        {% if not page %}
+      <div class="container">
+        <div class="col-md-12">
+            <p style="font-family:  'Merriweather Sans', sans-serif;">No results found!</p>
+        </div>
+      </div>
 
+        {% else %}
+        <ul class="slides" style="font-family: 'Merriweather Sans', sans-serif;">
+            
             <div class="container d-block">
                 {% for result in page %}
                 {% if result.faculty_name %}
@@ -151,6 +159,8 @@
                 {% endfor %}
             </div>
         </ul>
+
+        {% endif%}
     </div>
     {% if page.has_other_pages %}
     <div class="container pt-10 pb-10">
