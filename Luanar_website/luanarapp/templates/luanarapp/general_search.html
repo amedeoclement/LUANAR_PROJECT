@@ -114,19 +114,7 @@
                 </div>
                 
             </div>
-            <div class="container d-block">
-                {% elif result.office_name %}
-                <div class="col-md-12" style="text-align: justify;">
-                    <a class="d-block" href="#" title="Click to find out more">
-                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.office_name}}</h3>
-                    </a>
-                    <p>
-                        <b style="color: #2eb135;">LUANAR | Administrative office</b>
-                        <br>
-                        {{result.office_remarks|truncatewords:50}}
-                    </p>
-                </div>
-            </div>
+
             <div class="container d-block">
                 {% elif result.office_code %}
                 <div class="col-md-12" style="text-align: justify;">
@@ -139,6 +127,22 @@
                             {{result.staff_position}}</b>
                         <br>
                         {{result.about_staff|truncatewords:50}}
+                    </p>
+                </div>
+            </div>
+            
+            <div class="container d-block">
+                {% elif result.program_name %}
+                <div class="col-md-12" style="text-align: justify;">
+                    <a class="d-block" href="{% url 'program_details' result.program_id %}"
+                        title="Click to find out more">
+                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.program_name}}</h3>
+                    </a>
+                    <p>
+                        <b style="color: #2eb135;"> LUANAR | Programs |
+                           </b>
+                        <br>
+                        {{result.program_description|truncatewords:50}}
                     </p>
                 </div>
             </div>

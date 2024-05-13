@@ -682,11 +682,14 @@ def general_search(request):
             news = News.objects.filter(news_title__icontains=query) | News.objects.filter(news_body__icontains=query)
             events = Event.objects.filter(event_title__icontains=query) | Event.objects.filter(event_description__icontains=query) | Event.objects.filter(host__icontains=query)
             announcements = Announcement.objects.filter(title__icontains=query) | Announcement.objects.filter(description__icontains=query)
-            administrationOffices = AdministrationOffice.objects.filter(office_name__icontains=query) | AdministrationOffice.objects.filter(office_remarks__icontains=query)
+            programs = Program.objects.filter(program_name__icontains=query) | Program.objects.filter(program_description__icontains=query)
+
+
+            #administrationOffices = AdministrationOffice.objects.filter(office_name__icontains=query) | AdministrationOffice.objects.filter(office_remarks__icontains=query)
             academicStaffs = AcademicStaff.objects.filter(staff_name__icontains=query) | AcademicStaff.objects.filter(staff_position__icontains=query)
             adminstrationStaffs = AdministrationStaff.objects.filter(staff_name__icontains=query) | AdministrationStaff.objects.filter(staff_position__icontains=query)
             # Combine querysets from both models
-            combined_results = list(faculties) + list(news) + list(events) + list(announcements) + list(administrationOffices)+ list(academicStaffs)+ list(adminstrationStaffs)
+            combined_results = list(faculties) + list(news) + list(events) + list(announcements) + list(academicStaffs)+ list(adminstrationStaffs) + list(programs)
 
             # Number of items per page
             items_per_page = 6
