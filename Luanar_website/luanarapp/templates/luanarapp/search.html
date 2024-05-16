@@ -1,0 +1,48 @@
+{% extends "main.html" %}
+{% load static %}
+{% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+    <div class="container pt-120 pb-60">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-white text-center " style="font-family: sans-serif; font-size: 46px;">
+                        LUANAR | SEARCH WEB
+                    </h2>
+                    <ol class="breadcrumb text-left mt-10 white">
+                        <li><a href="{% url '' %}">LUANAR</a></li>
+                        <li><a href="#">SEARCH</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- search_results file -->
+<div class="content-area" style="background-color: azure;">
+    <div class="bg-color-01 padding-top-15 padding-bottom-30">
+        <div class="container" style="font-family:  'Merriweather Sans', sans-serif; font-weight: bold;">
+            <h2 class="margin-bottom-25" >Search</h2>
+            <ul class="breadcrumb">
+                <li class="breadcrumb-item"><a href="{% url '' %}">LUANAR</a></li>
+                <li class="breadcrumb-item active">Search</li>
+            </ul>
+            <div class="container">
+                <div class="col-md-12" style="background-color: rgb(206, 206, 206); margin-bottom: 10px;">
+                    <form id="searchfrm" name="searchfrm" method="GET" action="{% url 'general_search' %}"
+                        class="zp-validate-standard-form">
+                        <div class="input-group">
+                            <input name="query" type="text" class="form-control" style="margin-top: 15px; height: 40px;"
+                                placeholder="Type a text to search...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary" style="margin-top: 13px;" type="submit"
+                                    aria-label="Search"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+   {% endblock content %}

@@ -1,6 +1,6 @@
 {% extends "main.html" %}
 {% load static %}
-
+{% load filters %}
 {% block content %}
 <section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
     <div class="container pt-120 pb-60">
@@ -63,13 +63,13 @@
                 {% if result.faculty_name %}
                 <div class="col-md-12" style="text-align: justify;">
                     <a href="{% url 'faculty_details' result.faculty_id %}" title="Click to find out more">
-                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187); display: inline-block;">{{ result.faculty_name}}</h3>
+                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187); display: inline-block;">{{ result.faculty_name| highlight_search:query }}</h3>
                     </a>
                     <p>
 
                         <b style="color: #2eb135;"> LUANAR | Faculties</b>
                         <br>
-                        {{result.faculty_description|truncatewords:50}}
+                        {{result.faculty_description|truncatewords:50| highlight_search:query }}
                     </p>
                 </div>
             </div>
@@ -77,12 +77,12 @@
                 {% elif result.news_title %}
                 <div class="col-md-12" style="text-align: justify;">
                     <a class="d-block" href="{% url 'newsdetail' result.news_id %}" title="Click to find out more">
-                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.news_title}}</h3>
+                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.news_title| highlight_search:query }}</h3>
                     </a>
                     <p>
                         <b style="color: #2eb135;"> LUANAR | Updates | News</b>
                         <br>
-                        {{result.news_body|truncatewords:50}}
+                        {{result.news_body|truncatewords:50 | highlight_search:query }}
                     </p>
                 </div>
             </div>
@@ -91,12 +91,12 @@
                 <div class="col-md-12" style="text-align: justify;">
                     <a class="d-block" href="{% url 'announcement_detail' result.announcement_id %}"
                         title="Click to find out more">
-                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.title}}</h3>
+                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.title | highlight_search:query }}</h3>
                     </a>
                     <p>
                         <b style="color: #2eb135;"> LUANAR | Updates | Announcements</b>
                         <br>
-                        {{result.description|truncatewords:50}}
+                        {{result.description|truncatewords:50 | highlight_search:query }}
                     </p>
                 </div>
             </div>
@@ -104,12 +104,12 @@
                 {% elif result.event_title %}
                 <div class="col-md-12" style="text-align: justify;">
                     <a href="{% url 'eventsdetail' result.event_id %}" title="Click to find out more">
-                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.event_title}}</h3>
+                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.event_title| highlight_search:query }}</h3>
                     </a>
                     <p>
                         <b style="color: #2eb135;">LUANAR | Updates | Events</b>
                         <br>
-                        {{result.event_description|truncatewords:50}}
+                        {{result.event_description|truncatewords:50| highlight_search:query }}
                     </p>
                 </div>
                 
@@ -120,13 +120,13 @@
                 <div class="col-md-12" style="text-align: justify;">
                     <a class="d-block" href="{% url 'adminstrative_staff_view' result.staff_id %}"
                         title="Click to find out more">
-                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.staff_name}}</h3>
+                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.staff_name| highlight_search:query }}</h3>
                     </a>
                     <p>
                         <b style="color: #2eb135;"> LUANAR | Administrative Staff |
                             {{result.staff_position}}</b>
                         <br>
-                        {{result.about_staff|truncatewords:50}}
+                        {{result.about_staff|truncatewords:50| highlight_search:query }}
                     </p>
                 </div>
             </div>
@@ -136,10 +136,10 @@
                 <div class="col-md-12" style="text-align: justify;">
                     <a class="d-block" href="{% url 'program_details' result.program_id %}"
                         title="Click to find out more">
-                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.program_name}}</h3>
+                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187); display: inline-block;">{{ result.program_name | highlight_search:query }}</h3>
                     </a>
                     <p>
-                        <b style="color: #2eb135;"> LUANAR | Programs |
+                        <b style="color: #2eb135;"> LUANAR | Programs | {{result.program_code}}
                            </b>
                         <br>
                         {{result.program_description|truncatewords:50}}
@@ -151,12 +151,12 @@
                 <div class="col-md-12" style="text-align: justify;">
                     <a class="d-block" href="{% url 'academic_staff_view' result.staff_id %}"
                         title="Click to find out more">
-                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.staff_name}}</h3>
+                        <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.staff_name| highlight_search:query }}</h3>
                     </a>
                     <p>
                         <b style="color: #2eb135;">LUANAR | Academic Staff | {{result.staff_position}}</b>
                         <br>
-                        {{result.about_staff|truncatewords:50}}
+                        {{result.about_staff|truncatewords:50| highlight_search:query }}
                     </p>
                 </div>
                 {% endif %}

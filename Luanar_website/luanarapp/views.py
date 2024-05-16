@@ -672,6 +672,10 @@ def search_view(request):
 
     return render(request, 'luanarapp/students/undergraduateprograms.html', {'form': form})
 
+def search_page(request):
+    return render(request, 'luanarapp/search.html')
+
+
 def general_search(request):
     if request.method == 'GET':
         form = SearchForm(request.GET)

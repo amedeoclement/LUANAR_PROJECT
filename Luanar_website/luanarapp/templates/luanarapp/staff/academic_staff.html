@@ -47,12 +47,6 @@
                          
                               </div>
 
-<!--                               
-                            <div style="float: right; margin-left: 30px; width: 400px;"><img style="width: 100%;"
-                                    src="{{staff.profile_pic.url}}" alt="" />
-                                <div class="news-image-caption" style="font-size: 16px;"><strong>
-                                    {{staff.staff_position}}:&nbsp;</strong>{{staff.staff_name}}</div>
-                            </div> -->
                             <div style="text-align: justify; font-size: 15px;">
                                 {% autoescape off %}
                                 <p style="text-align: justify; font-size: 16px;">{{staff.about_staff|linebreaks}}</p>
@@ -62,26 +56,28 @@
                           
 
                         </div>
-
-                        <h3 style="font-family: sans-serif;">Contacting the {{staff.staff_position}}</h3>
-                        <table class="table" style="background-color: rgb(229, 231, 237); border-radius: 0 0 10px 10px; font-size: 16px;">
-                            <tr>
-                                <td class="col-md-3"><strong>Physical Address</strong></td>
-                                <td>LUANAR Bunda Campus - Gateway Administration Block</td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-3"><strong>Postal Address</strong></td>
-                                <td>P.O Box 219, Lilongwe, Malawi.</td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-3"><strong>Phone</strong></td>
-                                <td>{{staff.staff_contacts}}</td>
-                            </tr>
-                            <tr>
-                                <td class="col-md-3"><strong>Email</strong></td>
-                                <td><a href="mailto:{{staff.staff_email}}">{{staff.staff_email}}</a></td>
-                            </tr>
-                        </table>
+                 <div class="col-md-12">
+                    <h3 style="font-family: sans-serif;">Contacting the {{staff.staff_position}}</h3>
+                    <table class="table" style="background-color: rgb(229, 231, 237); border-radius: 0 0 10px 10px; font-size: 16px;">
+                        <tr>
+                            <td class="col-md-3"><strong>Physical Address</strong></td>
+                            <td>LUANAR Bunda Campus - Gateway Administration Block</td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-3"><strong>Postal Address</strong></td>
+                            <td>P.O Box 219, Lilongwe, Malawi.</td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-3"><strong>Phone</strong></td>
+                            <td>{{staff.staff_contacts}}</td>
+                        </tr>
+                        <tr>
+                            <td class="col-md-3"><strong>Email</strong></td>
+                            <td><a href="mailto:{{staff.staff_email}}">{{staff.staff_email}}</a></td>
+                        </tr>
+                    </table>
+                 </div>
+                      
                     </div>
 
                     <div class="col-md-3 sidebar">
