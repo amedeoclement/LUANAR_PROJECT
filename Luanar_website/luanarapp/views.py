@@ -39,11 +39,11 @@ def logoutUser(request):
 def home(request):
     announcements= Announcement.objects.all().order_by('-announcement_id')[:3]
     events = Event.objects.all().order_by('-event_id')[:2]
-    faculties = Faculty.objects.all().order_by('faculty_id')[:3]
+    faculties = Faculty.objects.all().order_by('faculty_code')[:3]
     news = News.objects.all().order_by('-news_id')[:3]
-
+    latest_event = Announcement.objects.all().order_by('-announcement_id')[0]
     form = SearchForm()
-    context = {'faculties': faculties, 'news':news,'events':events, 'announcements':announcements, 'prospectus':prospectus, 'form':form}
+    context = {'faculties': faculties, 'news':news,'events':events,'latest_event':latest_event, 'announcements':announcements, 'prospectus':prospectus, 'form':form}
     return render(request, 'luanarapp/home.html', context)
 
 
@@ -74,7 +74,7 @@ def policies(request):
 
 def faculties(request):
     firstfaculty = Faculty.objects.get(faculty_id = 1)
-    news = News.objects.all().order_by('-news_id')[:3]
+    news = News.objects.all().order_by( '-news_id')[1]
     departments = Department.objects.filter(faculty_code_id = 3)
     faculties = Faculty.objects.all().order_by('faculty_code')[:6]
     staff = AcademicStaff.objects.get(faculty_code_id = "FAG", staff_position = "HEAD OF FACULTY")
@@ -87,8 +87,9 @@ def faculty_detailsView(request, code):
     firstfaculty = Faculty.objects.get(faculty_id= code)
     departments = Department.objects.filter(faculty_code_id = code)
     faculties = Faculty.objects.all().order_by('faculty_code')[:6]
+    news = News.objects.all().order_by( '-news_id')[1]
     staff = AcademicStaff.objects.get(faculty_code_id = firstfaculty.faculty_code, staff_position = "HEAD OF FACULTY")
-    context = {'faculties':faculties, 'firstfaculty':firstfaculty, 'departments':departments, 'staff':staff}
+    context = {'faculties':faculties, 'firstfaculty':firstfaculty, 'departments':departments, 'staff':staff, 'news':news}
     return render(request, 'luanarapp/faculties.html', context)
 
 def department_detailsView(request, id):
@@ -99,8 +100,9 @@ def department_detailsView(request, id):
 
 def program_detailsView(request, id):
     program = Program.objects.get(program_id = id)
-    department = Department.objects.get(  department_id = program.department_code_id )
-    context = {'program':program, 'department':department}
+    department = Department.objects.get(department_id = program.department_code_id )
+    faculty = Faculty.objects.get(faculty_id = department.faculty_code_id)
+    context = {'program':program, 'department':department,'faculty':faculty}
     return render(request, 'luanarapp/programs.html', context)
 
 def campusesandmaps(request):
@@ -156,7 +158,7 @@ def newsandevents(request):
 
 def newsdetail(request, id):
     news = News.objects.all().order_by('?')[:4]
-    new = News.objects.get(news_id = id )
+    new = News.objects.get(news_title = id )
     events = Event.objects.all().order_by('-event_id')[:2]
     added_by_user = new.added_by  # Retrieve the user who added the news
     context = {'new': new , 'news':news, 'added_by_user':added_by_user,'events':events}
@@ -252,7 +254,7 @@ def vacancies(request):
 
 def eventsdetail(request, id):
     news = News.objects.all().order_by('?')[:4]
-    event = Event.objects.get(event_id = id )
+    event = Event.objects.get(event_title = id )
     current_date = datetime.date.today()
     context = {'event': event , 'news':news, 'current_date':current_date}
     return render(request, 'luanarapp/event_details.html', context)
@@ -465,13 +467,10 @@ def whattostudy(request):
     return render(request, 'luanarapp/students/whattostudy.html')
 
 def accommodation(request):
- 
     return render(request, 'luanarapp/students/accommodation.html')
-
 
 def gbv(request):
     return render(request, 'luanarapp/gbv.html')
-
 
 def safetyoncampus(request):
     return render(request, 'luanarapp/students/safetyoncampus.html')
@@ -590,7 +589,7 @@ def announcements(request):
     return render(request, 'luanarapp/announcements.html', {'page': page, 'page_range': page_range})
 
 def announcement_detail(request, id):
-    announcement_detail = Announcement.objects.get(announcement_id=id)
+    announcement_detail = Announcement.objects.get(title =id)
     news = News.objects.all().order_by('?')[:4]
     context = {'news':news,'announcement_detail':announcement_detail}
     return render(request, 'luanarapp/announcement_details.html' , context)

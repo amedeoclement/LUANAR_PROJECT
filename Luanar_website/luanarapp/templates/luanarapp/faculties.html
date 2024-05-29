@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
-  <div class="container pt-120 pb-60">
+  <div class="container pt-40 pb-20">
     <div class="section-content">
       <div class="row">
         <div class="col-md-12">
@@ -10,7 +10,8 @@
           <ol class="breadcrumb text-left mt-10 white">
             <li><a href=" url '' ">LUANAR</a></li>
             <li><a href="#">Schools</a></li>
-            <li class="active">Faculties</li>
+            <li><a href="#">Faculties</a></li>
+          
           </ol>
         </div>
       </div>
@@ -20,31 +21,41 @@
 <section class="container">
   <div class="col-md-12">
     <div class="row">
-      <div class="col-md-8 blog-pull-right">
-        <div class="single-service">
-          <h3 class="line-bottom">
-            {{firstfaculty.faculty_name}}
-          </h3>
-          {% if not firstfaculty.faculty_image%}
+      <div class="col-md-9 blog-pull-right ">
 
-          <p>{{ firstfaculty.faculty_name }} Image </p>
+        <div style="text-align: justify; border-bottom:#2eb135 1px solid; padding-top: 30px;">
+          <p style="text-align: justify; font-size: 16px;color: rgb(0,124,187);"><b> {{firstfaculty.faculty_name}}</b></p>
+      <hr>
+            <div class="col-md-8" style="float: right; margin-left: 10px;">
+              {% if not firstfaculty.faculty_image%}
 
-          {% else %}
+              <p>{{ firstfaculty.faculty_name }} Image </p>
+    
+              {% else %}
+    
+              <img src="{{firstfaculty.faculty_image.url}}" class="img-fluid img-responsive"
+                style=" width: 100%;" alt="" />
+              {% endif %}
 
-          <img src="{{firstfaculty.faculty_image.url}}" class="img-fluid img-responsive"
-            style=" height: 300px; width: 100%; padding-bottom: 10px;" alt="" />
-          {% endif %}
-          <p style="text-align: justify; font-size: 16px;">
+            </div>
+            <div style="text-align: justify; font-size: 15px;">
 
-            {% autoescape off %}
-            
-            {{firstfaculty.faculty_description|linebreaks}}
+               <div style=" text-align: justify; font-size: 16px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            <p>
+              {% autoescape off %}
+              {{firstfaculty.faculty_description|linebreaks}}
+              {% endautoescape %}
 
-            {% endautoescape %}
-          </p>
-       
+            </p>
+          </div>
+            </div>
+          
+
         </div>
-        <div class="list-group">
+
+
+
+        <div class="col-lg-12 col-md-12">
           <h3 style="background-color: aquamarine;" class="list-group-item text-center">
             Departments under this faculty
           </h3>
@@ -54,13 +65,15 @@
           {% endfor %}
         </div>
       </div>
-      <div class="col-sm-12 col-md-4">
-        <div class="sidebar sidebar-left mt-sm-30 ml-40">
 
-            <h4 class="widget-title line-bottom mt-30">
-              <i class="text-theme-colored"></i>Schools &
-              <span class="text-theme-colored2">Faculties</span>
-            </h4>
+
+
+      <div class="col-sm-12 col-md-3 ">
+        <div class="sidebar sidebar-left mt-sm-30">
+
+            <h2 class="widget-title line-bottom mt-30" style="font-family:  'Merriweather Sans', sans-serif; font-weight: bold;text-align: justify;">
+         Faculties
+            </h2>
             <ul class="nav nav-stacked nav-pills nav-sidebar" style="background-color: rgb(205, 218, 211); border-radius: 10px;">
           
             {% for faculty in faculties %}
@@ -74,14 +87,21 @@
 
         <div class="widget pt-20"> 
             
-            <div class="visible-md visible-lg">
-              <h4 class="widget-title line-bottom">
+            <div class="col-md-12" style="border-bottom: #2eb135 1px solid;">
+              <h4 class="widget-title line-bottom" style="font-family:  'Merriweather Sans', sans-serif; font-weight: bold;text-align: justify;">
                 Dean of <span class="text-theme-colored2">Faculty</span>
               </h4>
-              <div class="pb-10" style="border-bottom: #2eb135 1px solid; background-color: antiquewhite;">
+              <div class="pb-10" style=" background-color: antiquewhite;">
          
-                <a href="{% url 'academic_staff_view' staff.staff_id %}"> <img src="{{staff.profile_pic.url}}" class="card-img-top img-fluid" style="width: 100%; height: 200px;" alt="">
-                  <div class="col-md-12 text-center  pb-10" style=" background-color: antiquewhite;">
+                <a href="{% url 'academic_staff_view' staff.staff_id %}"> 
+
+                
+                  <div>
+                    <img src="{{staff.profile_pic.url}}" class="card-img-top img-fluid" style="width: 100%; height: 200px;" alt="">
+
+                  </div>
+                 
+                  <div class="text-center  pb-10" style=" background-color: antiquewhite;">
                   <h2 class="card-title font-weight-700 font-18 mt-20">{{staff.staff_name}}</h2>
                   <p class="text-capitalize" style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{ staff.staff_position}}</p></a>
                 
@@ -91,15 +111,15 @@
 <h2 class="widget-title " style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Latest News</h2>
 <div class="latest-posts">
 
-{% for new in news %}
+
 <article class="post media-post clearfix pb-0 mb-10" style="background-color: rgb(223, 226, 225);">
-<a class="post-thumb" href="#"><img src="{{new.news_photo.url}}"  style="height: 75px; width: 100px;" class="img-fluid" alt></a>
+<a class="post-thumb" href="{% url 'newsdetail' news.news_title %}"><img src="{{news.news_photo.url}}"  style="height: 75px; width: 100px;" class="img-fluid" alt></a>
 <div class="post-right">
-  <a href="#"><h4 class="post-title mt-0">{{new.news_title|truncatewords:10}}</h4></a>
+  <a href="{% url 'newsdetail' news.news_title %}"><h4 class="post-title mt-0">{{news.news_title|truncatewords:8}}</h4></a>
 </div>
 </article>
 
-{% endfor %}
+
 </div>
         </div>
       </div>

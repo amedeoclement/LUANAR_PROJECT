@@ -3,7 +3,7 @@
 
 {% block content %}
 <section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
-    <div class="container pt-120 pb-60">
+    <div class="container pt-40 pb-20">
       <div class="section-content">
         <div class="row">
           <div class="col-md-12">
@@ -31,12 +31,10 @@
 
                 <div class="icon-box mb-0 p-0">
 
-                    <!-- <a href="#" class="icon pull-left mb-0 mr-10"> <i class="pe-7s-users"></i> </a> -->
                 <div>
                   <h3><b>Position</b></h3>
-                  <p class="icon-box-title mb-10" style="font-size: 20px;">{{vacancy.position}}</p>
+                  <h3 class="icon-box-title mb-10" style="font-weight: 400px; color: rgb(0, 124, 187); font-family:  'Merriweather Sans', sans-serif;">{{vacancy.position}}</h3>
                   <hr>
-                 
                 </div>
                     
                      <h4><b>Job description</b></h4>
@@ -44,7 +42,12 @@
                       <p>{{vacancy.job_description}}</p>
 
                       <h4><b>Requirements</b></h4>
-                     <p>{{vacancy.requirements}}</p>
+<ul>
+  {% autoescape off %}
+   <li>{{vacancy.requirements|linebreaks}}</li> 
+  {% endautoescape %}
+</ul>
+                   
  
                      </div>
                     

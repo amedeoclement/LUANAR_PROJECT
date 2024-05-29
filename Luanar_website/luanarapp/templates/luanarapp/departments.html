@@ -1,16 +1,20 @@
-
 {% extends "main.html" %} {% load static %} {% block content %}
-<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
-    <div class="container pt-120 pb-60">
+
+<section class="inner-header divider parallax layer-overlay" data-bg-img="{% static 'images/bg/about.jpg' %}">
+    <div class="container pt-40 pb-20">
+
         <div class="section-content">
             <div class="row">
-                <div class="col-md-12">
-                    <h2 class="text-white text-center"  style="font-family:  'Merriweather Sans', sans-serif; font-size: 46px;">
-                         {{ department.department_name}}
+                <div class="col-md-12 text-left flip xs-text-center">
+                    <h2 class="text-white text-center"
+                        style="font-family:  'Merriweather Sans', sans-serif; font-size: 46px;">
+                        LUANAR | Departments
                     </h2>
-                    <ol class="breadcrumb text-left mt-10 white">
-                        <li><a href="{% url '' %}">LUANAR</a></li>
-                        <li class="active">Departments</li>
+                </div>
+                <div class="col-md-12">
+                    <ol class="breadcrumb text-left sm-text-center mt-10">
+                        <li><a href="{% url '' %}" class="text-white">LUANAR</a></li>
+                        <li><a href="#" class="text-white">Departments</a></li>
                     </ol>
                 </div>
             </div>
@@ -23,98 +27,119 @@
 			================================================== -->
     <div id="content">
 
-     
+
         <div class="blog-box blog-box-other with-one-col">
             <div class="container">
                 <div class="row">
-
-                    <div class="col-md-9 blog-side">
-
-                         <!-- Page Banner -->
-        <div class="page-banner pl-10 pt-20">
-          <h2 class="text-theme-colored"> {{department.department_name}}</h2>
-
-      </div>
-      <!-- blog-box Banner -->
-                        <div style="text-align: justify;">
-                            <div style="float: right; margin-left: 30px; width: 400px;">
-                              {% if not department.department_image %}
-       
-                              {% else %}
-                              <img style="width: 100%;"
-                                    src="{{department.department_image.url}}" alt="" />
-                              {% endif %}
+                    <div class="col-md-9 blog-pull-right ">
+                                <div style="text-align: justify; border-bottom:#2eb135 1px solid; padding-top: 30px;">
+                                  <p style="text-align: justify; font-size: 16px;color: rgb(0,124,187);"><b> {{department.department_name}}</b></p>
+                              <hr>
+                                    <div class="col-md-8" style="float: right; margin-left: 10px;">
+                                      {% if not department.department_image%}
+                        
+                                      <p>{{ department.department_name }} Image </p>
+                            
+                                      {% else %}
+                            
+                                      <img src="{{department.department_image.url}}" class="img-fluid img-responsive"
+                                        style=" width: 100%;" alt="" />
+                                      {% endif %}
+                        
+                                    </div>
+                                    <div style="text-align: justify; font-size: 15px;">
+                        
+                                       <div style=" text-align: justify; font-size: 16px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                                    <p>
+                                      {% autoescape off %}
+                                      {{department.about_department|linebreaks}}
+                                      {% endautoescape %}
+                        
+                                    </p>
                                   </div>
-                            <div style="text-align: justify; font-size: 15px;">
-                              {% autoescape off %}
-              
-                              {{department.about_department|linebreaks}}
-                           
-                              {% endautoescape %}
-                            </div>
-                          
+                                    </div>
+                                  
+                        
+                                </div>
 
-                        </div>
-                    </div>
+                                
+
+        <div class="col-lg-12 col-md-12">
+            <h3 style="background-color: aquamarine;" class="list-group-item text-center">
+              Programs under this Department
+            </h3>
+            {% for program in programs %}
+            <a href="{% url 'program_details' program.program_id %}"
+              class="list-group-item">{{program.program_name}}</a>
+            {% endfor %}
+          </div>
+
+                              </div>
 
                     <div class="col-md-3 sidebar">
                         <div class="sidebar-widgets">
-                                <h3 class="widget-title" style="font-family: sans-serif;">
-                                    Quick <span class="text-theme-colored2">Links</span>
-                                  </h3>
-                                <ul class="nav nav-pills nav-stacked nav-sidebar" style="background-color: rgb(205, 218, 211);">
-                                    <li>
-                                      <a href="{% url 'office_of_vc' %}">Office of VC</a>
-                                    </li>
-                                    <li>
-                                        <a href="{% url 'office_of_dvc' %}" >Office of DVC</a>
-                                      </li>
-                                    <li>
-                                      <a href="{% url 'office_of_doqa' %}">Quality Assurance</a>
-                                    </li>
-                                 
-                                    <li>
-                                      <a href="{% url 'feesandfunding' %}">Fees & Funding</a>
-                                    </li>
-                                    <li>
-                                      <a href="{% url 'studentsgovernance' %}">Students Governance</a>
-                                    </li>
-                                    <li>
-                                      <a href="{% url 'accommodation' %}" >Accommodation</a>
-                                    </li>
-                      
-                                  </ul>
-                                  <hr>
-                                  <div class="tags-widget widget">
-                                    <h4 style="font-family: sans-serif;">LUANAR's Virtual Campus</h4>
-    
-                                    <p>
-                                        <div class="box-hover-effect about-video mt-sm-30">
-                                            <div class="effect-wrapper">
-                                                <div class="thumb">
-                                                    <img class="img-fullwidth" src="{% static 'images/about/bunda.jpg' %}" alt="project">
-                                                </div>
-                                                <div class="video-button"></div>
-                                                <a class="hover-link" data-lightbox-gallery="youtube-video"
-                                                    href="https://www.youtube.com/watch?v=c__G3qgDMBw&t=7s" title="Youtube Video">Youtube
-                                                    Video</a>
-                                            </div>
-                    
+                            <h3 class="widget-title" style="font-family: sans-serif;">
+                                Quick <span class="text-theme-colored2">Links</span>
+                            </h3>
+                            <ul class="nav nav-pills nav-stacked nav-sidebar"
+                                style="background-color: rgb(205, 218, 211);">
+                                <li>
+                                    <a href="{% url 'office_of_vc' %}">Office of VC</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'office_of_dvc' %}">Office of DVC</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'office_of_doqa' %}">Quality Assurance</a>
+                                </li>
+
+                                <li>
+                                    <a href="{% url 'feesandfunding' %}">Fees & Funding</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'studentsgovernance' %}">Students Governance</a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'accommodation' %}">Accommodation</a>
+                                </li>
+
+                            </ul>
+                            <hr>
+                            <div class="tags-widget widget">
+                                <h4 style="font-family: sans-serif;">LUANAR's Virtual Campus</h4>
+
+                                <p>
+                                <div class="box-hover-effect about-video mt-sm-30">
+                                    <div class="effect-wrapper">
+                                        <div class="thumb">
+                                            <img class="img-fullwidth" src="{% static 'images/about/bunda.jpg' %}"
+                                                alt="project">
                                         </div>
-                                    </p>
+                                        <div class="video-button"></div>
+                                        <a class="hover-link" data-lightbox-gallery="youtube-video"
+                                            href="https://www.youtube.com/watch?v=c__G3qgDMBw&t=7s"
+                                            title="Youtube Video">Youtube
+                                            Video</a>
+                                    </div>
+
                                 </div>
+                                </p>
+                            </div>
 
                             <div class="tags-widget widget">
                                 <h4></h4>
 
-                                <p>Lilongwe University of Agriculture and Natural Resources (LUANAR) is located in Lilongwe, the capital city of Malawi. Lilongwe is situated in the central region of the country, making it easily accessible from various parts of Malawi. 
+                                <p>Lilongwe University of Agriculture and Natural Resources (LUANAR) is located in
+                                    Lilongwe, the capital city of Malawi. Lilongwe is situated in the central region of
+                                    the country, making it easily accessible from various parts of Malawi.
                                 </p>
-                                <p>The university campus is typically found on the outskirts of the city, offering a serene environment conducive to academic pursuits.
+                                <p>The university campus is typically found on the outskirts of the city, offering a
+                                    serene environment conducive to academic pursuits.
                                 </p>
-                              
+
                             </div>
 
-                           
+
                         </div>
                     </div>
                 </div>

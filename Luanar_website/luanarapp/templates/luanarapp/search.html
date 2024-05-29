@@ -2,11 +2,11 @@
 {% load static %}
 {% block content %}
 <section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
-    <div class="container pt-120 pb-60">
+    <div class="container pt-40 pb-20">
         <div class="section-content">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="text-white text-center " style="font-family: sans-serif; font-size: 46px;">
+                    <h2 class="text-white text-center " style="font-family:  'Merriweather Sans', sans-serif; font-size: 46px;">
                         LUANAR | SEARCH WEB
                     </h2>
                     <ol class="breadcrumb text-left mt-10 white">
@@ -28,11 +28,11 @@
                 <li class="breadcrumb-item active">Search</li>
             </ul>
             <div class="container">
-                <div class="col-md-12" style="background-color: rgb(206, 206, 206); margin-bottom: 10px;">
+                <div class="col-md-12" style="margin-bottom: 10px;">
                     <form id="searchfrm" name="searchfrm" method="GET" action="{% url 'general_search' %}"
                         class="zp-validate-standard-form">
                         <div class="input-group">
-                            <input name="query" type="text" class="form-control" style="margin-top: 15px; height: 40px;"
+                            <input name="query" type="text" class="form-control" style="border: aquamarine 2px solid; margin-top: 15px; height: 40px;"
                                 placeholder="Type a text to search...">
                             <span class="input-group-btn">
                                 <button class="btn btn-primary" style="margin-top: 13px;" type="submit"

@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
-  <div class="container pt-120 pb-60">
+  <div class="container pt-40 pb-20">
     <div class="section-content">
       <div class="row">
         <div class="col-md-12">
@@ -22,29 +22,31 @@
   <div class="row">
     <div class="col-md-9" style="padding-top: 7px;">
       <div class="single-service">
-        <h3 class="line-bottom">
-          News
+        <h3 style="font-family:  'Merriweather Sans', sans-serif;"><b>
+          News</b>
         </h3>
       </div>
-      <div class="section-content pb-20">
+      <div class="section-content pb-10">
         <div class="row">
         {% for new in page %}
-        <div class="col-md-12" style="padding-bottom: 30px;">        
+       
+        <div class="col-md-12" style="padding-bottom: 20px;">  
+          <hr style="height: 2px; background: rgb(131, 128, 128);">      
           <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 col-sm-12">
               <img  alt="" src="{{new.news_photo.url}}" style="border-radius: 10px;"  width="275" height="200">
             </div>
-            <div class="col-md-8 " style="text-align: justify; font-size: 14px; margin-top: -20px;">
-             <a href="{% url 'newsdetail' new.news_id %}">
-               <h3 style="color: #2eb125;">{{new.news_title}}</h3></a>
+            <div class="col-md-8 col-sm-12" style="text-align: justify; font-size: 14px; margin-top: -10px;">
+             <a href="{% url 'newsdetail' new.news_title %}">
+               <h4 style="text-align: justify; font-family:  'Merriweather Sans', sans-serif; color: rgb(0,124,187);">{{new.news_title}}</h4></a>
               <p>{{new.news_body|truncatewords:40}}</p>
               <a href="{% url 'newsdetail' new.news_id %}"
-              class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ MORE</a><span style="float: right;"><b>Posted:</b>  {{ new.updated_at|timesince }}
+              class="hvr-shutter-out-horizontal btn btn-sm btn-dark btn-theme-colored btn-flat">READ MORE</a><span style="float: right;"><b>Posted:</b>  {{ new.updated_at|timesince }}
                 ago</span>
             </div>
           </div>
             </div>
-
+            
         {% endfor %}
       </div>
 

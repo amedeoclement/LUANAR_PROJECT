@@ -3,14 +3,14 @@
 
 {% block content %}
 <section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
-    <div class="container pt-120 pb-60">
+    <div class="container pt-40 pb-20">
       <div class="section-content">
         <div class="row">
           <div class="col-md-12">
             <h2 class="text-theme-colored2 text-uppercase text-center" style="font-family: sans-serif; font-size: 46px;"> LUANAR | Vacancies</h2>
             <ol class="breadcrumb text-left mt-10 white">
               <li><a href=" url '' ">LUANAR</a></li>
-              <li class="active">Vacancies</li>
+              <li><a href="#">Vacancies</a></li>
             </ol>
           </div>
         </div>
@@ -43,11 +43,11 @@
                       {% for announcement in announcements %}
                       <div class="col-md-12 " style=" border-left: 5px solid; background-color: #f7f7f3f1; margin-bottom: 5px;">
                         <div class="col-md-12 col-xs-12 col-sm-12">
-                        <a href="{% url 'announcement_detail' announcement.announcement_id %}"><h4>{{announcement.title}}</h4></a>
+                        <a href="{% url 'announcement_detail' announcement.title %}"><h4>{{announcement.title}}</h4></a>
                         </div>
                         <div class="row ">
                           <div class="col-md-5">
-                            <a class="text-theme-colored font-weight-600 font-12" href="{% url 'announcement_detail' announcement.announcement_id %}"> View
+                            <a class="text-theme-colored font-weight-600 font-12" href="{% url 'announcement_detail' announcement.title %}"> View
                               Details →</a>
                           </div>
                           <div class="col-md-7">
@@ -64,39 +64,44 @@
               </div>
             <div class="col-md-8">
               <div class="single-service">
-                <h3 class="text-uppercase text-theme-colored" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">
+                <h3 class="text-uppercase text-theme-colored" style="font-family:  'Merriweather Sans', sans-serif; font-weight: bold;">
                  Vacancies
                 </h3>
               </div>
                 {% for vacancy in page %}
-                <div style="padding-bottom: 10px;">
+                <div class="col-md-12" style="padding-bottom: 10px;">
+                  <div class="col-md-12" style = "border-bottom: 2px solid #2eb135; border-right: 2px solid #2eb135">
 
+<!-- 
                     <a href="{% url 'vacancy_details' vacancy.vacancy_id %}" class="icon pull-left mb-0 mr-10"> <i class="pe-7s-users" style="font-size: 50px;"></i></a>
-                    <a href="{% url 'vacancy_details' vacancy.vacancy_id %}" ><h3 class="icon-box-title pt-15 mt-0" style="font-weight: 400px;">{{vacancy.position}}</h3></a>
+                     -->
+                    
+                     <a href="{% url 'vacancy_details' vacancy.vacancy_id %}" ><h3 class="icon-box-title pt-15 mt-0" style="font-weight: 400px; color: rgb(0, 124, 187); font-family:  'Merriweather Sans', sans-serif;">{{vacancy.position}}</h3></a>
                      
-                    <div>
-                      <p style="text-align: justify; font-size: 16px;">{{vacancy.job_description|truncatewords:46}}</p>
-                      <a href="{% url 'vacancy_details' vacancy.vacancy_id %}" class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">View details</a>
-              
-                    </div>
+                     <div>
+                       <p style="text-align: justify; font-size: 16px;">{{vacancy.job_description|truncatewords:46}}</p>
+                       <a href="{% url 'vacancy_details' vacancy.vacancy_id %}" class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">View details</a>
+               
+                     </div>
+                  </div>
                    
                    </div>
                 {% endfor %}
                 <div class="col-md-12 mb-30 mt-20" >
                   {% if page.has_previous %}
-                  <a class="btn btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?page=1">First</a>
-                  <a class="btn btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?page={{ page.previous_page_number }}">Previous</a>
+                  <a class="btn btn-xs btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?page=1">First</a>
+                  <a class="btn btn-xs btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?page={{ page.previous_page_number }}">Previous</a>
               {% endif %}
               {% for num in page_range %}
                   {% if num == page.number %}
-                      <span class="btn btn-primary" style="background-color:  rgb(204, 207, 207);">{{ num }}</span>
+                      <span class="btn btn-xs btn-primary" style="background-color:  rgb(204, 207, 207);">{{ num }}</span>
                   {% else %}
-                      <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ num }}">{{ num }}</a>
+                      <a class="btn btn-xs btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ num }}">{{ num }}</a>
                   {% endif %}
               {% endfor %}
               {% if page.has_next %}
-                  <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ page.next_page_number }}">Next</a>
-                  <a class="btn btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ page.paginator.num_pages }}">Last</a>
+                  <a class="btn btn-xs btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ page.next_page_number }}">Next</a>
+                  <a class="btn btn-xs btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?page={{ page.paginator.num_pages }}">Last</a>
               {% endif %}
               
                 </div>

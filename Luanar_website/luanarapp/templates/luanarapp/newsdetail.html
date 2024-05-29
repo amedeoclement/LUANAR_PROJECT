@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
-  <div class="container pt-120 pb-60">
+  <div class="container pt-40 pb-20">
     <div class="section-content">
       <div class="row">
         <div class="col-md-12">
@@ -10,7 +10,7 @@
           </h2>
           <ol class="breadcrumb text-left mt-10 white">
             <li><a href=" url '' ">LUANAR</a></li>
-            <li class="active">News</li>
+            <li><a href=" url '' ">News</a></li>
           </ol>
         </div>
       </div>
@@ -94,6 +94,7 @@
       </div>
 
       <div class="col-md-8 blog-side">
+        
         <div style="text-align: justify; border-bottom:#2eb135 3px solid;">
           <p style="text-align: justify; font-size: 16px;color: rgb(0,124,187);"><b>{{new.news_title}}</b></p>
           <p><b>Posted:</b> {{new.updated_at|date:"F d, Y"}} <span style="float: right;"> <b>Posted By:</b> {{ added_by_user.get_full_name }}</span>

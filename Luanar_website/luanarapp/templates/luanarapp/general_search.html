@@ -3,7 +3,7 @@
 {% load filters %}
 {% block content %}
 <section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
-    <div class="container pt-120 pb-60">
+    <div class="container pt-40 pb-20">
         <div class="section-content">
             <div class="row">
                 <div class="col-md-12">
@@ -29,11 +29,11 @@
                 <li class="breadcrumb-item active">Search</li>
             </ul>
             <div class="container">
-                <div class="col-md-12" style="background-color: aquamarine; margin-bottom: 10px;">
+                <div class="col-md-12" style="margin-bottom: 10px;">
                     <form id="searchfrm" name="searchfrm" method="GET" action="{% url 'general_search' %}"
                         class="zp-validate-standard-form">
                         <div class="input-group">
-                            <input name="query" type="text" class="form-control" style="margin-top: 15px; height: 40px;"
+                            <input name="query" type="text" class="form-control" style="border: aquamarine 2px solid; margin-top: 15px; height: 40px;"
                                 placeholder="Type a text to search..." value="{{query}}">
                             <span class="input-group-btn">
                                 <button class="btn btn-primary" style="margin-top: 13px;" type="submit"
@@ -76,7 +76,7 @@
             <div class="container d-block">
                 {% elif result.news_title %}
                 <div class="col-md-12" style="text-align: justify;">
-                    <a class="d-block" href="{% url 'newsdetail' result.news_id %}" title="Click to find out more">
+                    <a class="d-block" href="{% url 'newsdetail' result.news_title %}" title="Click to find out more">
                         <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.news_title| highlight_search:query }}</h3>
                     </a>
                     <p>
@@ -89,7 +89,7 @@
             <div class="container d-block">
                 {% elif result.title %}
                 <div class="col-md-12" style="text-align: justify;">
-                    <a class="d-block" href="{% url 'announcement_detail' result.announcement_id %}"
+                    <a class="d-block" href="{% url 'announcement_detail' result.title %}"
                         title="Click to find out more">
                         <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.title | highlight_search:query }}</h3>
                     </a>
@@ -103,7 +103,7 @@
             <div class="container d-block">
                 {% elif result.event_title %}
                 <div class="col-md-12" style="text-align: justify;">
-                    <a href="{% url 'eventsdetail' result.event_id %}" title="Click to find out more">
+                    <a href="{% url 'eventsdetail' result.event_title %}" title="Click to find out more">
                         <h3 class="pb-0 mb-0" style="color: rgb(0,124,187);  display: inline-block;">{{ result.event_title| highlight_search:query }}</h3>
                     </a>
                     <p>
