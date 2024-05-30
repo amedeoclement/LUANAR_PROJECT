@@ -7,7 +7,7 @@
       <div class="section-content">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="text-theme-colored2 text-uppercase text-center" style="font-family: sans-serif; font-size: 46px;"> LUANAR | Vacancies</h2>
+            <h2 class="text-white text-uppercase text-center" style="font-family: sans-serif; font-size: 46px;"> LUANAR | Vacancies</h2>
             <ol class="breadcrumb text-left mt-10 white">
               <li><a href=" url '' ">LUANAR</a></li>
               <li><a href="#">Vacancies</a></li>
@@ -24,10 +24,10 @@
     <div class="container pt-0">
         <div class="row">
             <div class="col-sm-12 col-md-4">
-              <h4 class="widget-title line-bottom mt-30">
-                <i class="text-theme-colored"></i>Quick
+              <h3 class="widget-title mt-30" style="font-family:  'Merriweather Sans', sans-serif; font-weight: bold;">
+               Quick
                 <span class="text-theme-colored2">Links</span>
-              </h4>
+              </h3>
               <ul class="nav nav-stacked nav-pills nav-sidebar" style="background-color: rgb(205, 218, 211); border-radius: 10px;">
                 <li><a href="{% url 'office_of_hr' %}">Office of Human Resources</a></li>
                 <li><a href="{% url 'newsandevents' %}">News and Events</a></li>
@@ -37,9 +37,9 @@
               </ul>
                 <div class="sidebar sidebar-left mt-sm-30 pt-20">
                   <div class="widget">
-                    <h4 class="widget-title line-bottom">
+                    <h3 class="widget-title" style="font-family:  'Merriweather Sans', sans-serif; font-weight: bold;">
                       Latest <span class="text-theme-colored2">Annoucements</span>
-                    </h4>
+                    </h3>
                       {% for announcement in announcements %}
                       <div class="col-md-12 " style=" border-left: 5px solid; background-color: #f7f7f3f1; margin-bottom: 5px;">
                         <div class="col-md-12 col-xs-12 col-sm-12">
@@ -70,7 +70,7 @@
               </div>
                 {% for vacancy in page %}
                 <div class="col-md-12" style="padding-bottom: 10px;">
-                  <div class="col-md-12" style = "border-bottom: 2px solid #2eb135; border-right: 2px solid #2eb135">
+                  <div class="col-md-12 pb-5" style = "border-bottom: 2px solid #2eb135; border-right: 2px solid #2eb135">
 
 <!-- 
                     <a href="{% url 'vacancy_details' vacancy.vacancy_id %}" class="icon pull-left mb-0 mr-10"> <i class="pe-7s-users" style="font-size: 50px;"></i></a>

@@ -2,11 +2,11 @@
 {% load static %}
 {% block content %}
 <section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
-    <div class="container pt-120 pb-60">
+    <div class="container pt-40 pb-20">
       <div class="section-content">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="text-white text-center " style="font-family: sans-serif; font-size: 46px;">LUANAR ANNOUNCEMENTS</h2>
+            <h2 class="text-white text-center " style="font-family: sans-serif; font-size: 46px;">LUANAR | ANNOUNCEMENTS</h2>
             <ol class="breadcrumb text-left mt-10 white">
               <li><a href=" url '' ">LUANAR</a></li>
               <li><a href="#">Announcements</a></li>
@@ -52,7 +52,7 @@
           </div>
         </div>
         <div class="col-sm-12 col-md-4">
-          <div class="sidebar sidebar-left mt-sm-30 ml-40">
+          <div class="sidebar sidebar-left mt-sm-30">
             
               <h3>
                  Quick <span class="text-theme-colored2">Links</span>
@@ -105,7 +105,7 @@
 <div class="bg-dark" style="background-color: rgb(87, 84, 84);">
     <div class="desc inherit-position" style="text-align: justify; padding: 0 10px 10px 10px; margin-bottom: 10px;">
         <p class="date text-white text-center">Date: {{new.updated_at|date:"F d, Y"}}</p>
-        <h4 class="min-height text-white">{{new.news_title}}</h4>
+        <h4 class="min-height text-white">{{new.news_title|truncatewords:6}}</h4>
         </div>
 </div>
 

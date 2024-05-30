@@ -495,6 +495,7 @@ class AdministrationStaff(models.Model):
         DEPUTY_VICE_CHANCELLOR = "Deputy Vice Chancellor" , 'Deputy Vice Chancellor'
         UNIVERSITY_REGISTRAR = "University Registrar", 'University Registrar'
         DOSA = "Dean of Students Affairs", 'Dean of Students Affairs'
+        HR = "Human Resources Manager",'Human Resources Manager'
 
     staff_position = models.CharField(max_length=100, choices= Position.choices)
     staff_contacts = models.CharField(max_length= 20)

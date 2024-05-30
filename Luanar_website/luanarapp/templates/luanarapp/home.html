@@ -59,9 +59,9 @@
             data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
             data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
             data-start="1400" data-splitin="none" data-splitout="none" data-responsive_offset="on"
-            style="z-index: 5; white-space: nowrap; letter-spacing:1px;"><a
-              class="btn btn-dark btn-theme-colored btn-circled pl-20 pr-20" href="{% url 'about' %}">Read more</a>
-          </div>
+            style="z-index: 5; white-space: nowrap; letter-spacing:1px;">
+            <a href="{% url 'about' %}" class="btn btn-dark btn-theme-colored">Read more</a>
+             </div>
         </li>
 
         <li data-index="rs-1" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default"
@@ -99,7 +99,7 @@
 
           <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0" id="slide-1-layer-3"
             data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']"
-            data-y="['top','top','top','top']" data-voffset="['280','220','180','180']"
+            data-y="['top','top','top','top']" data-voffset="['290','220','170','170']"
             data-fontsize="['18','18','16','13']" data-lineheight="['30','30','28','25']"
             data-fontweight="['600','600','600','600']" data-width="['700','650','600','420']" data-height="none"
             data-whitespace="nowrap" data-transform_idle="o:1;"
@@ -183,12 +183,11 @@
             data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
             data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
             data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none"
-            data-responsive_offset="on" style="z-index: 7; white-space: nowrap;"><a href="#"
+            data-responsive_offset="on" style="z-index: 7; white-space: nowrap;"><a href="{% url 'announcement_detail' latest_event.title %}"
               class="btn btn-dark btn-theme-colored">Read More</a>
           </div>
 
         </li>
-
       </ul>
     </div>
 
@@ -360,48 +359,6 @@
       information</a>
   </p>
 </div>
-<!--
-  <section class="parallax layer-overlay overlay-theme-colored-9 mb-md-50" data-bg-img="{% static 'images/bg/INDEXB.png' %}" data-parallax-ratio="0.4">
-    <div class="container pt-60 pb-90">
-    <div class="section-content">
-      <div class="section-title-wrapper">
-        <h3 class="text-center text-white" style="font-family:sans-serif; font-size: 40px">LUANAR AT A GLANCE</h3>
-        <br>
-      </div>
-    <div class="row">
-    <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
-    <div class="funfact text-center">
-    <div class="odometer-animate-number text-white font-weight-600 font-48" data-value="197" data-theme="minimal">0</div>
-    <div class="double-line-bottom-centered theme-colored2 mt-0 mb-25"></div>
-    <h5 class="text-white text-uppercase mb-0 font-16">Faculty Members</h5>
-    </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
-    <div class="funfact text-center">
-    <div class="odometer-animate-number text-white font-weight-600 font-48" data-value="10000" data-theme="minimal">0</div>
-    <div class="double-line-bottom-centered-theme-colored-2 mt-0 mb-25"></div>
-    <h5 class="text-white text-uppercase mb-0 font-16">Students</h5>
-    </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
-    <div class="funfact text-center">
-    <div class="odometer-animate-number text-white font-weight-600 font-48" data-value="72" data-theme="minimal">0</div>
-    <div class="double-line-bottom-centered-theme-colored-2 mt-0 mb-25"></div>
-    <h5 class="text-white text-uppercase mb-0 font-16">Programmes</h5>
-    </div>
-    </div>
-    <div class="col-xs-12 col-sm-6 col-md-3 mb-md-0">
-    <div class="funfact text-center">
-    <div class="odometer-animate-number text-white font-weight-600 font-48" data-value="8" data-theme="minimal">0</div>
-    <div class="double-line-bottom-centered-theme-colored-2 mt-0 mb-25"></div>
-    <h5 class="text-white text-uppercase mb-0 font-16">Countries</h5>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-  </section>
- -->
 
 <section class="container">
   <div class="col-md-12  pb-sm-40">
@@ -587,8 +544,7 @@
         <a href="{% url 'faculty_details' faculty.faculty_id %}">
           <div class="card">
             <div class="card-header" style="background-color: rgb(0, 124, 187);">
-              <h3 class="text-white" style="font-family:  'Merriweather Sans', sans-serif; font-weight: bold;">{{
-                faculty.faculty_name }}</h3>
+              <h3 class="text-white" style="font-family:  'Merriweather Sans', sans-serif; font-weight: bold;">{{ faculty.faculty_name }}</h3>
             </div>
             <div class=" card-body">
               <div>

@@ -10,7 +10,7 @@
           </h2>
           <ol class="breadcrumb text-left mt-10 white">
             <li><a href=" url '' ">LUANAR</a></li>
-            <li><a href=" url '' ">News</a></li>
+            <li><a href="#">News</a></li>
           </ol>
         </div>
       </div>
@@ -81,7 +81,7 @@
                                 </div>
                                 <div class="event-meta border-1px pl-40">
                                 <div class="event-content pull-left flip">
-                                <h4 class="event-title media-heading font-roboto-slab font-weight-700"><a href="{% url 'eventsdetail' event.event_id %}">{{event.event_title}}</a></h4>
+                                <h4 class="event-title media-heading font-roboto-slab font-weight-700"><a href="{% url 'eventsdetail' event.event_title %}">{{event.event_title}}</a></h4>
                                 <span class="mb-10 text-gray-darkgray mr-10"><i class="fa fa-clock-o mr-5 text-theme-colored2"></i> at {{event.start_time}} - {{event.end_time}}</span>
                                 <span class="text-gray-darkgray"><i class="fa fa-map-marker mr-5 text-theme-colored2"></i>{{event.venue}}</span>
                               
@@ -144,7 +144,7 @@
   <ul class="row news-list">
     {% for new in news %}
     <li class="col-sm-6 col-md-3 margin-bottom-20 equal-height">
-      <a class="overlay" href="{% url 'newsdetail' new.news_id %}">
+      <a class="overlay" href="{% url 'newsdetail' new.news_title %}">
         <div class="feature-item">
           <div class="thumb">
             <img src="{{ new.news_photo.url }}" class="img-fluid  feature-item" style="height: 150px; width:100%;" alt>
@@ -154,7 +154,7 @@
           <div class="desc inherit-position"
             style="text-align: justify; padding: 0 10px 10px 10px; margin-bottom: 10px;">
             <p class="date text-white text-center">Date: {{new.updated_at|date:"F d, Y"}}</p>
-            <h4 class="min-height text-white">{{new.news_title|truncatewords:10}}</h4>
+            <h4 class="min-height text-white">{{new.news_title|truncatewords:6}}</h4>
           </div>
         </div>
 
