@@ -6,7 +6,7 @@
         <div class="section-content">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="text-white text-center" style="font-family: sans-serif; font-size: 46px;">LUANAR
+                    <h2 class="text-white text-center" style="font-family: sans-serif; font-size: 38px;">LUANAR
                         | EVENTS</h2>
                     <ol class="breadcrumb text-left mt-10 white">
                         <li><a href=" url '' ">LUANAR</a></li>
@@ -49,14 +49,24 @@
                                     - {{event.end_time}}
 
 
-                                    &nbsp;&nbsp;<span style="background-color: #eef2ee; color: #2eb135;"> {% if event.date > current_date %}
-                                               Coming Soon
-                                        
+                                    &nbsp;&nbsp;
+                                         {% if event.date > current_date %}
+                                         <span style="color: #2eb135;">
+                                            Coming Soon
+                                         </span>
+
                                             {% elif  event.date < current_date %}
-                                               Past event
+                                            <span style="color: red;">
+                                               
+                                                Past event
+                                             </span>
+                                             
                                             {% else %}
-                                               Happening today
-                                            {% endif %} </span> 
+                                            <span style="color: rgb(0, 124, 187)">
+                                                Happening today
+                                             </span>
+                                            
+                                            {% endif %} 
                                 </div>
                             </div>
                         </div>
@@ -79,12 +89,11 @@
             </div>
 
             <div class="col-sm-12 col-md-4">
-                <div class="sidebar sidebar-left mt-sm-30 ml-40">
-
-                    <h3 class="widget-title line-bottom">
-                        Quick <span class="text-theme-colored2">Links</span>
-                    </h3>
-
+                <div class="sidebar sidebar-left">
+                    <h3 class="widget-title " style="font-family:  'Merriweather Sans', sans-serif;"><b>
+                        Quick
+                         <span class="text-theme-colored2">Links</span></b>
+                     </h3>
                     <ul class="nav nav-pills nav-stacked nav-sidebar"
                         style="background-color: rgb(205, 218, 211); border-radius: 10px;">
                         <li>

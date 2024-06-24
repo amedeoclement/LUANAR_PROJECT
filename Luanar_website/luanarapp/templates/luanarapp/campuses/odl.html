@@ -1,20 +1,235 @@
-{% extends "main.html" %} {% load static %} {% block content %}
-<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
-  <div class="container pt-40 pb-20">
-    <div class="section-content">
-      <div class="row">
-        <div class="col-md-12">
-          <h2 class="text-white text-uppercase text-center " style="font-family: sans-serif; font-size: 46px;">
-            Open and Distance Learning
-          </h2>
-          <ol class="breadcrumb text-left mt-10 white">
-            <li><a href="{% url '' %}">LUANAR</a></li>
-            <li><a href="#">CAMPUSES</a></li>
-            <li><a href="#">ODL</a></li>
-          </ol>
-        </div>
+{% extends "main.html" %}
+{% load static %}
+
+
+
+
+<!-- 
+
+
+
+-->
+
+{% block content %}
+
+<!-- Banner Wrapper Start -->
+
+<section id="home" style="height: 70%;">
+  <div class="container-fluid p-0">
+    <div class="" style="overflow: visible;"></div>
+    <div class="rev_slider" data-version="5.0" id="revslider-873" style="margin-top: 0px; margin-bottom: 0px;">
+      <ul class="col-lg-12 col-md-12 col-sm-12">
+
+      <li data-index="rs-2" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default"
+      data-easeout="default" data-rotate="0" data-saveperformance="off" data-title="Slide 2" data-description="">
+
+      <img src="{% static 'images/bg/bg5.jpg' %}" alt="" data-bgposition="center center" data-bgfit="cover"
+        data-bgrepeat="no-repeat" class="img-fluid" data-bgparallax="10" data-no-retina="">
+
+      <div class="tp-caption tp-resizeme text-uppercase text-white  font-raleway pl-30 pr-30" id="rs-2-layer-1"
+        data-x="['center']" data-hoffset="['0']" data-y="['middle']" data-voffset="['-100']" data-fontsize="['28']"
+        data-lineheight="['54']" data-width="none" data-height="none" data-whitespace="nowrap"
+        data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
+        data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
+        data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+        data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+        style="z-index: 7; white-space: nowrap; font-weight:400; border-radius: 30px; background-color: rgb(0, 124, 187, 0.2); border-radius: 10px 10px 0 0; padding-left: 10px; padding-right: 10px; border-bottom: rgb(0, 124, 187) 5px solid;border-left: rgb(0, 124, 187) 5px solid;">
+        Welcome to 
       </div>
+
+      <div class="tp-caption tp-resizeme text-white font-raleway pl-30 pr-30" id="rs-2-layer-2" data-x="['center']"
+        data-hoffset="['0']" data-y="['middle']" data-voffset="['-20']" data-fontsize="['48']"
+        data-lineheight="['50']" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;s:500"
+        data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
+        data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
+        data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+        data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+        style="z-index: 7; white-space: nowrap; font-weight:700; border-radius: 30px;">
+        LUANAR | ODL CAMPUS
+      </div>
+
+      <div class="tp-caption tp-resizeme text-center text-white" id="rs-2-layer-3" data-x="['center']"
+        data-hoffset="['0']" data-y="['middle']" data-voffset="['60']" data-fontsize="['30']"
+        data-lineheight="['28']" data-width="none" data-height="none" data-whitespace="nowrap"
+        data-transform_idle="o:1;s:500" data-transform_in="y:100;scaleX:1;scaleY:1;opacity:0;"
+        data-transform_out="x:left(R);s:1000;e:Power3.easeIn;s:1000;e:Power3.easeIn;"
+        data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+        data-start="1400" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+        style="z-index: 5; white-space: nowrap; letter-spacing:0px; font-weight:400;">A University with Endless
+        Possibilities.
+      </div>
+
+      <div class="tp-caption tp-resizeme" id="rs-2-layer-4" data-x="['center']" data-hoffset="['0']"
+        data-y="['middle']" data-voffset="['120']" data-width="none" data-height="none" data-whitespace="nowrap"
+        data-transform_idle="o:1;"
+        data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+        data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+        data-mask_in="x:0px;y:[100%];s:inherit;e:inherit;" data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+        data-start="1400" data-splitin="none" data-splitout="none" data-responsive_offset="on"
+        style="z-index: 5; white-space: nowrap; letter-spacing:1px;">
+        <a href="{% url 'about' %}" class="btn btn-dark btn-theme-colored">Read more</a>
+         </div>
+    </li>
+
+    <li data-index="rs-1" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default"
+        data-easeout="default" data-masterspeed="default" data-thumb="{% static 'images/bg/bg2.jpg' %}"
+        data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7"
+        data-saveperformance="off" data-title="Make an Impact">
+
+        <img src="{% static 'images/bg/bg2.jpg' %}" alt="" data-bgposition="center center" data-bgfit="cover"
+          data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="">
+
+
+        <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme rs-parallaxlevel-0" id="slide-1-layer-1"
+          data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+          data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-width="full"
+          data-height="full" data-whitespace="normal" data-transform_idle="o:1;"
+          data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
+          data-transform_out="opacity:0;s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-start="1000"
+          data-basealign="slide" data-responsive_offset="on"
+          style="z-index: 5;background-color:rgba(0, 0, 0, 0.35);border-color:rgba(0, 0, 0, 1.00);">
+        </div>
+
+        <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0" id="slide-1-layer-2"
+          data-x="['left','left','left','left']" data-hoffset="['40','40','40','25']"
+          data-y="['top','top','top','top']" data-voffset="['120','150','110','130']"
+          data-fontsize="['56','46','40','36']" data-lineheight="['70','60','50','45']"
+          data-fontweight="['800','700','700','700']" data-width="['700','650','600','420']" data-height="none"
+          data-whitespace="normal" data-transform_idle="o:1;"
+          data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+          data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+          data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none"
+          data-responsive_offset="on"
+          style="background-color: rgb(0, 124, 187, 0.2);padding-bottom: 20px; border-radius: 10px 10px 0 0; padding-left: 10px; padding-right: 10px; border-bottom: rgb(0, 124, 187) 5px solid;border-left: rgb(0, 124, 187) 5px solid; z-index: 6; min-width: 600px; max-width: 600px; white-space: normal;">
+          The place of <span class="text-theme-colored">useful <br> learning </span>
+        </div>
+
+        <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0" id="slide-1-layer-3"
+          data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']"
+          data-y="['top','top','top','top']" data-voffset="['290','300','240','240']"
+          data-fontsize="['20','20','18','14']" data-lineheight="['30','30','28','25']"
+          data-fontweight="['600','600','600','600']" data-width="['700','650','600','420']" data-height="none"
+          data-whitespace="nowrap" data-transform_idle="o:1;"
+          data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+          data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+          data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none"
+          data-responsive_offset="on" style="z-index: 7; white-space: nowrap;">Our Innovative learning methods are
+          designed to help you <br>achieve your goals.
+        </div>
+
+        <div class="tp-caption rs-parallaxlevel-0" id="slide-1-layer-4" data-x="['left','left','left','left']"
+          data-hoffset="['53','53','53','30']" data-y="['top','top','top','top']"
+          data-voffset="['360','320','300','300']" data-height="none" data-width="['700','650','600','420']"
+          data-whitespace="nowrap" data-transform_idle="o:1;"
+          data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Power1.easeInOut;"
+          data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+          data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;" data-mask_in="x:0px;y:0px;"
+          data-mask_out="x:0;y:0;" data-start="1000" data-splitin="none" data-splitout="none"
+          data-responsive_offset="on" data-responsive="off"
+          style="z-index: 8; white-space: nowrap;outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;">
+          <a href="{% url 'howtoapply' %}" class="btn btn-sm btn-dark btn-theme-colored">Enroll Now</a>
+        </div>
+      </li>
+
+      <li data-index="rs-3" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default"
+      data-easeout="default" data-masterspeed="default" data-thumb="{% static 'images/bg/bg3.jpg' %}"
+      data-rotate="0" data-fstransition="fade" data-fsmasterspeed="1500" data-fsslotamount="7"
+      data-saveperformance="off" data-title="Make an Impact">
+  
+      <img src="{% static 'images/bg/bg3.jpg' %}" alt="" data-bgposition="center center" data-bgfit="cover"
+        data-bgrepeat="no-repeat" data-bgparallax="10" class="rev-slidebg" data-no-retina="">
+  
+  
+      <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme rs-parallaxlevel-0" id="slide-3-layer-1"
+        data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']"
+        data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-width="full"
+        data-height="full" data-whitespace="normal" data-transform_idle="o:1;"
+        data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;"
+        data-transform_out="opacity:0;s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-start="1000"
+        data-basealign="slide" data-responsive_offset="on"
+        style="z-index: 5;background-color:rgba(0, 0, 0, 0.25);border-color:rgba(0, 0, 0, 1.00);">
+      </div>
+  
+      <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0" id="slide-3-layer-2"
+  
+        data-x="['left','left','left','left']" data-hoffset="['40','51','51','25']"
+            data-y="['top','top','top','top']" data-voffset="['150','170','140','140']"
+            data-fontsize="['56','46','40','36']" data-lineheight="['70','60','50','45']"
+  
+        data-fontweight="['800','700','700','700']" data-width="['700','650','500','420']" data-height="none"
+        data-whitespace="normal" data-transform_idle="o:1;"
+        data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+        data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+        data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none"
+        data-responsive_offset="on"
+        style="z-index: 6; min-width: 600px; max-width: 600px; white-space: normal;">
+        Invest in  <span class="text-theme-colored">
+          Your <br> Future
+        </span>
+      </div>
+  
+      <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0" id="slide-3-layer-3"
+      data-x="['left','left','left','left']" data-hoffset="['50','50','50','30']"
+      data-y="['top','top','top','top']" data-voffset="['290','300','240','240']"
+        data-fontsize="['18','18','16','13']" data-lineheight="['30','30','28','25']"
+        data-fontweight="['600','600','600','600']" data-width="['700','650','500','420']" data-height="none"
+        data-whitespace="nowrap" data-transform_idle="o:1;"
+        data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+        data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+        data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none"
+        data-responsive_offset="on" style="z-index: 7; white-space: nowrap;">
+        
+          Our conducive teaching and learning 
+          environment will give <br> you the best 
+          possible  learning experience.
+   
+      </div>
+  
+      <div class="tp-caption tp-resizeme text-white rs-parallaxlevel-0" id="slide-3-layer-4" data-x="['left','left','left','left']"
+      data-hoffset="['53','53','53','30']" data-y="['top','top','top','top']"
+      data-voffset="['360','320','300','300']"
+        data-fontsize="['18','18','16','16']" data-lineheight="['30','30','30','30']"
+        data-fontweight="['600','600','600','600']" data-width="['700','650','500','420']" data-height="none"
+        data-whitespace="nowrap" data-transform_idle="o:1;"
+        data-transform_in="y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+        data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+        data-mask_out="x:0;y:0;s:inherit;e:inherit;" data-start="1000" data-splitin="none" data-splitout="none"
+        data-responsive_offset="on" style="z-index: 7; white-space: nowrap;"><a href="#"
+          class="btn btn-sm btn-dark btn-theme-colored">Read More</a>
+      </div>
+  
+    </li>
+      </ul>
     </div>
+
+  </div>
+
+  <script>
+    $(document).ready(function (e) {
+      $(".rev_slider").revolution({
+        sliderType: "standard",
+        sliderLayout: "auto",
+        dottedOverlay: "none",
+        delay: 10000,
+        navigation: {
+          keyboardNavigation: "off",
+          keyboard_direction: "horizontal",
+          mouseScrollNavigation: "off",
+          onHoverStop: "off",
+          touch: {
+            touchenabled: "off",
+            swipe_threshold: 75,
+            swipe_min_touches: 1,
+            swipe_direction: "horizontal",
+            drag_block_vertical: false
+          },
+        },
+        responsiveLevels: [1240, 1024, 778],
+        visibilityLevels: [1240, 1024, 778],
+        gridwidth: [1170, 1024, 778, 480],
+      });
+    });
+  </script>
   </div>
 </section>
 
@@ -38,12 +253,12 @@
 
             <div class="col-md-6" style="font-family: sans-serif; font-size: 15px;">
               <h3 class="text-uppercasetext-theme-colored mt-0" style="font-family: sans-serif; font-weight: bolder;">
-                Welcome to Bunda College, <span class="text-theme-colored2">ODL campus</span>
+                Welcome to LUANAR, <span class="text-theme-colored2">ODL Campus</span>
 
               </h3>
               <hr>
 
-              <p>
+              <p style="text-align: justify;">
                 The LUANAR, Open and Distance (ODL) Directorate is dedicated to increase equitable access to market
                 relevant agricultural programmes through flexible learning environment which aligns with LUANAR’s vision
                 of becoming a world class university in teaching and learning excellence.
@@ -71,130 +286,274 @@
               teams at University level including LUANAR Management, ODL Directorate, Faculties, Departments, Library
               Management, ICT experts, Laboratory Assistants, Lecturers and Tutors.
             </p>
+            <p>LUANAR ODL has adopted a modular approach to learning, which is delivered through a blended mode that comprises face to face interaction and distance mode to support students, enhanced by e-learning technologies.</p>
+            <p>The directorate places strong emphasis on student support services. This is being achieved by operating satellite centers in Mzuzu, Lilongwe and Blantyre where students have access to Internet and ICT equipment, library resources, tutoring services based on areas requiring support, guidance and counselling, and other support services to support teaching and learning.</p>
+         
           </div>
 
 
 
         </div>
       </div>
-      <div class="col-sm-12 col-md-3">
-        <div class="sidebar sidebar-left mt-sm-30">
 
-            <h3 class="widget-title line-bottom">
-                Important <span class="text-theme-colored2">information</span>
+      <div class="col-sm-12 col-md-3">
+        <div class="sidebar sidebar-left">
+
+            <h3 class="widget-title" style="font-family:  'Merriweather Sans', sans-serif;"> <b>
+              QUICK <span class="text-theme-colored2">LINKS</span></b>
             </h3>
 
-            <ul class="nav nav-stacked nav-pills nav-sidebar" style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+            <ul class="nav nav-pills nav-stacked nav-sidebar" style="background-color: rgb(205, 218, 211); border-radius: 10px;">
               <li>
-                <a href="{% url 'accommodation' %}"
-                  >Accommodation</a >
+                <a href="{% url 'accommodation' %}">Accommodation</a>
               </li>
               <li>
-                <a href="{% url 'citycampus' %}"
-                  >City Campus</a >
+                <a href="{% url 'citycampus' %}">City Campus</a>
               </li>
               <li>
-                <a href="{% url 'naturalresourcescollege' %}" 
-                  >NRC Campus</a >
+                <a href="{% url 'naturalresourcescollege' %}" >NRC Campus</a>
               </li>
               <li>
-                <a href="{% url 'virtualcampus' %}"
-                  >Virtual Campus</a >
+                <a href="{% url 'virtualcampus' %}" >Virtual Campus</a>
               </li>
               <li>
-                <a href="{% url 'odl' %}"
-                  >ODeL </a >
+                <a href="{% url 'bundacampus' %}" >ODL Campus </a>
               </li>
-             
-             
             </ul>
+          <div class="widget pt-20">
+
+            <div class="col-md-12">
+              <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 2px solid;">
+                <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top" style="padding-top: 15px;"
+                  alt="...">
+                <div class="card-body ">
+                  <h5 class="card-title font-weight-700 font-18 mt-20">Admission</h5>
+                  <p class="card-text" style="text-align: justify;">LUANAR is a dynamic and vibrant community of learning that brings together
+                    administrators, academic staff and students from Malawi...
+                  </p>
+                  <a href="{% url 'howtoapply' %}"
+                    class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ MORE</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+</section> 
 
-    <div class="container">
-      <div class="section-content">
+<section class="container">
+  <div class="col-md-12  pb-sm-40">
+    <div class="section-title">
+      <div>
+        <h2 class="text-uppercase title" style="font-family:  'Merriweather Sans', sans-serif; font-weight: bold;">
+          Latest <span class="text-theme-colored2">News</span></h2><span>
+            <a href="{% url 'newsandevents' %}"
+            class="hvr-shutter-out-horizontal btn btn-dark btn-xs btn-theme-colored btn-flat font-14">Read more...</a>
+      
+            
+        </span>
+      </div>
+    </div>
+    <div class="section-content">
+      <div class="row">
+        {% for new in news %}
+        <div class="col-md-4 col-lg-4">
+          
+              <div class="entry-header">
+                <div class="post-thumb thumb">
+                  <a href="{% url 'newsdetail' new.news_title %}">
+                    <img src="{{new.news_photo.url}}" alt="" class="img-responsive img-fullwidth"
+                      style="height: 220px;">
+                  </a>
+                </div>
+              </div>
+              <div class="entry-content bg-white border-2px mb-30 p-20" style="min-height: 37vh;">
+                <div class="entry-meta">
+                  <ul class="list-inline font-12 mb-10">
+                    <li><i class="fa fa-users text-gray mr-5"></i>Tag: {{new.tag}} </li>
+                    <li class="" style="float: right;"><i class="fa fa-clock-o mr-5"></i> {{ new.updated_at|timesince }}
+                      ago</li>
+                  </ul>
+                </div>
+                <h4 class="entry-title font-weight-600 letter-space-1 mt-5 mb-10"><a
+                    href="{% url 'newsdetail' new.news_title %}"
+                    class="text-theme-colored">{{new.news_title|truncatewords:10}}</a></h4>
+                <p class="mb-0" style="text-align: justify;">{{new.news_body|truncatewords:12}}</p>
+              </div>
+             
+        </div>
 
-          <div class="container mt-5">
-              <div class="container mt-0">
-                  <div class="col-md-12 text-center">
-                      <h2 class="text-uppercase title">CITY <span class="text-theme-colored2"> CAMPUS</span></h2>
-                      <div class="line-bottom-centered"></div>
-                  </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mb-0 pt-50" style="background-color: #efe6b2e0;">
+  <section class="container events">
+    <div class="col-md-12 col-lg-12">
+      <div class="row">
+        <div class="col-md-6">
+          <h3 class="text-uppercase line-bottom-theme-colored-2 mt-0 pb-10"
+            style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight:bold;"><i
+              class="fa fa-calendar mr-10"></i>Upcoming <span class="text-theme-colored2">Events</span></h3>
+          {% for event in events %}
+          <article>
+            <div class="event-block">
+              <div class="event-date text-center">
+                <ul class="text-white font-18 font-weight-600">
+                  <li class="border-bottom">{{ event.date|date:"d" }}</li>
+                  <li class>{{ event.date|date:"M" }}</li>
+                </ul>
+              </div>
+              <div class="event-meta border-1px pl-40" style="background-color: white; width: 90%;">
+                <div class="event-content pull-left flip">
+                  <h4 class="event-title media-heading font-roboto-slab font-weight-700"><a
+                      href="{% url 'eventsdetail' event.event_title %}">{{event.event_title|truncatewords:10}}</a></h4>
+                  {% if not event.start_time %}
+                  <span class="mb-10 text-gray-darckgray mr-10"><i class="fa fa-clock-o mr-5 text-theme-colored2"></i>
+                    The whole day</span>
+                  {% else %}
+                  <span class="mb-10 text-gray-darkgray mr-10"><i class="fa fa-clock-o mr-5 text-theme-colored2"></i> at
+                    {{event.start_time}} - {{event.end_time}}</span>
+                  {% endif %}
+
+                  <span class="text-gray-darkgray"><i
+                      class="fa fa-map-marker mr-5 text-theme-colored2"></i>{{event.venue}}</span>
+                  <p class="mt-5">{{event.event_description|truncatewords:7}}</p>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          {% endfor %}
+        </div>
+
+        <div class="col-md-6" style="padding-top: 0px;">
+
+          <h3 class="text-uppercase mt-0 "
+            style="padding-bottom: 20px;   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">
+            Latest <span class="text-theme-colored2">Announcements</span></h3>
+
+
+          {% for announcement in announcements %}
+          <div class="pb-10">
+            <div
+              style="background-color: rgb(0, 124, 187, 0.1);padding-bottom: 20px; border-radius: 10px 10px 0 0; padding-left: 10px; padding-right: 10px; border-bottom: rgb(0, 124, 187) 5px solid;border-left: rgb(0, 124, 187) 5px solid;">
+
+              <div>
+                <a href="{% url 'announcement_detail' announcement.title %}">
+                  <p
+                    style="text-align: justify; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; color:rgb(0,124,187);">
+                    {{announcement.title}}</p>
+                </a>
+              </div>
+              <div>
+                <p class="text-dark" style="text-align: justify;">
+                  {{announcement.description|truncatewords:20}}
+                </p>
               </div>
               <div class="row">
-                  <div class="col-md-4">
-                      <div class="card mb-sm-30 bg-white pb-20" style="border-bottom:#2eb135 5px solid;">
-                          <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top"
-                              style="padding-top: 15px;" alt="...">
-                          <div class="card-body pl-20  pr-10">
-                              <h3 class="font-weight-600 mt-20 text-center"><a href="#">PROGRAMS AT ODL</a></h3>
-                              <p class="card-text" style="text-align: justify">ODL Campus offers Four undergraduate programs from three departments including Extension Agribusiness, Agriculture and Applied Economics and Agribusiness Department...</p>
-                              <a href="{% url 'programs_at_odl' %}"
-                                  class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ
-                                  MORE</a>
-
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-md-4">
-                      <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 5px solid;">
-                          <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top"
-                              style="padding-top: 15px;" alt="...">
-                          <div class="card-body pl-20  pr-10">
-                              <h3 class="font-weight-600 mt-20 text-center"><a href="#">STUDENTS PORTAL</a></h3>
-                              <p class="card-text" style="text-align: justify">Students portal allows you to access your academic records at
-                                  LUANAR. During the orientations, students are given default passwords which
-                                  enable them login for the first time into the portal.</p>
-                              <a href="#"
-                                  class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">LOGIN
-                                  NOW</a>
-                          </div>
-                      </div>
-                  </div>
-                  <div class="col-md-4">
-                      <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 5px solid; ">
-                          <img src="{% static 'images/about/cr1.jpg' %}" class="card-img-top"
-                              style="padding-top: 15px;" alt="...">
-                          <div class="card-body pl-20  pr-10">
-                              <h3 class="font-weight-600 mt-20 text-center"><a href="#">SPORTS AND RECREATION</a>
-                              </h3>
-                              <p class="card-text" style="text-align: justify">Clubs have been offering sporting opportunities for student
-                                  cohort for many years. Membership is open to students, staff and alumni.
-                                  Sporting clubs compete in local, regional...</p>
-                              <a href="#"
-                                  class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ
-                                  MORE</a>
-                          </div>
-                      </div>
-                  </div>
+                <div class="col-md-4">
+                  <a class="text-theme-colored font-weight-600 font-12"
+                    href="{% url 'announcement_detail' announcement.title %}"> View
+                    Details →</a>
+                </div>
+                <div class="col-md-8">
+                  <p class="mb-5 text-gray-darkgray" style="float:right;"><i
+                      class="fa fa-clock-o mr-5 text-theme-colored2"></i>
+                    Posted : {{announcement.created_at|timesince}} ago</p>
+                </div>
               </div>
-          </div>
-      </div>
-  </div>
-  <div class="container pt-20">
-    <div class="container mt-0">
-      <div class="col-md-12 text-center">
-      <h2 class="text-uppercase title">ODL CAMPUS LOCATION AND STRUCTURE</h2>
-      <div class="line-bottom-centered"></div>
-     </div>
-      </div>
-   
-      <div class="container col-md-12" style="text-align: justify;">
-         <div class="row">
-          <div class="col-md-6">
-             <p class="pl-20  pr-10">The ODL Directorate was established in 2016 with an initial enrolment of 441 students. As of January 2020, the student enrollment was over 1500 students. Currently, LUANAR ODL offers four academic programs: BSc in Agribusiness Management, BSc in Agricultural Economics, BSc in Extension and BSc in Agricultural Innovations. Admission into ODL programmes is through both generic and mature entry level, in line with the LUANAR Admission Policy and Programme Requirements.Running of ODL programmes is undertaken by various operational teams at University level including LUANAR Management, ODL Directorate, Faculties, Departments, Library Management, ICT experts, Laboratory Assistants, Lecturers and Tutors.</p>
+
             </div>
-          <div class="col-md-6">
-             <p class="pl-20  pr-10">LUANAR ODL has adopted a modular approach to learning, which is delivered through a blended mode that comprises face to face interaction and distance mode to support students, enhanced by e-learning technologies.</p>
-             <p class="pl-20  pr-10">The directorate places strong emphasis on student support services. This is being achieved by operating satellite centers in Mzuzu, Lilongwe and Blantyre where students have access to Internet and ICT equipment, library resources, tutoring services based on areas requiring support, guidance and counselling, and other support services to support teaching and learning.</p>
-          
+          </div>
+
+
+          {% endfor %}
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>
+
+
+<section id="faculties" style="padding-bottom: 0px; margin-bottom: 0px;" class="container pt-20">
+
+  <div class="col-md-12 section-title pt-10 pb-0 mb-0">
+
+    <h2 class="text-uppercase title" style="font-family:  'Merriweather Sans', sans-serif; font-weight: bold;">Our <span
+        class="text-theme-colored2">Faculties</span></h2>
+    </span> <span style="float: left;"> <a href="{% url 'campus_faculties' 3 %}"
+        class="hvr-shutter-out-horizontal btn btn-dark btn-xs btn-theme-colored btn-flat font-14">View all faculties</a>
+    </span>
+  </div>
+  <div class="col-md-12 pt-0 mt-0">
+    <div class="row">
+      {% for faculty in faculties %}
+      <div class="col-md-4">
+       
+        <div class="card">
+          <div class="card-header" style="background-color: rgb(0, 124, 187); height: 80px; text-align: center;">
+            <h3 class="text-white" style="font-family:  'Merriweather Sans', sans-serif; font-weight: bold;">{{ faculty.faculty_name }}</h3>
+          </div>
+          <div class=" card-body">
+            <div>
+              {% if not faculty.faculty_image %}
+
+              {% else %}
+              <a href="{% url 'faculty_details' faculty.faculty_id %}">
+              <img src="{{faculty.faculty_image.url}}" class="img-fluid" alt="">
+              </a>
+              {% endif %}
+            </div>
+            <div class="col-md-12" style="background-color: #e1e9e2; min-height: 27vh;">
+              <a href="{% url 'faculty_details' faculty.faculty_id %}">
+              <div class="pt-5"
+                style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                <p style="text-align: justify;">
+
+                  {{faculty.faculty_description| truncatewords:20}}
+
+                </p>
+              </div>
+              </a>
+            </div>
           </div>
         </div>
+    </div>
+      {% endfor %}
+
+    </div>
+  </div>
+
+</section>
+
+<section>
+
+  <div class="col-md-12 col-lg-12 bg-theme-colored2">
+    <div class="row ">
+      <div class="col-md-7">
+        <h2 class="text-white text-uppercase pt-0">Subscribe to our Newsletter!</h2>
+      </div>
+      <div class="col-md-5">
+        <form id="mailchimp-subscription-form-footer" class="newsletter-form " style="padding-top: 15px;">
+          <div class="input-group">
+            <input value name="EMAIL" placeholder="Enter your Email" class="form-control input-lg font-16"
+              data-height="45px" id="mce-EMAIL-footer" style="height: 45px;" type="email">
+            <span class="input-group-btn">
+              <button data-height="45px" class="btn btn-theme-colored text-white btn-xs m-0 font-14" type="submit"
+                style="height: 45px;">Subscribe</button>
+            </span>
+          </div>
+        </form>
+
       </div>
     </div>
   </div>
- 
-
 </section>
 {% endblock content %}

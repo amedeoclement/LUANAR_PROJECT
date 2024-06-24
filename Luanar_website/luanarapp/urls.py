@@ -6,10 +6,9 @@ urlpatterns = [
 path('', views.home, name= ""),
 path('login/', views.loginPage, name="login"),
 path('logout/', views.logoutUser, name="logout"),
-path('create-gallery/', views.create_gallery, name="create-gallery"),
 path('about', views.about, name = "about"),
 path('vacancies', views.vacancies, name = "vacancies"),
-path('vacancy_details/<str:id>', views.vacancy_detailsView, name = "vacancy_details"),
+path('vacancy_details/<str:id>/<str:title>', views.vacancy_detailsView, name = "vacancy_details"),
 path('newsandevents', views.newsandevents, name = "newsandevents"),
 path('newsdetail/<str:id>', views.newsdetail, name = "newsdetail"),
 path('events', views.events, name = "events"),
@@ -18,6 +17,9 @@ path('campusesandmaps', views.campusesandmaps, name = "campusesandmaps"),
 path('luanarholdings', views.luanarholdings, name = "luanarholdings"),
 path('faculties', views.faculties, name = "faculties"),
 path('faculty_details/<str:code>', views.faculty_detailsView, name="faculty_details"),
+
+path('campus_faculties/<str:code>', views.campus_faculties, name="campus_faculties"),
+
 path('department_details/<str:id>', views.department_detailsView, name = "department_details"),
 path('program_details/<str:id>', views.program_detailsView, name= "program_details"),
 
@@ -25,6 +27,7 @@ path('search/', views.search_view, name='search_view'),
 path('search_page', views.search_page, name = "search_page"),
 
 path('general_search/', views.general_search, name ="general_search"),
+path('subscribe/', views.subscribe, name ="subscribe"),
 
 
 
@@ -52,7 +55,6 @@ path('summerprograms', views.summerprograms , name = "summerprograms"),
 path('bundacampus', views.bundacampus , name = "bundacampus"),
 path('citycampus', views.citycampus , name = "citycampus"),
 path('programs_at_city', views.programs_at_cityView, name = "programs_at_city"),
-path('programs_at_odl', views.programs_at_odlView, name = "programs_at_odl"),
 
 path('odl', views.odl , name = "odl"),
 path('naturalresourcescollege', views.naturalresourcescollege , name = "naturalresourcescollege"),
@@ -118,7 +120,6 @@ path('marketing', views.marketing, name ="marketing"),
 
 path('announcements', views.announcements , name = "announcements"),
 path('announcement_detail/<str:id>', views.announcement_detail, name = 'announcement_detail'),
-path('gallery', views.gallery , name = "gallery"),
 path('social_media_links', views.social_media_links , name = "social_media_links"),
 path('downloads', views.downloads , name = "downloads"),
 

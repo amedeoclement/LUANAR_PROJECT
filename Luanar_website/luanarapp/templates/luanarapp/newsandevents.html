@@ -6,8 +6,7 @@
     <div class="section-content">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="text-white text-center" style="font-family: sans-serif; font-size: 46px;">NEWS & EVENTS
-          </h2>
+          <h2 class="text-white text-center" style="font-family: sans-serif; font-size: 38px;">LUANAR | NEWS          </h2>
           <ol class="breadcrumb text-left mt-10 white">
             <li><a href="{% url '' %}">LUANAR</a></li>
             <li><a href="#">UPDATES</a></li>
@@ -31,7 +30,7 @@
         {% for new in page %}
        
         <div class="col-md-12" style="padding-bottom: 20px;">  
-          <hr style="height: 2px; background: rgb(131, 128, 128);">      
+          <hr style="height: 1px; background: rgb(131, 128, 128);">      
           <div class="row">
             <div class="col-md-4 col-sm-12">
               <img  alt="" src="{{new.news_photo.url}}" style="border-radius: 10px;"  width="275" height="200">
@@ -40,7 +39,7 @@
              <a href="{% url 'newsdetail' new.news_title %}">
                <h4 style="text-align: justify; font-family:  'Merriweather Sans', sans-serif; color: rgb(0,124,187);">{{new.news_title}}</h4></a>
               <p>{{new.news_body|truncatewords:40}}</p>
-              <a href="{% url 'newsdetail' new.news_id %}"
+              <a href="{% url 'newsdetail' new.news_title %}"
               class="hvr-shutter-out-horizontal btn btn-sm btn-dark btn-theme-colored btn-flat">READ MORE</a><span style="float: right;"><b>Posted:</b>  {{ new.updated_at|timesince }}
                 ago</span>
             </div>
@@ -76,37 +75,40 @@
   </div>
   <div class="col-md-3">
 
-    <h3 class="widget-title mt-30" style="font-family: sans-serif;">
+    <h3 class="widget-title mt-30" style="font-family: sans-serif;"><b>
       <i class="text-theme-colored"></i>Quick
-      <span class="text-theme-colored2">Links</span>
+      <span class="text-theme-colored2">Links</span></b>
     </h3>
 
     <ul class="nav nav-stacked nav-pills nav-sidebar"
       style="background-color: rgb(205, 218, 211); border-radius: 10px;">
-      <li> <a href="{% url 'newsandevents' %}">News</a></li>
-      <li> <a href="{% url 'announcements' %}">Announcements</a></li>
       <li> <a href="{% url 'events' %}">Events</a></li>
+      <li> <a href="{% url 'announcements' %}">Announcements</a></li>
       <li> <a href="{% url 'researchandoutreach' %}">Research & Outreach</a></li>
       <li> <a href="{% url 'vacancies' %}">Vacancies</a></li>
       <li> <a href="{% url 'studentclubsandsociety' %}">Sports & Recreation</a></li>
-      <li> <a href="{% url 'popularvideos' %}">Popular Videos</a></li>
     </ul>
-    <div class="col-md-12">
-      <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 3px solid; ">
+    <div>
+      <div class="card mb-sm-30 bg-white pb-20 " style="border-bottom:#2eb135 3px solid;">
         <img src="/static/images/about/cr1.jpg" class="card-img-top"
             style="padding-top: 15px;" alt="...">
         <div class="card-body">
             <h3 class="font-weight-600 mt-20 text-center"><a href="{% url 'studentclubsandsociety' %}">SPORTS AND RECREATION</a>
             </h3>
             <p class="card-text" style="text-align: justify">Clubs have been offering sporting opportunities for student
-                cohort for many years. Membership is open to students, staff and alumni.
-                Sporting clubs compete in local, regional...</p>
+                cohort for many years. Membership is open to students, staff and alumni...</p>
             <a href="{% url 'studentclubsandsociety' %}"
                 class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">READ
                 MORE</a>
         </div>
     </div>
     </div>
+
+    {% if not staff.staff_name %}
+
+
+    {% else %}
+
     <div class="col-md-12 pt-20 mb-10">
       <h3 class="widget-title line-bottom">
         Featured <span class="text-theme-colored2">Staff</span>
@@ -115,7 +117,14 @@
         <div class="pb-10" style="border-bottom: #2eb135 1px solid; background-color: antiquewhite;">
          
           
-          <a href="{% url 'adminstrative_staff_view' staff.staff_id %}"> <img src="{{staff.profile_pic.url}}" class="card-img-top img-fluid" style="width: 100%; height: 200px; vertical-align: auto;" alt=""></a>
+          <a href="{% url 'adminstrative_staff_view' staff.staff_id %}"> 
+            {% if not staff.profile_pic %}
+            <img src="/static/images/about/placeholderimage.jpg"  class="card-img-top img-fluid" style="width: 100%; height: 200px; vertical-align: auto;" alt="">
+            {% else %}
+           <img src="{{staff.profile_pic.url}}" class="card-img-top img-fluid" style="width: 100%; height: 200px; vertical-align: auto;" alt="">
+              {% endif %}
+        
+
             <div class="col-md-12 text-center  pb-10" style=" background-color: antiquewhite;">
             <h2 class="card-title font-weight-700 font-18 mt-20">{{staff.staff_name}}</h2>
             <p class="text-capitalize" style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{ staff.staff_position}}</p>
@@ -124,6 +133,8 @@
         </div>
         </div>
       </div>
+{% endif %}
+
     </div>
     
   </div>

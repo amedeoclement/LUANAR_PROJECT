@@ -7,7 +7,7 @@
       <div class="section-content">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="text-white text-uppercase text-center" style="font-family: sans-serif; font-size: 46px;"> LUANAR | Vacancies</h2>
+            <h2 class="text-white text-uppercase text-center" style="font-family: sans-serif; font-size: 38px;"> LUANAR | Vacancies</h2>
             <ol class="breadcrumb text-left mt-10 white">
               <li><a href=" url '' ">LUANAR</a></li>
               <li><a href="#">Vacancies</a></li>
@@ -72,15 +72,11 @@
                 <div class="col-md-12" style="padding-bottom: 10px;">
                   <div class="col-md-12 pb-5" style = "border-bottom: 2px solid #2eb135; border-right: 2px solid #2eb135">
 
-<!-- 
-                    <a href="{% url 'vacancy_details' vacancy.vacancy_id %}" class="icon pull-left mb-0 mr-10"> <i class="pe-7s-users" style="font-size: 50px;"></i></a>
-                     -->
-                    
-                     <a href="{% url 'vacancy_details' vacancy.vacancy_id %}" ><h3 class="icon-box-title pt-15 mt-0" style="font-weight: 400px; color: rgb(0, 124, 187); font-family:  'Merriweather Sans', sans-serif;">{{vacancy.position}}</h3></a>
+                     <a href="{% url 'vacancy_details' vacancy.vacancy_id vacancy.position %}" ><h3 class="icon-box-title pt-15 mt-0" style="font-weight: 400px; color: rgb(0, 124, 187); font-family:  'Merriweather Sans', sans-serif;">{{vacancy.position}}</h3></a>
                      
                      <div>
                        <p style="text-align: justify; font-size: 16px;">{{vacancy.job_description|truncatewords:46}}</p>
-                       <a href="{% url 'vacancy_details' vacancy.vacancy_id %}" class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">View details</a>
+                       <a href="{% url 'vacancy_details' vacancy.vacancy_id vacancy.position %}" class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat">View details</a>
                
                      </div>
                   </div>

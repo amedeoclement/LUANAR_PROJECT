@@ -40,8 +40,14 @@
         <!-- blog-box Banner -->
                         <div style="text-align: justify;">
 
-                            <div class="col-md-6" style="float: right; margin-left: 10px;"> <img src="{{staff.profile_pic.url}}" class="img-fluid img-responsive"
-                                style=" width: 100%;" alt="" />
+                            <div class="col-md-6" style="float: right; margin-left: 10px;">
+                              
+                                {% if not staff.profile_pic %}
+                                <img src="/static/images/about/placeholderimage.jpg"  class="card-img-top img-fluid" style="width: 100%; vertical-align: auto;" alt="">
+                                {% else %}
+                               <img src="{{staff.profile_pic.url}}" class="card-img-top img-fluid" style="width: 100%;" alt="">
+                                  {% endif %}
+
                                 <div class="news-image-caption" style="font-size: 16px;"><strong>
                                     {{staff.staff_position}}:&nbsp;</strong>{{staff.staff_name}}</div>
                          

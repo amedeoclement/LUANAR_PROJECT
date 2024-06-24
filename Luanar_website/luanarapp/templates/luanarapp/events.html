@@ -6,7 +6,7 @@
         <div class="section-content">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="text-white text-center" style="font-family: sans-serif; font-size: 46px;">NEWS &
+                    <h2 class="text-white text-center" style="font-family: sans-serif; font-size: 38px;">NEWS &
                         EVENTS
                     </h2>
                     <ol class="breadcrumb text-left mt-10 white">
@@ -27,7 +27,7 @@
           <div class="col-md-12" >
             <div class="row">
                 {% for event in page %}
-                <a href="{% url 'eventsdetail' event.event_id %}">
+                <a href="{% url 'eventsdetail' event.event_title %}">
                     <div class="col-lg-4 col-md-4 col-sm-6 mt-20" >
                         <img class="img img-responsive img-fluid" src="{{event.event_photo.url}}" style="width: 100%;"  />
                         <div class="event"  style="background-color: rgb(0,124,187);">
@@ -67,9 +67,9 @@
         </div>
         <div class="col-md-3">
 
-            <h3 class="widget-title line-bottom mt-30" style="font-family: sans-serif;">
-                <i class="text-theme-colored"></i>Quick
-                <span class="text-theme-colored2">Links</span>
+            <h3 class="widget-title mt-30" style="font-family:  'Merriweather Sans', sans-serif;"><b>
+               Quick
+                <span class="text-theme-colored2">Links</span></b>
             </h3>
 
             <ul class="nav nav-stacked nav-pills nav-sidebar"

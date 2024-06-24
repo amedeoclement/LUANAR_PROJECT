@@ -2,5 +2,107 @@
 {% load static %}
 
 {% block content %}
+<section class="inner-header divider layer-overlay overlay-dark-4" data-bg-img="{% static 'images/bg/about.jpg' %}">
+    <div class="container pt-40 pb-20">
+        <div class="section-content">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="text-white text-center " style="font-family: sans-serif; font-size: 38px;">
+                        LUANAR | DOWNLOADS
+                    </h2>
+                    <ol class="breadcrumb text-left mt-10 white">
+                        <li><a href="{% url '' %}">LUANAR</a></li>
+                        <li><a href="#">DOWNLOADS</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pb-20" style="background-color: azure;">
+    <div class="container" id="slider">
+        {% if not page %}
+      
+        <div class="col-md-12">
+            <p style="font-family:  'Merriweather Sans', sans-serif;">No downloads available!</p>
+        </div>
+     
+
+        {% else %}
+        <div style="font-family: 'Merriweather Sans', sans-serif;">
+            <ol style="list-style-type: number;  color: rgb(0,124,187)" >
+            {% for result in page %}
+        
+
+            {% if result.application_form %}
+
+                <div class="col-md-12 pb-10" style="text-align: justify;">
+                    <li>
+                    <a  style="word-wrap: break-word;  color: rgb(0,124,187); font-size: 16px;" href="{{result.application_form.url}}" title="Click to find out more" class="responsive-link">
+                    {{ result.application_form }}
+                  
+                    </a>
+                    </li>
+                </div>
+            {% elif result.pdf %}
+                <div class="col-md-12 pb-10" style="text-align: justify;">
+                    <li><a style="word-wrap: break-word;  color: rgb(0,124,187); font-size: 16px;"  href="{{result.pdf.url}}"
+                        title="Click to find out more" class="responsive-link">
+                        &nbsp;{{ result.pdf }}
+                    </a>
+                    </li>
+                </div>
+        {% elif result.vacancy_file %}
+          
+                <div class="col-md-12 pb-10" style="text-align: justify;">
+                    <li>
+                    <a style="word-wrap: break-word;  color: rgb(0,124,187); font-size: 16px;"  href="{{result.vacancy_file.url}}"
+                        title="Click to find out more" class="responsie-link">
+                        {{ result.vacancy_file }}
+                    </a>
+                    </li>
+                </div>  
+           {% else  %}
+                <div class="col-md-12 pb-10" style="text-align: justify;">
+                    <li>
+                    <a  style="word-wrap: break-word;  color: rgb(0,124,187); font-size: 16px;" href="{{result.file.url}}" title="Click to find out more" class="responsive-link">
+                     {{ result.file}}
+                    </a>
+                    </li>
+
+                </div>
+           
+            {% endif %}
+       
+           {% endfor %}
+            </ol>
+    </div>
+        {% endif%}
+    </div>
+    {% if page.has_other_pages %}
+    <div class="container pt-10 pb-10">
+        {% if page.has_previous %}
+        <a class="btn btn-xs btn-outline-primary" style="background-color:  rgb(204, 207, 207);" href="?query={{query}}&&page=1">First</a>
+        <a class="btn btn-xs btn-outline-primary" style="background-color:  rgb(204, 207, 207);"
+          href="?query={{query}}&&page={{ page.previous_page_number }}">Previous</a>
+        {% endif %}
+        {% for num in page_range %}
+        {% if num == page.number %}
+        <span class="btn btn-xs btn-primary" style="background-color:  rgb(204, 207, 207);">{{ num }}</span>
+        {% else %}
+        <a class="btn btn-xs btn-outline-primary" style="background-color: rgb(204, 207, 207);" href="?query={{query}}&&page={{ num }}">{{ num }}</a>
+        {% endif %}
+        {% endfor %}
+        {% if page.has_next %}
+        <a class="btn btn-xs btn-outline-primary" style="background-color: rgb(204, 207, 207);"
+          href="?query={{query}}&&page={{ page.next_page_number }}">Next</a>
+        <a class="btn btn-xs btn-outline-primary" style="background-color: rgb(204, 207, 207);"
+          href="?query={{query}}&&page={{ page.paginator.num_pages }}">Last</a>
+        {% endif %}
+      </div>
+{% endif %}
+
+</section> 
 
 {% endblock content %}

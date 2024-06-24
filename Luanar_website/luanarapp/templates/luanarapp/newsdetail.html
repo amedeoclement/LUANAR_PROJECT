@@ -6,7 +6,7 @@
     <div class="section-content">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="text-white text-center" style="font-family: sans-serif; font-size: 46px;">LUANAR IN NEWS
+          <h2 class="text-white text-center" style="font-family: sans-serif; font-size: 38px;">LUANAR IN NEWS
           </h2>
           <ol class="breadcrumb text-left mt-10 white">
             <li><a href=" url '' ">LUANAR</a></li>
@@ -23,10 +23,10 @@
 
       <div class="col-sm-12 col-md-4">
         <div class="sidebar sidebar-left mt-sm-30">
-
-          <h3 class="text-uppercase" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
-            Quick <span class="text-theme-colored2">Links</span>
-          </h3>
+          <h3 class="widget-title mt-30" style="font-family:  'Merriweather Sans', sans-serif;"><b>
+            Quick
+             <span class="text-theme-colored2">Links</span></b>
+         </h3>
 
           <ul class="nav nav-pills nav-stacked nav-sidebar"
             style="background-color: rgb(205, 218, 211); border-radius: 10px;">
@@ -99,7 +99,8 @@
           <p style="text-align: justify; font-size: 16px;color: rgb(0,124,187);"><b>{{new.news_title}}</b></p>
           <p><b>Posted:</b> {{new.updated_at|date:"F d, Y"}} <span style="float: right;"> <b>Posted By:</b> {{ added_by_user.get_full_name }}</span>
           </p>
-            <div class="col-md-8" style="float: right; margin-left: 10px;"> <img src="{{new.news_photo.url}}" class="img-fluid img-responsive"
+            <div class="col-md-8" style="float: right; margin-left: 10px;">
+               <img src="{{new.news_photo.url}}" class="img-fluid img-responsive"
               style=" width: 100%;" alt="" />
                 <div class="news-image-caption" style="font-size: 16px;">
                   {% if not new.photo_description %}

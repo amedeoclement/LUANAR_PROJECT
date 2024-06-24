@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-hzd6^du%@r%8b+#@3b#rxpdn02nhv+*d@#p)jr0px39a58k45f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '10.10.2.44']
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -181,12 +181,18 @@ DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
-        'ENGINE': 'django.db.backends.mysql',
+        #'ENGINE': 'django.db.backends.mysql',
+        #'NAME': 'luanarapp',
+        #'USER': 'luanar_updates_system',
+        #'PASSWORD': 'luanar_updates_password',
+        #'HOST': 'localhost',
+        #'PORT': '3306'
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'luanarapp',
         'USER': 'luanar_updates_system',
-        'PASSWORD': 'luanar_updates_password',
-        'HOST': 'localhost',
-        'PORT': '3306'
+        'PASSWORD': 'Webadmin#2024',
+        'HOST': 'localhost',  # Set to empty string for localhost
+        'PORT': '5432',  # Default port for PostgreSQL
     }
 }
 
@@ -207,6 +213,13 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.office365.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'camidi@luanar.ac.mw'
+EMAIL_HOST_PASSWORD = 'Clemenceau@96' 
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/

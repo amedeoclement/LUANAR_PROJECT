@@ -8,29 +8,13 @@ from django.db.models import Q
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from .models import *
-from .forms import GalleryForm
-from .forms import SearchForm
+from .forms import SearchForm, SubscriberForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 #create your views here
 
 def loginPage(request):
     return redirect('/admin')
-    # if request.method == 'POST':
-    #     username = request.POST.get('username')
-    #     password = request.POST.get('password')
-    #     try:
-    #         user = User.objects.get(username=username)
-    #     except:
-    #         messages.error(request, 'User does not exist')
-    #     user = authenticate(request, username=username, password=password)
-    #     if user is not None:
-    #        login(request, user) 
-    #        return redirect('home')
-    #     else:
-    #          messages.error(request, 'username or password incorrect')
-    # context = {}
-    # return render(request, 'luanarapp/login_register.html', context)
 
 def logoutUser(request):
     logout(request)
@@ -38,24 +22,12 @@ def logoutUser(request):
 
 def home(request):
     announcements= Announcement.objects.all().order_by('-announcement_id')[:3]
-    events = Event.objects.all().order_by('-event_id')[:2]
+    events = Event.objects.all().order_by('-event_id')[:3]
     faculties = Faculty.objects.all().order_by('faculty_code')[:3]
     news = News.objects.all().order_by('-news_id')[:3]
-    latest_event = Announcement.objects.all().order_by('-announcement_id')[0]
     form = SearchForm()
-    context = {'faculties': faculties, 'news':news,'events':events,'latest_event':latest_event, 'announcements':announcements, 'prospectus':prospectus, 'form':form}
+    context = {'faculties': faculties, 'news':news,'events':events, 'announcements':announcements, 'prospectus':prospectus, 'form':form}
     return render(request, 'luanarapp/home.html', context)
-
-
-def create_gallery(request):
-    if request.method == 'POST':
-        form = GalleryForm(request.POST,request.FILES)
-        if form.is_valid():
-            form.save()
-            return redirect('home')
-    else:
-        form = GalleryForm()
-        return render(request,'luanarapp/create_gallery.html', {'form':form})
 
 
 #luanar in general
@@ -73,24 +45,32 @@ def policies(request):
     return render(request, 'luanarapp/policies.html')
 
 def faculties(request):
-    firstfaculty = Faculty.objects.get(faculty_id = 1)
+    firstfaculty = Faculty.objects.get(faculty_code = 'BUNDA_FAG')
     news = News.objects.all().order_by( '-news_id')[1]
     departments = Department.objects.filter(faculty_code_id = 3)
     faculties = Faculty.objects.all().order_by('faculty_code')[:6]
-    staff = AcademicStaff.objects.get(faculty_code_id = "FAG", staff_position = "HEAD OF FACULTY")
+    staff = AcademicStaff.objects.filter(faculty_code_id = "BUNDA_FAG", staff_position = "HEAD OF FACULTY")
     context = {'faculties':faculties, 'firstfaculty':firstfaculty, 'departments':departments, 'news':news, 'staff':staff}
-    
     return render(request, 'luanarapp/faculties.html', context)
-   
+
 
 def faculty_detailsView(request, code):
     firstfaculty = Faculty.objects.get(faculty_id= code)
     departments = Department.objects.filter(faculty_code_id = code)
     faculties = Faculty.objects.all().order_by('faculty_code')[:6]
     news = News.objects.all().order_by( '-news_id')[1]
-    staff = AcademicStaff.objects.get(faculty_code_id = firstfaculty.faculty_code, staff_position = "HEAD OF FACULTY")
+    staff = AcademicStaff.objects.filter(faculty_code_id = firstfaculty.faculty_code, staff_position = "HEAD OF FACULTY")
     context = {'faculties':faculties, 'firstfaculty':firstfaculty, 'departments':departments, 'staff':staff, 'news':news}
     return render(request, 'luanarapp/faculties.html', context)
+
+def campus_faculties(request, code):
+    firstfaculty = Faculty.objects.filter(campus_code_id = code)[1]
+    faculties = Faculty.objects.filter(campus_code_id = code).order_by('faculty_code')
+    news = News.objects.all().order_by( '-news_id')[1]
+    staff = AcademicStaff.objects.filter(faculty_code_id = firstfaculty.faculty_code, staff_position = "HEAD OF FACULTY")
+    context = {'faculties':faculties, 'firstfaculty':firstfaculty, 'staff':staff, 'news':news}
+    return render(request, 'luanarapp/faculties.html', context)
+
 
 def department_detailsView(request, id):
     department = Department.objects.get(department_id = id)
@@ -260,9 +240,10 @@ def eventsdetail(request, id):
     return render(request, 'luanarapp/event_details.html', context)
 
 
-def vacancy_detailsView(request, id):
-    vacancy = Vacancy.objects.get(vacancy_id = id)
-    context = {'vacancy':vacancy}
+def vacancy_detailsView(request, id, title):
+    vacancy = Vacancy.objects.get(vacancy_id = id, position = title)
+    hr = AdministrationStaff.objects.get(staff_position = "Human Resources Manager")
+    context = {'vacancy':vacancy, 'hr':hr}
     return render(request, 'luanarapp/vacancy_details.html', context)
 
 def luanar4moreimpact(request):
@@ -279,7 +260,7 @@ def message_from_vcView(request):
     return render(request,'luanarapp/about/message_from_vc.html')
 
 def mission_vision_valuesView(request):
-    vc = AdministrationStaff.objects.get(office_code_id = 2)
+    vc = AdministrationStaff.objects.filter(office_code_id = 2)
   
     return render(request, 'luanarapp/about/mission_vision_values.html', {'vc':vc})
 
@@ -294,30 +275,42 @@ def new_partinershipsView(request):
 
 #luanar campuses views
 def bundacampus(request):
-    programs = Program.objects.all()[:6]
-    context = {'programs': programs}
+    announcements= Announcement.objects.filter(tag = "Bunda").order_by('-announcement_id')[:2]
+    events = Event.objects.filter(tag = "Bunda").order_by('-event_id')[:2]
+    faculties = Faculty.objects.filter(campus_code_id = 1).order_by('faculty_code')[:3]
+    news = News.objects.filter(tag = 'Bunda').order_by('-news_id')[:3]
+    context = {'faculties': faculties, 'news':news,'events':events, 'announcements':announcements}
     return render(request, 'luanarapp/campuses/bundacampus.html', context)
 
 def citycampus(request):
-    return render(request, 'luanarapp/campuses/citycampus.html')
+    announcements= Announcement.objects.filter(tag = "CITY").order_by('-announcement_id')[:2]
+    events = Event.objects.filter(tag = "CITY").order_by('-event_id')[:2]
+    faculties = Faculty.objects.filter(campus_code_id = 4).order_by('faculty_code')[:3]
+    news = News.objects.filter(tag = 'CITY').order_by('-news_id')[:3]
+    context = {'faculties': faculties, 'news':news,'events':events, 'announcements':announcements}
+    return render(request, 'luanarapp/campuses/citycampus.html',context)
 
 def programs_at_cityView(request):
     programs = Program.objects.all()[:6]
     context = {'programs': programs}
     return render(request, 'luanarapp/campuses/programs_at_city.html', context)
 
-def programs_at_odlView(request):
-    programs = Program.objects.all()[:6]
-    context = {'programs': programs}
-    return render(request, 'luanarapp/campuses/programs_at_odl.html', context)
-
 def odl(request):
-    return render(request, 'luanarapp/campuses/odl.html')
+    announcements= Announcement.objects.filter(tag = "ODL").order_by('-announcement_id')[:2]
+    events = Event.objects.filter(tag = "ODL").order_by('-event_id')[:2]
+    faculties = Faculty.objects.filter(campus_code_id = 3).order_by('faculty_code')[:3]
+    news = News.objects.filter(tag = 'ODL').order_by('-news_id')[:3]
+    context = {'faculties': faculties, 'news':news,'events':events, 'announcements':announcements}
+    return render(request, 'luanarapp/campuses/odl.html', context)
 
 def naturalresourcescollege(request):
-    programs = Program.objects.all()[:6]
-    context = {'programs': programs}
+    announcements= Announcement.objects.filter(tag = "NRC").order_by('-announcement_id')[:2]
+    events = Event.objects.filter(tag = "NRC").order_by('-event_id')[:2]
+    faculties = Faculty.objects.filter(campus_code_id = 2).order_by('faculty_code')[:3]
+    news = News.objects.filter(tag = 'NRC').order_by('-news_id')[:3]
+    context = {'faculties': faculties, 'news':news,'events':events, 'announcements':announcements}
     return render(request, 'luanarapp/campuses/naturalresourcescollege.html', context)
+
 
 def virtualcampus(request):
     return render(request, 'luanarapp/campuses/virtualcampus.html')
@@ -594,14 +587,56 @@ def announcement_detail(request, id):
     context = {'news':news,'announcement_detail':announcement_detail}
     return render(request, 'luanarapp/announcement_details.html' , context)
 
-def gallery(request):
-    return render(request, 'luanarapp/gallery.html')
-
 def social_media_links(request):
     return render(request, 'luanarapp/social_media_links.html')
 
 def downloads(request):
-    return render(request, 'luanarapp/downloads.html')
+            
+            announcements = Announcement.objects.all().order_by('-announcement_id')
+            newsletter = Newsletter.objects.all().order_by('-id')
+            vacancies = Vacancy.objects.all().order_by('-vacancy_id')
+            # Combine querysets from both models
+            combined_results = list(announcements) + list(newsletter) + list(vacancies)
+
+            # Number of items per page
+            items_per_page = 10
+
+            # Create a Paginator object
+            paginator = Paginator(combined_results, items_per_page)
+
+            # Get the page number from the request
+            page_number = request.GET.get('page')
+
+            try:
+                # Get the specified page
+                page = paginator.page(page_number)
+            except PageNotAnInteger:
+                # If page is not an integer, deliver first page.
+                page = paginator.page(1)
+            except EmptyPage:
+                # If page is out of range (e.g. 9999), deliver last page of results.
+                page = paginator.page(paginator.num_pages)
+
+            # Get the current page number
+            current_page = page.number
+
+            # Get the total number of pages
+            total_pages = paginator.num_pages
+
+            # Calculate the range of pages to display
+            if total_pages <= 6:
+                page_range = paginator.page_range
+            else:
+                if current_page <= 3:
+                    page_range = range(1, 7)
+                elif current_page >= total_pages - 2:
+                    page_range = range(total_pages - 5, total_pages + 1)
+                else:
+                    page_range = range(current_page - 2, current_page + 3)
+
+            # Pass the page object and page range to the template
+            context =  {'page': page, 'page_range': page_range}
+            return render(request, 'luanarapp/downloads.html', context)
 
 # staff profiles
 
@@ -670,6 +705,30 @@ def search_view(request):
         form = SearchForm()
 
     return render(request, 'luanarapp/students/undergraduateprograms.html', {'form': form})
+
+
+def subscribe(request):
+    if request.method == 'POST':
+        form = SubscriberForm(request.POST)
+        if form.is_valid():
+
+            email = form.cleaned_data.get('email')
+            if Subscriber.objects.filter( email = email).exists():
+                messages.info(request, 'This email is already subscribed.')
+            else:
+                form.save()
+                messages.success(request, 'You have successfully subscribed to the newsletter.')
+                return redirect('')
+            
+        else:
+           form = SubscriberForm()
+           messages.info(request, 'The email has already been used on this site!!!')
+
+    else:
+        form = SubscriberForm()
+        messages.info(request, 'Check the form if it is properly configured')
+    return redirect('')
+
 
 def search_page(request):
     return render(request, 'luanarapp/search.html')

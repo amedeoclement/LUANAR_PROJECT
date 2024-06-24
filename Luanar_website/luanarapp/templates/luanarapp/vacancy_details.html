@@ -7,7 +7,7 @@
       <div class="section-content">
         <div class="row">
           <div class="col-md-12">
-            <h2 class="text-white text-uppercase text-center " style="font-family: sans-serif; font-size: 46px;">LUANAR | Vacancies</h2>
+            <h2 class="text-white text-uppercase text-center " style="font-family: sans-serif; font-size: 38px;">LUANAR | Vacancies</h2>
             <ol class="breadcrumb text-left mt-10 white">
               <li><a href=" url '' ">LUANAR</a></li>
               <li><a href="#">Vacancies</a></li>
@@ -38,8 +38,14 @@
                 </div>
                     
                      <h4><b>Job description</b></h4>
-                     <div style="text-align: justify; font-size: 16px;">
-                      <p>{{vacancy.job_description}}</p>
+                     <div style=" font-size: 16px;">
+       <div style="text-align: justify;" >
+        {% autoescape off %}
+        <p>{{vacancy.job_description}}</p> 
+       {% endautoescape %}
+     
+       </div>              
+
 
                       <h4><b>Requirements</b></h4>
 <ul>
@@ -48,7 +54,6 @@
   {% endautoescape %}
 </ul>
                    
- 
                      </div>
                     
                  <hr>
@@ -56,7 +61,7 @@
                      <h4 style="font-family:  'Merriweather Sans', sans-serif; font-weight: bold;">Get full details here</h4>
                     </div>
                     {% if not vacancy.vacancy_file %}
-                    
+                   
 
                     {% else %}
                     <a href="{{vacancy.vacancy_file.url}}" class="hvr-shutter-out-horizontal btn btn-sm btn-dark  btn-theme-colored btn-flat"><i class="fa fa-download fa-lg"></i>&nbsp; Download pdf</a>
@@ -81,15 +86,30 @@
                     <h3>
                       Featured <span class="text-theme-colored2">Staff</span>
                     </h3>
+
+            {% if not hr.staff_position %}
+           <div>
+            <p>No staff found!</p>
+          </div>
+           {% else %}
+
                     <div class="col-md-12">
                       <div class="card mb-sm-30 bg-white" style="border-bottom:#2eb135 4px solid;">
-                        <a href="#"><img src="/static/images/about/cr1.jpg" class="card-img-top" style="padding-top: 15px;"
+                        {% if not hr.profile_pic %}
+                        <a href="{% url 'adminstrative_staff_view' hr.staff_id %}"><img src="/static/images/about/placeholderimage.jpg" class="card-img-top" style="padding-top: 15px;"
                           alt="...">
+                        {% else %}
+                        <a href="{% url 'adminstrative_staff_view' hr.staff_id %}"><img src="{{hr.profile_pic.url}}" class="card-img-top" style="padding-top: 15px;"
+                          alt="...">
+                          {% endif %}
+
                         <div class="card-body ">
-                         <h3 class="card-title font-weight-700 mt-20">D. Mpando</h3>
+                         <h3 class="card-title font-weight-700 mt-20">{{hr.staff_name}}</h3>
                           <h4 class="card-title font-weight-700 font-16 mt-20">Human Resources Manager</h4></a>
                             </div>
                       </div>
+
+                      {% endif %}
                     </div>
                   </div>
                 </div>

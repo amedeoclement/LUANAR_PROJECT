@@ -2,10 +2,25 @@ from django.contrib import admin
 from .models import  Event, News, Announcement, ProgramNature, AcademicStaff,Calendar, Program, Faculty, ResearchAndOutreach, QuickAnnouncement, AdministrationStaff,Luanar4moreImpact,Vacancy, Department, College,Campus, AdministrationOffice
 
 #Register your models here.
+
+from .models import Subscriber, Newsletter
+
+@admin.register(Subscriber)
+class SubscriberAdmin(admin.ModelAdmin):
+    list_display = ['email', 'date_subscribed']
+    search_fields =('email','date_subscribed')
+    list_per_page = 5
+
+@admin.register(Newsletter)
+class NewsletterAdmin(admin.ModelAdmin):
+    list_display = ['title', 'uploaded_at']
+    search_fields =('title', 'uploaded_at')
+    list_per_page = 5
+
 class EventAdmin(admin.ModelAdmin):
     list_display= ('event_title','host','venue', 'event_description','event_photo', 'date')
     list_display_links = ('event_title','host','venue', 'event_description','event_photo', 'date')
-    search_fields =('event_title','host', 'venue')
+    search_fields =('event_title','host', 'venue', 'tag')
     list_per_page = 5
     
 class NewAdmin(admin.ModelAdmin):

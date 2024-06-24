@@ -4,7 +4,7 @@
     <div class="section-content">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="text-white text-center" style="font-family: sans-serif; font-size: 46px;">
+          <h2 class="text-white text-center" style="font-family: sans-serif; font-size: 38px;">
             LUANAR | ANNOUNCEMENTS
           </h2>
           <ol class="breadcrumb text-left mt-10 white">
@@ -92,20 +92,22 @@
           </div>
         </div>
       </div>
-      <div class="col-md-3 col-sm-12">
-        <div class="sidebar sidebar-left mt-sm-30">
+      <div class="col-md-3 col-sm-12 pt-0">
+        <div class="sidebar sidebar-left ">
 
-            <h3 class="widget-title line-bottom">
-              Important <span class="text-theme-colored2">information</span>
-            </h3>
-
-            <ul class="nav nav-stacked nav-pills nav-sidebar" style="background-color: rgb(205, 218, 211); border-radius: 10px;">
-              <li><a href="{% url 'accommodation' %}">Accommodation</a></li>
-              <li><a href="{% url 'citycampus' %}">City Campus</a></li>
-              <li><a href="{% url 'naturalresourcescollege' %}">NRC Campus</a></li>
-              <li><a href="{% url 'virtualcampus' %}">Virtual Campus</a></li>
-              <li><a href="{% url 'odl' %}">ODL Campus</a></li>
-            </ul>
+          <h3 class="widget-title" style="font-family: sans-serif;"><b>
+            <i class="text-theme-colored"></i>Quick
+            <span class="text-theme-colored2">Links</span></b>
+          </h3>
+      
+          <ul class="nav nav-stacked nav-pills nav-sidebar"
+            style="background-color: rgb(205, 218, 211); border-radius: 10px;">
+            <li> <a href="{% url 'events' %}">Events</a></li>
+            <li> <a href="{% url 'announcements' %}">Announcements</a></li>
+            <li> <a href="{% url 'researchandoutreach' %}">Research & Outreach</a></li>
+            <li> <a href="{% url 'vacancies' %}">Vacancies</a></li>
+            <li> <a href="{% url 'studentclubsandsociety' %}">Sports & Recreation</a></li>
+          </ul>
           <div class="widget">
 
             <div class="col-md-12">

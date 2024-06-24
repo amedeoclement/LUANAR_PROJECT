@@ -4,6 +4,52 @@ from django.dispatch import receiver
 import os
 from django.contrib.auth.models import User
 
+
+
+class Subscriber(models.Model):
+    email = models.EmailField(unique=True)
+    date_subscribed = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email
+
+class Newsletter(models.Model):
+    title = models.CharField(max_length=200)
+    pdf = models.FileField(upload_to='downloads/', blank=True, null=True)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+    
+     # Override save method to handle file replacement
+    def save(self, *args, **kwargs):
+    # Check if the instance has a primary key (i.e., it's an existing object)
+      if self.pk:
+        old_instance = Newsletter.objects.get(pk=self.pk)
+        # Check if the file field has changed
+        if old_instance.pdf != self.pdf:
+            old_instance.pdf.delete(False)
+      else:
+        # If it's a new instance, no need to delete old file
+        pass
+      super().save(*args, **kwargs)
+
+# Signal to delete file before model instance is deleted
+@receiver(pre_delete, sender=Newsletter)
+
+def delete_file_on_delete(sender, instance, **kwargs):
+         instance.pdf.delete(False)
+
+# Signal to delete old file if replaced by a new one
+@receiver(pre_save, sender=Newsletter)
+def delete_old_file_on_change(sender, instance, **kwargs):
+    if instance.pk:
+       old_instance = Newsletter.objects.get(pk=instance.pk)
+       if old_instance.pdf != instance.pdf:
+            old_instance.pdf.delete(False)
+    
+
+
 class News(models.Model):
     news_id = models.AutoField(primary_key=True)
     news_title = models.CharField(max_length=200)
@@ -11,9 +57,14 @@ class News(models.Model):
     news_subtitle = models.CharField(max_length= 400, null = True, blank = True)
     news_body = models.TextField()
     news_photo = models.ImageField(upload_to='news_photos/', blank=True, null=True)
-    photo_description = models.CharField(max_length= 400)
-    tag = models.CharField(max_length= 100, blank=True, null=True)
-
+    photo_description = models.CharField(max_length= 400, blank=True,null=True)
+    class Category(models.TextChoices):
+        BUNDA = "Bunda" , 'Bunda'
+        NRC = "NRC", 'NRC'
+        CITY = "CITY", 'CITY'
+        ODL = "ODL", 'ODL'
+        PUBLIC = "Public",'Public'
+    tag = models.CharField(max_length= 50, choices = Category.choices)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     class Meta:
@@ -58,6 +109,13 @@ class Event(models.Model):
     host = models.CharField(max_length= 200)
     venue = models.CharField(max_length=200)
     date = models.DateField(blank=True, null=True)
+    class Category(models.TextChoices):
+        BUNDA = "Bunda" , 'Bunda'
+        NRC = "NRC", 'NRC'
+        CITY = "CITY", 'CITY'
+        ODL = "ODL", 'ODL'
+        PUBLIC = "Public",'Public'
+    tag = models.CharField(max_length= 50, choices = Category.choices, blank=True, null=True)
     start_time = models.TimeField(blank=True, null = True)
     end_time = models.TimeField(blank=True, null = True)
     created_at = models.DateTimeField(auto_now_add=True)
@@ -110,13 +168,15 @@ class Announcement(models.Model):
     announcement_id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
     description = models.TextField(null = True, blank = True)
-    class Category(models.TextChoices):
-        PUBLIC = "PUBLIC" , 'Public'
-        STAFF = "STAFF", 'Staff'
-        STUDENTS = "STUDENTS", 'Students'
     application_form = models.FileField(upload_to='announcements_files/', blank=True, null=True)
     file = models.FileField(upload_to='announcements_files/', blank=True, null=True)
-    category = models.CharField(max_length= 50, choices = Category.choices)
+    class Category(models.TextChoices):
+        BUNDA = "Bunda" , 'Bunda'
+        NRC = "NRC", 'NRC'
+        CITY = "CITY", 'CITY'
+        ODL = "ODL", 'ODL'
+        PUBLIC = "Public",'Public'
+    tag = models.CharField(max_length= 50, choices = Category.choices, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):

@@ -6,7 +6,7 @@
     <div class="section-content">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="text-white text-uppercase text-center" style="font-family: sans-serif; font-size: 46px;">Faculties</h2>
+          <h2 class="text-white text-uppercase text-center" style="font-family: sans-serif; font-size: 38px;">Faculties</h2>
           <ol class="breadcrumb text-left mt-10 white">
             <li><a href=" url '' ">LUANAR</a></li>
             <li><a href="#">Schools</a></li>
@@ -55,15 +55,16 @@
 
 
 
-        <div class="col-lg-12 col-md-12">
-          <h3 style="background-color: aquamarine;" class="list-group-item text-center">
-            Departments under this faculty
-          </h3>
-          {% for department in departments %}
-          <a href="{% url 'department_details' department.department_id %}"
-            class="list-group-item">{{department.department_name}}</a>
-          {% endfor %}
-        </div>
+        
+          <div class="col-md-12" style=" border-left: 5px solid; margin: 20px 0 10px 0; background-color: #f0f0f0;">
+            <div>
+              <h3 style="font-family:  'Merriweather Sans', sans-serif; font-weight: bold;">
+                Departments under  {{firstfaculty.faculty_name}}:
+              </h3>
+            </div>
+
+          </div>
+         
       </div>
 
 
@@ -87,6 +88,10 @@
 
         <div class="widget pt-20"> 
             
+{% if not staff.staff_name %}
+
+{% else %}
+
             <div class="col-md-12" style="border-bottom: #2eb135 1px solid;">
               <h4 class="widget-title line-bottom" style="font-family:  'Merriweather Sans', sans-serif; font-weight: bold;text-align: justify;">
                 Dean of <span class="text-theme-colored2">Faculty</span>
@@ -107,6 +112,8 @@
                 
               </div>
             </div>
+{% endif %}
+
           </div> 
 <h2 class="widget-title " style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Latest News</h2>
 <div class="latest-posts">
